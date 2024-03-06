@@ -1,0 +1,22 @@
+dateModified: 1709748452
+email:
+  fromEmail: info@almanac.digital
+  fromName: Grid
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    51b22b87-9b56-4681-915e-e9b42177698f: Common # Common
+    69c71848-5c39-4f0d-856d-9d3d692610c6: Grid # Grid
+    70b4eee2-1755-4aea-bad6-0288ddeaf774: Grid # Grid
+system:
+  edition: solo
+  live: true
+  name: Grid
+  schemaVersion: 4.5.3.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

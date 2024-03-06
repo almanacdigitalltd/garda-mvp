@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-GB
+name: Grid
+primary: true
+siteGroup: 70b4eee2-1755-4aea-bad6-0288ddeaf774 # Grid
+sortOrder: 1
