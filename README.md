@@ -41,3 +41,14 @@ Then paste
 `export ANDROID_AVD_HOME=~/.android/avd`
 
 Save and quit - `:wq`
+
+## Web (CraftCMS)
+
+Composer install
+`composer intall`
+
+Start Server
+`ddev start`
+
+Import DB
+`ddev import-db --file=DB_PATH`
