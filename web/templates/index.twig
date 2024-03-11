@@ -9,15 +9,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="referrer" content="origin-when-cross-origin" />
 
-        {% do craft.app.view.registerCssFile('@web/assets/css/index.css') %}
+        {% if devMode %}
+            {% css "http://localhost:5173/sass/web.scss" %}
+
+            {% js "http://localhost:5173/@vite/client" with {
+                type: "module"
+            } %}
+
+            {% js "http://localhost:5173/js/web.js" with {
+                type: "module"
+            } %}
+        {% else %}
+            {% css "@web/assets/css/index.css" %}
+
+            {% js "@web/assets/js/core.js" %}
+        {% endif %}
         
     </head>
 
     <body class="ltr">
 
         <h1>The Grid</h1>
-
-        {% do craft.app.view.registerJsFile('@web/assets/js/core.js') %}
 
     </body>
 

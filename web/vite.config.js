@@ -4,6 +4,7 @@ export default ({ mode }) => {
     process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
     return defineConfig({
+		root: '../src',
         base: process.env.VITE_BASE_PATH,
         publicDir: process.env.VITE_DEFAULT_PATH + '/public',
         build: {
