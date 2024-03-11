@@ -1,0 +1,19 @@
+$font-primary: 'Avenir', sans-serif;
+$font-secondary: 'bebas-neue-pro', serif;
+
+$font-size-base: 16px;
+$font-lock-min:  480px !default; 
+$font-lock-max: 1450px !default;
+
+$site-width: 1342px;
+
+// BREAKPOINTS
+$break-mobile: 480px;
+$break-tablet: 768px;
+$break-desktop: 1024px;
+
+$grid-gap: 20px;
+$grid-gap-tablet: 24px;
+$grid-gap-desktop: 30px;
+
+$grid-columns: 12;
