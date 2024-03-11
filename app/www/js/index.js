@@ -25,10 +25,11 @@ function checkConnection() {
 }
 
 function setOffline () {
+    if ( ! onlineUrl ) return
     onlineUrl.close()
 }
 
 function setOnline () {
-    iab.open('https://almanac.digital', '_self', 'location=no,clearsessioncache=yes,zoom=no')
+    onlineUrl = iab.open('https://almanac.digital', '_self', 'location=no,clearsessioncache=yes,zoom=no')
 }
 
