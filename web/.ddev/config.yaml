@@ -1,4 +1,4 @@
-name: web
+name: grid
 type: craftcms
 docroot: web
 php_version: "8.1"
