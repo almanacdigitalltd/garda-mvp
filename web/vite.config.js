@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig, loadEnv } from "vite";
 
 export default ({ mode }) => {
@@ -7,6 +8,11 @@ export default ({ mode }) => {
 		root: '../src',
         base: process.env.VITE_BASE_PATH,
         publicDir: process.env.VITE_DEFAULT_PATH + '/public',
+		resolve: {
+			alias: {
+				'@modules': path.resolve(__dirname, '../web/node_modules'),
+			},
+		},
         build: {
             minify: true,
             outDir: process.env.VITE_OUTPUT_PATH,
