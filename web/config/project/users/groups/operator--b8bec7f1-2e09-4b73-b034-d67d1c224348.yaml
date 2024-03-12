@@ -1,3 +1,5 @@
 description: ''
 handle: operator
 name: Operator
+permissions:
+  - 'viewentries:59bcce9b-0523-4c33-ac21-5c3a3879cfbe' # Products
