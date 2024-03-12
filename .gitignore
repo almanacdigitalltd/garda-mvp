@@ -1,5 +1,8 @@
-
-
-
-
 .DS_Store*
+package-lock.json
+
+node_modules
+
+# App
+app/www/css/index.css
+app/www/js/core.js

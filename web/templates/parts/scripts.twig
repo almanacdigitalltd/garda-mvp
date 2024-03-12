@@ -1,0 +1,15 @@
+{% if devMode %}
+    {% css "http://localhost:5173/sass/web.scss" %}
+
+    {% js "http://localhost:5173/@vite/client" with {
+        type: "module"
+    } %}
+
+    {% js "http://localhost:5173/js/web.js" with {
+        type: "module"
+    } %}
+{% else %}
+    {% css "@web/assets/css/index.css" %}
+
+    {% js "@web/assets/js/core.js" %}
+{% endif %}

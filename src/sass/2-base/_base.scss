@@ -1,0 +1,71 @@
+html {
+	box-sizing: border-box;
+	font-size: $font-size-base;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	overflow-y: unset;
+}
+
+body {
+	background: #ff0000;
+	color: #000000;
+	font-family: $font-primary;
+	font-size: $font-size-base;
+	font-weight: 300;
+	overflow-x: hidden;
+}
+
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+
+	font-synthesis: inherit;
+}
+
+address {
+	font-size: inherit;
+	font-style: inherit;
+}
+
+figure {
+	margin: 0;
+}
+
+.touch {
+	cursor: pointer;
+}
+
+::selection {
+	// color: var(--report-color-white);
+}
+
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
+	touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+ol, ul {
+	padding: 0;
+	margin: 0;
+	
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
