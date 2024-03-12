@@ -1,4 +1,4 @@
-dateModified: 1710223125
+dateModified: 1710229087
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
@@ -14,7 +14,8 @@ meta:
     55523a07-30ac-4de4-aab3-bb0ba4e5931a: 'Public Schema' # Public Schema
     b8bec7f1-2e09-4b73-b034-d67d1c224348: Operator # Operator
     b957da5d-2360-4243-9f15-e94ef786cf21: Users # Users
-    e877a5dc-7e22-4b93-b7f9-98e7b6ff5f21: Default # Default
+    d3da2a31-6aef-4533-86ad-0cfb6924a6b1: Products # Products
+    e877a5dc-7e22-4b93-b7f9-98e7b6ff5f21: Product # Product
 system:
   edition: pro
   live: true

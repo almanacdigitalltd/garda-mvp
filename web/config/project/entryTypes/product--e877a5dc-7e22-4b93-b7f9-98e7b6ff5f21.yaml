@@ -34,9 +34,9 @@ fieldLayouts:
         name: Content
         uid: 7621a0e9-e2a9-45e3-bdd6-ae3a5bb7e674
         userCondition: null
-handle: default
+handle: product
 hasTitleField: true
-name: Default
+name: Product
 section: 59bcce9b-0523-4c33-ac21-5c3a3879cfbe # Products
 showStatusField: true
 slugTranslationKeyFormat: null
