@@ -1,0 +1,20 @@
+columnSuffix: faskucok
+contentColumnType: smallint(2)
+fieldGroup: b957da5d-2360-4243-9f15-e94ef786cf21 # Users
+handle: score
+instructions: null
+name: Score
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: 20
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

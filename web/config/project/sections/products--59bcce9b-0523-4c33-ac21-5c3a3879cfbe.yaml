@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: products
+name: Products
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  69c71848-5c39-4f0d-856d-9d3d692610c6: # Grid
+    enabledByDefault: true
+    hasUrls: true
+    template: products/_entry
+    uriFormat: 'products/{slug}'
+type: channel

@@ -1,0 +1,29 @@
+tabs:
+  -
+    elementCondition:
+      class: craft\elements\conditions\users\UserCondition
+      conditionRules:
+        -
+          class: craft\elements\conditions\users\GroupConditionRule
+          operator: in
+          uid: b36e0928-defa-44cd-a693-1beb4e08eb62
+          values:
+            - b8bec7f1-2e09-4b73-b034-d67d1c224348 # Operator
+      elementType: craft\elements\User
+      fieldContext: global
+    elements:
+      -
+        elementCondition: null
+        fieldUid: 449b3264-21d0-4588-8963-b654f1cba62f # Score
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: f2cf2a2f-97a3-4a15-8d46-5e48e5cd4973
+        userCondition: null
+        warning: null
+        width: 100
+    name: Quiz
+    uid: 51aa92bb-5523-4cf3-99f4-cd2bdde10bdb
+    userCondition: null
