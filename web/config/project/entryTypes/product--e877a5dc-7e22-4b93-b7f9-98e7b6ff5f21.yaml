@@ -1,0 +1,47 @@
+fieldLayouts:
+  dffd8ab3-293a-465c-8012-212cf2163049:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4dce7230-33ed-48ed-a0eb-282a35d06668
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 7621a0e9-e2a9-45e3-bdd6-ae3a5bb7e674
+        userCondition: null
+handle: product
+hasTitleField: true
+name: Product
+section: 59bcce9b-0523-4c33-ac21-5c3a3879cfbe # Products
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
