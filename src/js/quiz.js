@@ -6,6 +6,9 @@ const slides = document.querySelectorAll( '.c-quiz .swiper-slide' );
 const slideCount = slides.length;
 fraction.textContent = `1 of ${slideCount}`;
 
+const nextButton = document.querySelector( '.c-quiz__next' )
+const submitButton = document.querySelector( '.c-quiz__submit' )
+
 const initialize = () => {
     setupSwiper()
 
@@ -28,18 +31,22 @@ const setupSwiper = () => {
         allowTouchMove: false,
         on: {
             slideChange: () => {
-                let index = swiper.realIndex + 1
-
-                fraction.textContent = `${index} of ${slideCount}`
-                document.querySelector( '.c-quiz__next' ).classList.add( 'e-button--disabled' )
-                document.querySelector( '.c-quiz__submit' ).classList.add( 'e-button--disabled' )
-
-                answerTrigger( document.querySelector( '.c-quiz .swiper-slide-' + index ) )
-
-                swapNextSubmit( index, slideCount )
+                onSlideChange( swiper )
             }
         }
     })
+}
+
+const onSlideChange = swiper => {
+    let index = swiper.realIndex + 1
+
+    fraction.textContent = `${index} of ${slideCount}`
+    nextButton.classList.add( 'e-button--disabled' )
+    submitButton.classList.add( 'e-button--disabled' )
+
+    answerTrigger( document.querySelector( '.c-quiz .swiper-slide-' + index ) )
+
+    swapNextSubmit( index, slideCount )
 }
 
 const answerTrigger = activeSlide => {
@@ -47,21 +54,21 @@ const answerTrigger = activeSlide => {
     
     answers.forEach( answer => {
         answer.addEventListener( 'change', () => {
-            document.querySelector( '.c-quiz__next' ).classList.remove( 'e-button--disabled' )
-            document.querySelector( '.c-quiz__submit' ).classList.remove( 'e-button--disabled' )
+            nextButton.classList.remove( 'e-button--disabled' )
+            submitButton.classList.remove( 'e-button--disabled' )
         } )
     });
 }
 
 const swapNextSubmit = ( index, slideCount ) => {
     if ( index == slideCount ) {
-        document.querySelector( '.c-quiz__next' ).classList.add( 'e-button--hide' )
-        document.querySelector( '.c-quiz__submit' ).classList.remove( 'e-button--hide' )
+        nextButton.classList.add( 'e-button--hide' )
+        submitButton.classList.remove( 'e-button--hide' )
     }
 }
 
 const submitAnswers = () => {
-    document.querySelector( '.c-quiz__submit' ).addEventListener('click', () => {
+    submitButton.addEventListener('click', () => {
         getScore()
     })
 }
