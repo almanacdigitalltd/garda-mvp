@@ -1,0 +1,118 @@
+field: 2ff8cdee-ebe4-488c-9b5c-4eefb0adccda # Quiz
+fieldLayouts:
+  e123d678-e93a-41a3-9268-2b4db6cb816a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5f98ca01-c165-422f-953a-52eb0af89714 # Question
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a90eaa6-1748-46d3-9a76-d052fb2a59ab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2816d58c-3e2e-4f4d-9b37-7c854689a0a8 # Answers
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 174cfa28-f5fc-4f87-aedc-8eccb5197012
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f292815f-e9d8-495c-90a3-2bdfdcc5a12a
+        userCondition: null
+fields:
+  5f98ca01-c165-422f-953a-52eb0af89714: # Question
+    columnSuffix: uugpndoo
+    contentColumnType: text
+    fieldGroup: null
+    handle: question
+    instructions: null
+    name: Question
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2816d58c-3e2e-4f4d-9b37-7c854689a0a8: # Answers
+    columnSuffix: kfylmjzp
+    contentColumnType: text
+    fieldGroup: null
+    handle: answers
+    instructions: null
+    name: Answers
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Answer
+                -
+                  - handle
+                  - answer
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Correct?'
+                -
+                  - handle
+                  - correct
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: null
+      minRows: null
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: question
+name: Question
+sortOrder: 1

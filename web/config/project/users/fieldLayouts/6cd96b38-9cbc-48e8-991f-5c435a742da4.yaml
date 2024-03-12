@@ -6,7 +6,7 @@ tabs:
         -
           class: craft\elements\conditions\users\GroupConditionRule
           operator: in
-          uid: b36e0928-defa-44cd-a693-1beb4e08eb62
+          uid: 07b8aab2-6bbd-491d-a108-d42e75d34597
           values:
             - b8bec7f1-2e09-4b73-b034-d67d1c224348 # Operator
       elementType: craft\elements\User
