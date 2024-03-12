@@ -57,6 +57,7 @@ Import DB
 
 ### development
 
+After every pull run `ddev craft up`
 
 #### Troubleshooting
 - On initial setup the "Settings" menu option in the main CraftCMS Console might not be visible - add `ALLOW_ADMIN_CHANGES=true` to local `.env` file
