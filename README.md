@@ -44,11 +44,19 @@ Save and quit - `:wq`
 
 ## Web (CraftCMS)
 
+### Setup
+
 Composer install
-`composer intall`
+`composer install`
 
 Start Server
 `ddev start`
 
 Import DB
 `ddev import-db --file=DB_PATH`
+
+### development
+
+
+#### Troubleshooting
+- On initial setup the "Settings" menu option in the main CraftCMS Console might not be visible - add `ALLOW_ADMIN_CHANGES=true` to local `.env` file
