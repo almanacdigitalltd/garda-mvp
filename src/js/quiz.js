@@ -1,6 +1,9 @@
 import Swiper from "@modules/swiper";
 import { Navigation, Pagination } from "@modules/swiper/modules";
 
+const storage = window.localStorage
+let score = JSON.parse( storage.getItem('score') )
+
 const fraction = document.querySelector( '.c-quiz__fraction span' );
 const slides = document.querySelectorAll( '.c-quiz .swiper-slide' );
 const slideCount = slides.length;
@@ -81,7 +84,45 @@ const getScore = () => {
         score = score + Number( answer.value )
     })
 
-    alert( 'Your score is ' + score )
+    saveScore( score )
+}
+
+const saveScore = score => {
+    storage.setItem('score', score);
+
+    sendToCms( score )
+}
+
+const getSessionInfo = () => {
+    return fetch('/actions/users/session-info', {
+      headers: {
+        'Accept': 'application/json',
+      },
+    })
+    .then(response => response.json());
+}
+
+const sendToCms = score => {
+
+    getSessionInfo()
+    .then( session => {
+        const params = new FormData();
+
+        params.append( 'userId', session.id );
+        params.append( 'fields[score]', score )
+
+        fetch('/actions/users/save-user', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'X-CSRF-Token': session.csrfTokenValue,
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+            body: params,
+        })
+        .then( response => response.json() )
+        .then( result => console.log( result ) );
+    })
 }
 
 export default initialize;

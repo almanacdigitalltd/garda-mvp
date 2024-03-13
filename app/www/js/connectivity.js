@@ -23,7 +23,7 @@ const setOffline = () =>{
 }
 
 const setOnline = () =>{
-    onlineUrl = cordova.InAppBrowser.open('https://almanac.digital', '_self', 'location=no,clearsessioncache=yes,zoom=no')
+    onlineUrl = cordova.InAppBrowser.open('https://grid.ddev.site', '_self', 'location=no,clearsessioncache=yes,zoom=no')
 }
 
 export default initialize

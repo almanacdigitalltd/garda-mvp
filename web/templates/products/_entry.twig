@@ -1,3 +1,5 @@
+{% requireLogin %}
+
 {% extends "_layouts/_base.twig" %}
 
 {% block content %}
@@ -5,7 +7,10 @@
     {% set questions = entry.quiz.all() %}
 
     {% if questions|length %}
-    <div class="swiper c-quiz">
+    <div
+        class="swiper c-quiz"
+        data-csrf-token-value="{{ craft.app.request.getCsrfToken() }}"
+        data-csrf-token-name="{{ craft.app.config.general.csrfTokenName }}">
 
         <div class="c-quiz__progress">
             <div class="c-quiz__fraction">

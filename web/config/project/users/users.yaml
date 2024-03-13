@@ -1,6 +1,6 @@
-allowPublicRegistration: false
-deactivateByDefault: false
-defaultGroup: ''
+allowPublicRegistration: true
+deactivateByDefault: true
+defaultGroup: b8bec7f1-2e09-4b73-b034-d67d1c224348 # Operator
 photoSubpath: null
 photoVolumeUid: null
 requireEmailVerification: true
