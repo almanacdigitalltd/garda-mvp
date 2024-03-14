@@ -6,18 +6,23 @@ let score = JSON.parse( storage.getItem('score') )
 
 const fraction = document.querySelector( '.c-quiz__fraction span' );
 const slides = document.querySelectorAll( '.c-quiz .swiper-slide' );
-const slideCount = slides.length;
-fraction.textContent = `1 of ${slideCount}`;
+let slideCount
+if ( fraction && slides ) {
+    slideCount = slides.length;
+    fraction.textContent = `1 of ${slideCount}`;
+}
 
 const nextButton = document.querySelector( '.c-quiz__next' )
 const submitButton = document.querySelector( '.c-quiz__submit' )
 
 const initialize = () => {
-    setupSwiper()
+    if ( fraction && slides ) {
+        setupSwiper()
 
-    answerTrigger( document.querySelector('.c-quiz .swiper-slide-1') )
+        answerTrigger( document.querySelector('.c-quiz .swiper-slide-1') )
 
-    submitAnswers()
+        submitAnswers()
+    }
 }
 
 const setupSwiper = () => {
@@ -78,7 +83,7 @@ const submitAnswers = () => {
 
 const getScore = () => {
     const answers = document.querySelectorAll('.c-quiz input:checked')
-    let score = 0
+    score = 0
     
     answers.forEach( answer => {
         score = score + Number( answer.value )
@@ -90,14 +95,16 @@ const getScore = () => {
 const saveScore = score => {
     storage.setItem('score', score);
 
-    sendToCms( score )
+    if ( this === undefined ) {
+        sendToCms( score )
+    }
 }
 
 const getSessionInfo = () => {
     return fetch('/actions/users/session-info', {
-      headers: {
-        'Accept': 'application/json',
-      },
+        headers: {
+            'Accept': 'application/json',
+        },
     })
     .then(response => response.json());
 }

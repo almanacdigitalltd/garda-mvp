@@ -7,8 +7,9 @@
     </author>
     <content src="index.html" />
 
-    <allow-intent href="*" />
     <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
 
     <preference name="android-minSdkVersion" value="33"/>
     <preference name="android-targetSdkVersion" value="33"/>

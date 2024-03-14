@@ -1,6 +1,7 @@
 let onlineUrl
 
 const initialize = () => { 
+
     checkConnection()
     
     document.addEventListener("offline", setOffline, false)
@@ -23,7 +24,7 @@ const setOffline = () =>{
 }
 
 const setOnline = () =>{
-    onlineUrl = cordova.InAppBrowser.open('https://grid.ddev.site', '_self', 'location=no,clearsessioncache=yes,zoom=no')
+    onlineUrl = window.open('https://grid.ddev.site', '_self', 'location=no,clearsessioncache=yes,zoom=no')
 }
 
 export default initialize
