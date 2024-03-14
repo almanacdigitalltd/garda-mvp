@@ -1,7 +1,20 @@
 {% extends "_layouts/_base.twig" %}
 
+{% set products = craft.entries()
+                        .section('products')
+                        .productCategory(category)
+                        .all()
+                    %}
+
+
 {% block content %}
 
     I AM A LIST
+    
+    <h1>{{ category.title }}</h1>
+
+    {% for product in products %}
+        <a href="{{ product.url }}">{{ product.title }}</a>
+    {% endfor %}
 
 {% endblock %}

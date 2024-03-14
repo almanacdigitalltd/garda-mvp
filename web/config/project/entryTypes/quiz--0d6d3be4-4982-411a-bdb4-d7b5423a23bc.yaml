@@ -1,5 +1,5 @@
 fieldLayouts:
-  dffd8ab3-293a-465c-8012-212cf2163049:
+  b9af0856-cbf2-4e28-a2c6-a416aa77b54d:
     tabs:
       -
         elementCondition: null
@@ -27,45 +27,21 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 4dce7230-33ed-48ed-a0eb-282a35d06668
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: a5ac68a5-7d49-42e3-acad-1b4767bc31dd # Product Category
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 57a42635-fbb4-4f55-b54a-b8b34589e836
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 2ff8cdee-ebe4-488c-9b5c-4eefb0adccda # Quiz
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f11ac8f9-995b-4e6a-a693-14d1873b691f
+            uid: 0849ebc3-989c-446d-a519-b3a032bec998
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 7621a0e9-e2a9-45e3-bdd6-ae3a5bb7e674
+        uid: b777d1e3-1c75-4c89-98ac-3c8aa73ece4b
         userCondition: null
-handle: product
+handle: quiz
 hasTitleField: true
-name: Product
+name: Quiz
 section: 59bcce9b-0523-4c33-ac21-5c3a3879cfbe # Products
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-sortOrder: 1
+sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

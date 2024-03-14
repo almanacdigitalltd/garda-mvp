@@ -2,6 +2,13 @@
 
 {% block content %}
 
-    HELLO I AM A ENTRY
+    HELLO I AM A Product
+
+    <h1>{{ entry.title }}</h1>
+
+    {{ entry.type }}
+    {{ entry.level }}
+
+    <a href="/products/robot/robot-quiz">Go to Quiz?</a>
 
 {% endblock %}

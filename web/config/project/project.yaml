@@ -1,10 +1,11 @@
-dateModified: 1710239409
+dateModified: 1710433703
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
+    0d6d3be4-4982-411a-bdb4-d7b5423a23bc: Quiz # Quiz
     2ff8cdee-ebe4-488c-9b5c-4eefb0adccda: Quiz # Quiz
     5cd2d042-df9b-4694-a9d8-3e592c7c9092: Trainer # Trainer
     5f98ca01-c165-422f-953a-52eb0af89714: Question # Question
@@ -16,13 +17,16 @@ meta:
     1606a569-6659-4376-b705-2e3b5d289e2f: Question # Question
     2816d58c-3e2e-4f4d-9b37-7c854689a0a8: Answers # Answers
     55523a07-30ac-4de4-aab3-bb0ba4e5931a: 'Public Schema' # Public Schema
+    a5ac68a5-7d49-42e3-acad-1b4767bc31dd: 'Product Category' # Product Category
     b8bec7f1-2e09-4b73-b034-d67d1c224348: Operator # Operator
     b957da5d-2360-4243-9f15-e94ef786cf21: Users # Users
     d3da2a31-6aef-4533-86ad-0cfb6924a6b1: Products # Products
     e877a5dc-7e22-4b93-b7f9-98e7b6ff5f21: Product # Product
+    f497f8b0-4e14-4f6f-a824-cb5f0b694997: 'Product Categories' # Product Categories
 system:
   edition: pro
   live: true
   name: Grid
+  retryDuration: null
   schemaVersion: 4.5.3.0
-  timeZone: America/Los_Angeles
+  timeZone: Europe/London
