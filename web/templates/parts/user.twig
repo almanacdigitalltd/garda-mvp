@@ -1,0 +1,13 @@
+{% if currentUser %}
+    {% set js %}
+        window.localStorage.setItem( 'user', {{ currentUser.id }} );
+    {% endset %}
+
+    {% do view.registerJs(js, POS_BEGIN) %}
+{% else %}
+    {% set js %}
+        window.localStorage.removeItem( 'user' );
+    {% endset %}
+
+    {% do view.registerJs(js, POS_BEGIN) %}
+{% endif %}
