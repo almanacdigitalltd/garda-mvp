@@ -24,6 +24,18 @@ tabs:
         userCondition: null
         warning: null
         width: 100
+      -
+        elementCondition: null
+        fieldUid: 77b90f54-7dcf-4c75-899c-dc1e42c26305 # Test Pass
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: ce6f26de-88b0-486f-af69-fbd4c7c5bfa9
+        userCondition: null
+        warning: null
+        width: 100
     name: Quiz
     uid: 51aa92bb-5523-4cf3-99f4-cd2bdde10bdb
     userCondition: null
