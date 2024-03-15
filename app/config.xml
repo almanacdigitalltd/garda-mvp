@@ -11,9 +11,10 @@
     <allow-navigation href="*" />
     <allow-intent href="*" />
 
-    <preference name="android-minSdkVersion" value="33"/>
-    <preference name="android-targetSdkVersion" value="33"/>
+    <preference name="android-minSdkVersion" value="33" />
 
-    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="landscape" />
+
+     <preference name="StatusBarOverlaysWebView" value="false" />
 </widget>
