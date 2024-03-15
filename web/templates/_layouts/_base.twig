@@ -4,12 +4,8 @@
   {% include "_layouts/_head.twig" %}
   
   <body class="ltr">
-    
-    <header>
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-    </header>
+
+    {% include "parts/user.twig" %}
     
     {% block content %}
       {# Nothing here, yet! #}

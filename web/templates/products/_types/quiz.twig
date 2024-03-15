@@ -1,0 +1,65 @@
+I'm a quiz
+
+{% set quizImage = entry.productImage.one() %}
+{{ quizImage.getImg() }}
+
+<h1>{{ entry.title }}</h1>
+
+{{ entry.type }}
+{{ entry.level }}
+
+{% set questions = entry.quiz.all() %}
+
+    {% if questions|length %}
+    <div
+        class="swiper c-quiz"
+        data-csrf-token-value="{{ craft.app.request.getCsrfToken() }}"
+        data-csrf-token-name="{{ craft.app.config.general.csrfTokenName }}">
+
+        <div class="c-quiz__progress">
+            <div class="c-quiz__fraction">
+                Question <span></span>
+            </div>
+            <div class="swiper-pagination c-quiz__bar"></div>
+        </div>
+
+        <div class="swiper-wrapper">
+
+            {% for question in questions %}
+            {% set qNum = loop.index %}
+            <div class="swiper-slide swiper-slide-{{ qNum }} c-quiz__item">
+            
+                <div class="c-quiz__section">
+                    {{ question.question_section }}
+                </div>
+
+                <div class="c-quiz__question">
+                    {{ question.question }}
+                </div>
+
+                {% set answers = question.answers %}
+                {% if answers|length %}
+                <div class="c-quiz__answers">
+                    {% for answer in answers %}
+                    <input type="radio" name="question{{ qNum }}" id="q{{ qNum }}a{{ loop.index }}" value="{{ answer.correct }}" />
+                    <label for="q{{ qNum }}a{{ loop.index }}">{{ answer.answer }}</label>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <button class="e-button e-button--disabled swiper-button-next c-quiz__next">
+            Next question
+        </button>
+
+        <button class="e-button e-button--hide e-button--disabled c-quiz__submit">
+            Submit
+        </button>
+
+    </div>
+
+{% endif %}

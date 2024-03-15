@@ -3,6 +3,9 @@ package-lock.json
 
 node_modules
 
+# Src
+src/.vite
+
 # App
 app/www/css/index.css
 app/www/js/core.js

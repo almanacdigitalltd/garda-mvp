@@ -4,4 +4,5 @@
 composer.lock
 .DS_Store
 
-/web/assets
+web/assets/css/index.css
+web/assets/js/core.js

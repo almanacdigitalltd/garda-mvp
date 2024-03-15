@@ -1,3 +1,3 @@
-// import accordion from "./accordion";
+import quiz from "./quiz.js";
 
-// accordion();
+quiz();

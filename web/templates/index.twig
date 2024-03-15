@@ -1,3 +1,5 @@
+{% requireLogin %}
+
 {% extends "_layouts/_base.twig" %}
 
 {# Get categories #}
@@ -8,13 +10,13 @@
 
     <h1>The Grid</h1>
 
-    {% nav category in categories %}
-
-        <div>
-            <h2>
-                <a href="{{ category.url }}">{{ category.title }}</a>
-            </h2>
-        </div>
-
-    {% endnav %}
+    <div class="c-categories">
+        {% nav category in categories %}
+            <div class="c-categories__item">
+                <h2 class="categories__title">
+                    <a href="{{ category.url }}">{{ category.title }}</a>
+                </h2>
+            </div>
+        {% endnav %}
+    </div>
 {% endblock %}

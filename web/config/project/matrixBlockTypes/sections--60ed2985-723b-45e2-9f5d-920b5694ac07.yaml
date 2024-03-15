@@ -1,0 +1,79 @@
+field: 86db85ad-8482-4e82-9713-af24bbb14e05 # Video Sections
+fieldLayouts:
+  19d02ea7-6ff9-45be-bb83-2cc6ee18dbdf:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: e0aab3ab-5cbd-4eba-9ce9-8deb156393a9 # Section Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11a3e799-27b1-4f41-ac8b-715e4403c73c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ca145744-939c-4eb4-b8ea-70db55ca748e # Section Time
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5cebbf84-a60a-4331-a9e6-b6e47fdfaac7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5e95c128-a731-4c9c-9b9f-891a89bd7148
+        userCondition: null
+fields:
+  ca145744-939c-4eb4-b8ea-70db55ca748e: # Section Time
+    columnSuffix: riiusgwh
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: sectionTime
+    instructions: 'Add time in seconds'
+    name: 'Section Time'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: null
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e0aab3ab-5cbd-4eba-9ce9-8deb156393a9: # Section Title
+    columnSuffix: otjqarby
+    contentColumnType: text
+    fieldGroup: null
+    handle: sectionTitle
+    instructions: null
+    name: 'Section Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: sections
+name: Sections
+sortOrder: 1

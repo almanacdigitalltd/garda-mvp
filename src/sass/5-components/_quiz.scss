@@ -1,0 +1,25 @@
+@import '@modules/swiper/swiper.scss';
+
+.c-quiz {
+
+    &__progress {
+        display: flex;
+    }
+
+    &__bar {
+        display: flex;
+        gap: 0 8px;
+
+        .swiper-pagination-bullet {
+            background-color: #5D5D5D;
+            display: block;
+            height: 10px;
+            width: 60px;
+
+            &-active, &-active ~ * {
+                background-color: #B5B5B5;
+            }
+        }
+    }
+
+}

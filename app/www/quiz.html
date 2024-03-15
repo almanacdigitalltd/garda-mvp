@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://grid.ddev.site'; font-src 'self' data:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="css/index.css">
+
+        <title>Categories - The Grid</title>
+
+    </head>
+
+    <body>
+
+        <div class="app">
+            
+            <div class="swiper c-quiz">
+
+                <div class="c-quiz__progress">
+                    <div class="c-quiz__fraction">
+                        Question <span></span>
+                    </div>
+                    <div class="swiper-pagination c-quiz__bar"></div>
+                </div>
+        
+                <div class="swiper-wrapper">
+        
+                    <div class="swiper-slide swiper-slide-1 c-quiz__item">
+                    
+                        <div class="c-quiz__section">
+                            Section 1 - Operation
+                        </div>
+        
+                        <div class="c-quiz__question">
+                            This is question 1
+                        </div>
+        
+                        <div class="c-quiz__answers">
+                                                <input type="radio" name="question1" id="q1a1" value="1" />
+                            <label for="q1a1">Answer 1</label>
+                                                <input type="radio" name="question1" id="q1a2" value="" />
+                            <label for="q1a2">Answer 2</label>
+                                                <input type="radio" name="question1" id="q1a3" value="" />
+                            <label for="q1a3">Answer 3</label>
+                        </div>
+                                    
+                    </div>
+                    <div class="swiper-slide swiper-slide-2 c-quiz__item">
+                    
+                        <div class="c-quiz__section">
+                            Section 2 - Operation
+                        </div>
+        
+                        <div class="c-quiz__question">
+                            This is question 2
+                        </div>
+        
+                        <div class="c-quiz__answers">
+                                                <input type="radio" name="question2" id="q2a1" value="" />
+                            <label for="q2a1">Answer 1</label>
+                                                <input type="radio" name="question2" id="q2a2" value="1" />
+                            <label for="q2a2">Answer 2</label>
+                                                <input type="radio" name="question2" id="q2a3" value="" />
+                            <label for="q2a3">Answer 3</label>
+                        </div>
+                                    
+                    </div>
+                    <div class="swiper-slide swiper-slide-3 c-quiz__item">
+                    
+                        <div class="c-quiz__section">
+                            Section 3 - Operation
+                        </div>
+        
+                        <div class="c-quiz__question">
+                            This is question 3
+                        </div>
+        
+                        <div class="c-quiz__answers">
+                                                <input type="radio" name="question3" id="q3a1" value="" />
+                            <label for="q3a1">Answer 1</label>
+                                                <input type="radio" name="question3" id="q3a2" value="" />
+                            <label for="q3a2">Answer 2</label>
+                                                <input type="radio" name="question3" id="q3a3" value="1" />
+                            <label for="q3a3">Answer 3</label>
+                        </div>
+                                    
+                    </div>
+                    
+                </div>
+        
+                <button class="e-button e-button--disabled swiper-button-next c-quiz__next">
+                    Next question
+                </button>
+        
+                <button class="e-button e-button--hide e-button--disabled c-quiz__submit">
+                    Submit
+                </button>
+        
+            </div>
+
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/core.js"></script>
+        <script type="module" src="js/index.js"></script>
+
+    </body>
+
+</html>
