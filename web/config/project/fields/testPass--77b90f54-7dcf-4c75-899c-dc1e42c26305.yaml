@@ -1,0 +1,23 @@
+columnSuffix: fapojhru
+contentColumnType: string
+fieldGroup: b957da5d-2360-4243-9f15-e94ef786cf21 # Users
+handle: testPass
+instructions: null
+name: 'Test Pass'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Pass
+        -
+          - value
+          - pass
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

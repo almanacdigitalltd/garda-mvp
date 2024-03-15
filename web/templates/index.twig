@@ -2,8 +2,21 @@
 
 {% extends "_layouts/_base.twig" %}
 
+{# Get categories #}
+{% set productCategoriesQuery = craft.categories().group('productCategories') %}
+{% set categories = productCategoriesQuery.all() %}
+
 {% block content %}
 
     <h1>The Grid</h1>
 
+    <div class="c-categories">
+        {% nav category in categories %}
+            <div class="c-categories__item">
+                <h2 class="categories__title">
+                    <a href="{{ category.url }}">{{ category.title }}</a>
+                </h2>
+            </div>
+        {% endnav %}
+    </div>
 {% endblock %}

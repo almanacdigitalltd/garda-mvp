@@ -1,29 +1,59 @@
-dateModified: 1710351542
+dateModified: 1710508052
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  hardDisk:
+    hasUrls: true
+    name: 'Hard Disk'
+    settings:
+      path: '@webroot/uploads/images'
+    type: craft\fs\Local
+    url: '@web/uploads/images'
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/uploads/images'
+    type: craft\fs\Local
+    url: '@web/uploads/images'
 meta:
   __names__:
+    0d6d3be4-4982-411a-bdb4-d7b5423a23bc: Quiz # Quiz
     2ff8cdee-ebe4-488c-9b5c-4eefb0adccda: Quiz # Quiz
     5cd2d042-df9b-4694-a9d8-3e592c7c9092: Trainer # Trainer
     5f98ca01-c165-422f-953a-52eb0af89714: Question # Question
     51b22b87-9b56-4681-915e-e9b42177698f: Common # Common
+    53da4b2e-b470-4683-844d-756244a017de: 'Product Videos' # Product Videos
     59bcce9b-0523-4c33-ac21-5c3a3879cfbe: Products # Products
+    60ed2985-723b-45e2-9f5d-920b5694ac07: Sections # Sections
     69c71848-5c39-4f0d-856d-9d3d692610c6: Grid # Grid
     70b4eee2-1755-4aea-bad6-0288ddeaf774: Grid # Grid
+    77b90f54-7dcf-4c75-899c-dc1e42c26305: 'Test Pass' # Test Pass
+    77ed3694-98fe-460a-88b1-e12cd9e20787: 'Product Video' # Product Video
+    86db85ad-8482-4e82-9713-af24bbb14e05: 'Video Sections' # Video Sections
     426c78b9-21d0-4b95-b8d9-8945bab17d5f: Section # Section
     449b3264-21d0-4588-8963-b654f1cba62f: Score # Score
+    894ab888-cd48-4cae-9fe7-396146bf26b5: Result # Result
     1606a569-6659-4376-b705-2e3b5d289e2f: Question # Question
     2816d58c-3e2e-4f4d-9b37-7c854689a0a8: Answers # Answers
     55523a07-30ac-4de4-aab3-bb0ba4e5931a: 'Public Schema' # Public Schema
+    a5ac68a5-7d49-42e3-acad-1b4767bc31dd: 'Product Category' # Product Category
     b8bec7f1-2e09-4b73-b034-d67d1c224348: Operator # Operator
     b957da5d-2360-4243-9f15-e94ef786cf21: Users # Users
+    ca145744-939c-4eb4-b8ea-70db55ca748e: 'Section Time' # Section Time
     d3da2a31-6aef-4533-86ad-0cfb6924a6b1: Products # Products
+    d436e4d8-e259-4054-b435-ca4a550559dc: 'Product Images' # Product Images
+    e0aab3ab-5cbd-4eba-9ce9-8deb156393a9: 'Section Title' # Section Title
+    e8d22a20-c9ae-4c66-8549-5785f9701cc5: 'Product Image' # Product Image
+    e674d4ca-c17d-405f-81ec-52e3f33bd2d0: 'Product Brand' # Product Brand
     e877a5dc-7e22-4b93-b7f9-98e7b6ff5f21: Product # Product
+    f497f8b0-4e14-4f6f-a824-cb5f0b694997: 'Product Categories' # Product Categories
 system:
   edition: pro
   live: true
   name: Grid
+  retryDuration: null
   schemaVersion: 4.5.3.0
-  timeZone: America/Los_Angeles
+  timeZone: Europe/London

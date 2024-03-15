@@ -20,5 +20,8 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: products/_entry
-    uriFormat: 'products/{slug}'
-type: channel
+    uriFormat: '{parent.uri ?? ''products''}/{slug}'
+structure:
+  maxLevels: 1
+  uid: c22562b9-4292-41a2-be6c-792506451b17
+type: structure

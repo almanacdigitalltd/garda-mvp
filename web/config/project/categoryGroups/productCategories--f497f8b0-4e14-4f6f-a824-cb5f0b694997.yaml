@@ -1,0 +1,47 @@
+defaultPlacement: end
+fieldLayouts:
+  82d214a0-649d-4710-84f4-cfc470bcc702:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: d6d557c9-8bbd-42e3-a8fb-a5714b524284
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fe6139b3-b788-4470-9b5b-4c83789b6265
+        userCondition: null
+handle: productCategories
+name: 'Product Categories'
+siteSettings:
+  69c71848-5c39-4f0d-856d-9d3d692610c6: # Grid
+    hasUrls: true
+    template: products/
+    uriFormat: 'products/{slug}'
+structure:
+  maxLevels: 1
+  uid: 3710c21c-ec7e-4f81-b741-25a7de571dda
