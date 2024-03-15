@@ -1,11 +1,13 @@
-import Swiper from "@modules/swiper";
-import { Navigation, Pagination } from "@modules/swiper/modules";
+import Swiper from "@modules/swiper"
+import { Navigation, Pagination } from "@modules/swiper/modules"
+
+import { getSessionInfo, pushScore } from './actions'
 
 const storage = window.localStorage
 let score = JSON.parse( storage.getItem('score') )
 
-const fraction = document.querySelector( '.c-quiz__fraction span' );
-const slides = document.querySelectorAll( '.c-quiz .swiper-slide' );
+const fraction = document.querySelector( '.c-quiz__fraction span' )
+const slides = document.querySelectorAll( '.c-quiz .swiper-slide' )
 let slideCount
 if ( fraction && slides ) {
     slideCount = slides.length;
@@ -96,39 +98,15 @@ const saveScore = score => {
     storage.setItem('score', score);
 
     if ( this === undefined ) {
+        console.log('This is NOT Cordova')
         sendToCms( score )
     }
 }
 
-const getSessionInfo = () => {
-    return fetch('/actions/users/session-info', {
-        headers: {
-            'Accept': 'application/json',
-        },
-    })
-    .then(response => response.json());
-}
-
 const sendToCms = score => {
-
     getSessionInfo()
     .then( session => {
-        const params = new FormData();
-
-        params.append( 'userId', session.id );
-        params.append( 'fields[score]', score )
-
-        fetch('/actions/users/save-user', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'X-CSRF-Token': session.csrfTokenValue,
-                'X-Requested-With': 'XMLHttpRequest',
-            },
-            body: params,
-        })
-        .then( response => response.json() )
-        .then( result => console.log( result ) );
+        pushScore( session, score )
     })
 }
 
