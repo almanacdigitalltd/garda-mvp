@@ -33,18 +33,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: e8d22a20-c9ae-4c66-8549-5785f9701cc5 # Product Image
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4476bacf-edcb-4474-9b2f-7f3cec116568
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 2ff8cdee-ebe4-488c-9b5c-4eefb0adccda # Quiz
             instructions: null
             label: null
