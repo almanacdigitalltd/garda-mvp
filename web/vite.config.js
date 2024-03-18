@@ -11,6 +11,7 @@ export default ({ mode }) => {
 		resolve: {
 			alias: {
 				'@modules': path.resolve(__dirname, '../web/node_modules'),
+				'@assets': path.resolve(__dirname, '../src'),
 			},
 		},
         build: {
@@ -29,6 +30,10 @@ export default ({ mode }) => {
                     assetFileNames: ({name}) => {
                         if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')){
                             return 'img/[name][extname]';
+                        }
+
+						if (/\.(ttf|woff)$/.test(name ?? '')){
+                            return 'fonts/[name][extname]';
                         }
                         
                         if (/\.css$/.test(name ?? '')) {

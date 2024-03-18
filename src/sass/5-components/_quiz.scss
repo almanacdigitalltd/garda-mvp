@@ -8,13 +8,13 @@
 
     &__bar {
         display: flex;
-        gap: 0 8px;
+        @include fluid-size(column-gap, 4px, 8px);
 
         .swiper-pagination-bullet {
             background-color: #5D5D5D;
             display: block;
-            height: 10px;
-            width: 60px;
+            @include fluid-size(height, 8px, 10px);
+            @include fluid-size(width, 40px, 60px);
 
             &-active, &-active ~ * {
                 background-color: #B5B5B5;

@@ -1,0 +1,9 @@
+<div class="o-header">
+
+    <h1>{{ title }}</h1>
+
+    {% if subTitle is defined %}
+    <h2 {% if subTitleWeight is defined %} class="fw-{{ subTitleWeight }}"{% endif %}>{{ subTitle }}</h2>
+    {% endif %}
+
+</div>

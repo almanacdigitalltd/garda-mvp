@@ -5,11 +5,13 @@ export default ({ mode }) => {
     process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
     return defineConfig({
+        root: '../src',
         base: process.env.VITE_BASE_PATH,
         publicDir: process.env.VITE_DEFAULT_PATH + '/public',
         resolve: {
 			alias: {
 				'@modules': path.resolve(__dirname, '../app/node_modules'),
+                '@assets': path.resolve(__dirname, '../src'),
 			},
 		},
         build: {
@@ -28,6 +30,10 @@ export default ({ mode }) => {
                     assetFileNames: ({name}) => {
                         if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')){
                             return 'img/[name][extname]';
+                        }
+
+                        if (/\.(ttf|woff)$/.test(name ?? '')){
+                            return 'fonts/[name][extname]';
                         }
                         
                         if (/\.css$/.test(name ?? '')) {

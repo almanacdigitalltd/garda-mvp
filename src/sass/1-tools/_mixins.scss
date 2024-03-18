@@ -1,0 +1,46 @@
+@use "sass:math";
+
+@mixin fluid-size(
+	$type,
+	$min,
+	$max: null,
+	$lock-min: $font-lock-min,
+	$lock-max: $font-lock-max
+) {
+    @include responsive( $type, $min, $max, $lock-min, $lock-max )
+}
+
+@mixin responsive(
+	$type,
+	$min,
+	$max: null,
+	$lock-min: $font-lock-min,
+	$lock-max: $font-lock-max
+) {
+	& {
+		#{$type}: $min;
+	}
+
+    @if $max {
+
+      	@media ( min-width: $lock-min ) { 
+			& { 
+			#{$type}: calc(
+				#{$min} + 
+				#{num($max) - num($min)} * 
+				(100vw - #{$lock-min}) / 
+				#{num($lock-max) - num($lock-min)}
+			); 
+			} 
+    	}
+
+		@media (min-width: $lock-max){ 
+			& { #{$type}: $max; } 
+		}
+
+    }
+}
+
+@function num( $input ) { 
+	@return math.div($input, ($input * 0 + 1) ); 
+}

@@ -1,0 +1,9 @@
+.o-logo {
+    background-image: url(@assets/img/logo.svg);
+    background-size: contain;
+    @include fluid-size(height, 161px, 241px);
+    position: fixed;
+    @include fluid-size(right, 20px, 24px);
+    @include fluid-size(top, 16px, 21px);
+    @include fluid-size(width, 40px, 60px);
+}

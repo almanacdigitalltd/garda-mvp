@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ craft.app.language }}">
 
-  {% include "_layouts/_head.twig" %}
+  {% include "_layouts/_head" %}
   
   <body class="ltr">
 
-    {% include "parts/user.twig" %}
+    {% include "parts/user" %}
+
+    {% include "_layouts/_logo" %}
     
+    <div class="o-container">
     {% block content %}
       {# Nothing here, yet! #}
     {% endblock %}
+    </div>
 
   </body>
 

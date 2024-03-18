@@ -1,6 +1,5 @@
 html {
 	box-sizing: border-box;
-	font-size: $font-size-base;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	font-synthesis: none;
@@ -10,11 +9,10 @@ html {
 }
 
 body {
-	background: #ff0000;
-	color: #000000;
+	background: $primary-color;
+	color: $secondary-color;
 	font-family: $font-primary;
-	font-size: $font-size-base;
-	font-weight: 300;
+	font-weight: $font-light;
 	overflow-x: hidden;
 }
 

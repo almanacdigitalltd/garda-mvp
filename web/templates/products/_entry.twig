@@ -1,9 +1,24 @@
 {% requireLogin %}
 
-{% extends "_layouts/_base.twig" %}
+{% extends "_layouts/_base" %}
+
+{% if entry.parent %}
+    {% set category = entry.parent.productCategory.one() %}
+{% else %}
+    {% set category = entry.productCategory.one() %}
+{% endif %}
+
 
 {% block content %}
+
+    {% include "_layouts/_header" with {
+        title: "Training - Centre",
+        subTitle: category.title,
+        subTitleWeight: 'medium'
+    } %}
     
     {% include "products/_types/" ~ entry.type %}
+
+    {% include "_layouts/_footer" with {} %}
 
 {% endblock %}

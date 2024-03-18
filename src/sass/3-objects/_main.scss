@@ -1,0 +1,5 @@
+.o-main {
+    height: calc( 100vh - $header-height - $footer-height );
+    max-width: $main-width;
+    width: 100%;
+}

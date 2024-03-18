@@ -1,22 +1,35 @@
 {% requireLogin %}
 
-{% extends "_layouts/_base.twig" %}
+{% extends "_layouts/_base" %}
 
 {# Get categories #}
-{% set productCategoriesQuery = craft.categories().group('productCategories') %}
+{% set productCategoriesQuery = craft.categories().group( 'productCategories' ) %}
 {% set categories = productCategoriesQuery.all() %}
 
 {% block content %}
 
-    <h1>The Grid</h1>
+    {% include "_layouts/_header" with {
+        title: "Training - Centre"
+    } %}
 
+    <div class="o-main">
+
+    {% if categories %}
     <div class="c-categories">
+
         {% nav category in categories %}
-            <div class="c-categories__item">
-                <h2 class="categories__title">
-                    <a href="{{ category.url }}">{{ category.title }}</a>
-                </h2>
-            </div>
+        <a href="{{ category.url }}" class="c-categories__item">
+            <h2 class="h3 categories__title">
+                {{ category.title }}
+            </h2>
+        </a>
         {% endnav %}
+
     </div>
+    {% endif %}
+
+    </div>
+
+    {% include "_layouts/_footer" with {} %}
+
 {% endblock %}

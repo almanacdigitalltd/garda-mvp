@@ -1,0 +1,20 @@
+.c-categories {
+    display: grid;
+    @include fluid-size(column-gap, 40px, 57px);
+    @include fluid-size(row-gap, 30px, 40px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &__item {
+        align-items: center;
+        aspect-ratio: 1 / 1;
+        box-shadow:
+            -2px -2px 2px 0 rgba(87,115,129,0.29),
+            2px 2px 5px 0px rgba(0,0,0,0.7);
+        color: $secondary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+    }
+}

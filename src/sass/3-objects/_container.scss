@@ -1,0 +1,9 @@
+.o-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    @include fluid-size(padding-left, 80px, 120px);
+    @include fluid-size(padding-right, 80px, 120px);
+    width: 100vw;
+}

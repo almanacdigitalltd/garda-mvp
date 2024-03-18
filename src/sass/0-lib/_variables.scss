@@ -1,19 +1,28 @@
-$font-primary: 'Arial', sans-serif;
-$font-secondary: 'Arial', serif;
+// FONTS
+$font-primary: 'Montserrat', Arial, sans-serif;
 
-$font-size-base: 16px;
-$font-lock-min:  480px !default; 
-$font-lock-max: 1450px !default;
+$font-lock-min:  751px !default; 
+$font-lock-max: 1317px !default;
 
-$site-width: 1342px;
+$font-light: 300;
+$font-medium: 500;
+$font-semi-bold: 600;
+
+$site-width: 1317px;
 
 // BREAKPOINTS
 $break-mobile: 480px;
 $break-tablet: 768px;
 $break-desktop: 1024px;
 
-$grid-gap: 20px;
-$grid-gap-tablet: 24px;
-$grid-gap-desktop: 30px;
+// SIZES
+$header-height: 146px;
+$footer-height: 86px;
+$main-width: 753px;
 
-$grid-columns: 12;
+// COLOURS
+$primary-color: #1E2326;
+$secondary-color: #B5B5B5;
+
+$color-pass: #25D429;
+$color-fail: #D42524;

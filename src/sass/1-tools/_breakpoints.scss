@@ -1,0 +1,18 @@
+@mixin small {
+	@media (min-width: $break-mobile) {
+	  @content;
+	}
+  }
+  
+  @mixin medium {
+	@media (min-width: $break-tablet) {
+	  @content;
+	}
+  }
+  
+  @mixin large {
+	@media (min-width: $break-desktop) {
+	  @content;
+	}
+  }
+  
