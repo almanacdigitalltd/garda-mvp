@@ -20,8 +20,8 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: products/_entry
-    uriFormat: '{parent.uri ?? ''products''}/{slug}'
+    uriFormat: '{% if level == 1 %}{productCategory.one().slug}{% else %}{parent.uri}{% endif %}/{slug}'
 structure:
-  maxLevels: 1
+  maxLevels: 2
   uid: c22562b9-4292-41a2-be6c-792506451b17
 type: structure

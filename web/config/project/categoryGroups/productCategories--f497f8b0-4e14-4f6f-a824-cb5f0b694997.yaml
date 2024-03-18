@@ -41,7 +41,7 @@ siteSettings:
   69c71848-5c39-4f0d-856d-9d3d692610c6: # Grid
     hasUrls: true
     template: products/
-    uriFormat: 'products/{slug}'
+    uriFormat: '{slug}'
 structure:
   maxLevels: 1
   uid: 3710c21c-ec7e-4f81-b741-25a7de571dda
