@@ -17,7 +17,9 @@
         subTitleWeight: 'medium'
     } %}
     
-    {% include "products/_types/" ~ entry.type %}
+    <div class="o-main">
+        {% include "products/_types/" ~ entry.type %}
+    </div>
 
     {% include "_layouts/_footer" with {} %}
 

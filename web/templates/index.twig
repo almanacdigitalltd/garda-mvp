@@ -18,8 +18,20 @@
     <div class="c-categories">
 
         {% nav category in categories %}
+        {% set categoryImage = category.categoryImage.all() %}
+
         <a href="{{ category.url }}" class="c-categories__item">
-            <h2 class="h3 categories__title">
+
+            {% if categoryImage %}
+            <div class="c-categories__icon">
+                {{ categoryImage[0].getImg() }}
+            </div>
+            <div class="c-categories__icon c-categories__icon--active">
+                {{ categoryImage[1].getImg() }}
+            </div>
+            {% endif %}
+
+            <h2 class="h3 c-categories__title">
                 {{ category.title }}
             </h2>
         </a>

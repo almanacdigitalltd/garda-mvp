@@ -4,18 +4,18 @@ h1, h2, h3 {
 }
 
 h1, .h1 {
-    @include fluid-size(font-size, 24px, 27px);
-    @include fluid-size(line-height, 30px, 33px);
+    @include fluid-size(font-size, 24px, 32px);
+    @include fluid-size(line-height, 31px, 39px);
 }
 
 h2, .h2 {
-    @include fluid-size(font-size, 19px, 22px);
-    @include fluid-size(line-height, 25px, 28px);
+    @include fluid-size(font-size, 19px, 23px);
+    @include fluid-size(line-height, 24px, 28px);
 }
 
 h3, .h3 {
-    @include fluid-size(font-size, 13px, 15px);
-    @include fluid-size(line-height, 20px, 22px);
+    @include fluid-size(font-size, 13px, 14px);
+    @include fluid-size(line-height, 20px, 21px);
 }
 
 p {

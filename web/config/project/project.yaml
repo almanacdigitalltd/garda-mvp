@@ -1,4 +1,4 @@
-dateModified: 1710522269
+dateModified: 1710863213
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
@@ -37,6 +37,7 @@ meta:
     449b3264-21d0-4588-8963-b654f1cba62f: Score # Score
     894ab888-cd48-4cae-9fe7-396146bf26b5: Result # Result
     1606a569-6659-4376-b705-2e3b5d289e2f: Question # Question
+    1674eb65-b705-46b3-bd9d-e557d477cad4: 'Category Image' # Category Image
     2816d58c-3e2e-4f4d-9b37-7c854689a0a8: Answers # Answers
     55523a07-30ac-4de4-aab3-bb0ba4e5931a: 'Public Schema' # Public Schema
     a5ac68a5-7d49-42e3-acad-1b4767bc31dd: 'Product Category' # Product Category

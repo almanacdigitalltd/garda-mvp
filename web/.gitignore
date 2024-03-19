@@ -6,3 +6,5 @@ composer.lock
 
 web/assets/css/index.css
 web/assets/js/core.js
+
+web/uploads

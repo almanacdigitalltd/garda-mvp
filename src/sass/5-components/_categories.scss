@@ -1,7 +1,7 @@
 .c-categories {
     display: grid;
-    @include fluid-size(column-gap, 40px, 57px);
-    @include fluid-size(row-gap, 30px, 40px);
+    @include fluid-size(column-gap, 40px, 60px);
+    @include fluid-size(row-gap, 18px, 28px);
     grid-template-columns: repeat(3, 1fr);
 
     &__item {
@@ -16,5 +16,40 @@
         justify-content: center;
         text-align: center;
         text-decoration: none;
+        
+        &:active {
+            box-shadow:
+                inset 5px 5px 4px 0 rgba(0,0,0,0.45),
+                inset -4px -4px 3px 0px rgba(87,115,129,0.35);
+
+            .c-categories__icon {
+                display: none;
+
+                &--active {
+                    display: block;
+                }
+            }
+        }
     }
+
+    &__icon {
+        @include fluid-size(height, 85px, 126px);
+        @include fluid-size(margin-bottom, 16px, 20px);
+        @include fluid-size(width, 99px, 148px);
+
+        img {
+            height: 100%;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        &--active {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-weight: $font-medium;
+    }
+
 }
