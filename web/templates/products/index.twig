@@ -16,31 +16,41 @@
         subTitleWeight: 'medium'
     } %}
 
-    <div class="o-main">
+    <div class="o-main o-main--wide o-main--shadow">
 
         <div class="c-product-list">
+
         {% for product in products %}
-            
-            {# Gets the first image / refs the field name #}
             {% set productImage = product.productImage.one() %}
 
             <div class="c-product-list__item">
             
-                <div class="c-product-list__image">
+                <div class="c-product-list__meta">
+
                     {% if productImage %}
-                        {# getImg creates the image tag #}
+                    <div class="c-product-list__image">
                         {{ productImage.getImg() }}
+                    </div>
                     {% endif %}
+
                 </div>
                 
-                <h2 class="c-product-list__title">
-                    <a class="c-product-list__link" href="{{ product.url }}">{{ product.title }}</a>
-                </h2>
+                <div class="c-product-list__title">
+                    <h2>
+                        <a class="c-product-list__link" href="{{ product.url }}">
+                            {{ product.title }}
+                        </a>
+                    </h2>
+                </div>
                 
-                <div class="c-product-list__brand">{{ product.productBrand }}</div>
+                <div class="c-product-list__brand">
+                    <h3 class="h2">{{ product.productBrand }}</h3>
+                </div>
                 
             </div>
+            
         {% endfor %}
+
         </div>
 
     </div>

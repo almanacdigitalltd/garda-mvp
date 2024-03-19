@@ -2,4 +2,14 @@
     height: calc( 100vh - $header-height - $footer-height );
     max-width: $main-width;
     width: 100%;
+
+    &--wide {
+        max-width: $main-width-wide;
+    }
+
+    &--shadow {
+        box-shadow:
+            inset 6px 6px 12px rgba($color-black, 0.25),
+            inset -4px -4px 5px rgba($color-grey, 0.1);
+    }
 }

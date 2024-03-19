@@ -9,8 +9,8 @@ h1, .h1 {
 }
 
 h2, .h2 {
-    @include fluid-size(font-size, 19px, 23px);
-    @include fluid-size(line-height, 24px, 28px);
+    @include fluid-size(font-size, 16px, 19px);
+    @include fluid-size(line-height, 20px, 23px);
 }
 
 h3, .h3 {

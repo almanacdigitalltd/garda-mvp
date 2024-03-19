@@ -1,0 +1,51 @@
+.c-product-list {
+    &__item {
+        border-bottom: 3px solid $color-grey-dark;
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+    }
+
+    &__meta {
+        display: flex;
+        justify-content: center;
+        padding: 25px;
+
+        img {
+            height: auto;
+            max-width: 154px;
+        }
+    }
+
+    &__image {
+        position: relative;
+        
+        &:after {
+            box-shadow: inset 3px 3px 3px rgba($color-black, 0.9);
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        img {
+            height: auto;
+            max-width: 154px;
+        }
+    }
+
+    &__title {
+        align-items: center;
+        border-left: 3px solid $color-grey-dark;
+        border-right: 3px solid $color-grey-dark;
+        display: flex;
+        padding: 25px;
+    }
+
+    &__brand {
+        align-items: center;
+        display: flex;
+        padding: 25px;
+    }
+}
