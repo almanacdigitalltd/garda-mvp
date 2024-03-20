@@ -2,32 +2,42 @@
 
 {% block content %}
 
-    <form method="post" accept-charset="UTF-8">
-        {{ csrfInput() }}
-        {{ actionInput('users/login') }}
+    {% include "_layouts/_header" with {
+        title: "Training - Centre"
+    } %}
 
-        <label for="loginName">Username or email</label>
-        {{ input('text', 'loginName', craft.app.user.rememberedUsername, {
-            id: 'loginName'
-        }) }}
+    <div class="o-main">
 
-        <label for="password">Password</label>
-        {{ input('password', 'password', null, {
-            id: 'password',
-        }) }}
+        <form method="post" accept-charset="UTF-8">
+            {{ csrfInput() }}
+            {{ actionInput('users/login') }}
 
-        <label>
-            {{ input('checkbox', 'rememberMe', '1') }}
-            Remember me
-        </label>
+            <label for="loginName">Username or email</label>
+            {{ input('text', 'loginName', craft.app.user.rememberedUsername, {
+                id: 'loginName'
+            }) }}
 
-        <button>Login</button>
+            <label for="password">Password</label>
+            {{ input('password', 'password', null, {
+                id: 'password',
+            }) }}
 
-        {% if errorMessage is defined %}
-            <p>{{ errorMessage }}</p>
-        {% endif %}
-    </form>
+            <label>
+                {{ input('checkbox', 'rememberMe', '1') }}
+                Remember me
+            </label>
 
-    {# <p><a href="{{ url('reset-password') }}">Forgot your password?</a></p> #}
+            <button>Login</button>
+
+            {% if errorMessage is defined %}
+                <p>{{ errorMessage }}</p>
+            {% endif %}
+        </form>
+
+        {# <p><a href="{{ url('reset-password') }}">Forgot your password?</a></p> #}
+
+    </div>
+
+    {% include "_layouts/_footer" with {} %}
 
 {% endblock %}

@@ -1,25 +1,78 @@
 @import '@modules/swiper/swiper.scss';
 
 .c-quiz {
+    @include fluid-size(padding-left, 24px, 36px);
+    @include fluid-size(padding-right, 24px, 36px);
 
-    &__progress {
-        display: flex;
+    &__title {
+        @include fluid-size(margin-bottom, 18px, 23px);
+        text-align: center;
+        
+        span {
+            background-color: $secondary-color;
+            box-shadow: inset 0px 10px 8px rgba($color-black, 0.43);
+            color: $primary-color;
+            display: inline-block;
+            font-weight: $font-bold;
+            @include fluid-size(padding-bottom, 9px, 13px);
+            @include fluid-size(padding-left, 25px, 37px);
+            @include fluid-size(padding-right, 25px, 37px);
+            @include fluid-size(padding-top, 9px, 13px);
+        }
     }
 
-    &__bar {
-        display: flex;
-        @include fluid-size(column-gap, 4px, 8px);
+    &__subtitle {
+        @include fluid-size(margin-bottom, 14px, 18px);
+        text-align: center;
+    }
 
+    &__progress {
+        align-items: center;
+        display: flex;
+        @include fluid-size(margin-bottom, 28px, 34px);
+    }
+
+    &__fraction {
+        @include fluid-size(font-size, 16px, 19px);
+        font-weight: $font-semi-bold;
+        @include fluid-size(line-height, 20px, 23px);
+        @include fluid-size(min-width, 180px, 200px);
+        text-transform: uppercase;
+    }
+    
+    &__bar {
+        @include fluid-size(column-gap, 4px, 6px);
+        display: flex;
+        flex-grow: 1;
+        
         .swiper-pagination-bullet {
             background-color: #5D5D5D;
             display: block;
             @include fluid-size(height, 8px, 10px);
-            @include fluid-size(width, 40px, 60px);
-
+            width: 100%;
+            
             &-active, &-active ~ * {
                 background-color: #B5B5B5;
             }
         }
+    }
+    
+    &__section {
+        @include fluid-size(font-size, 15px, 17px);
+        font-weight: $font-semi-bold;
+        @include fluid-size(line-height, 12px, 14px);
+        @include fluid-size(margin-bottom, 14px, 18px);
+        text-transform: uppercase;
+    }
+
+    &__question {
+        @include fluid-size(margin-bottom, 36px, 45px);
+    }
+
+    &__next,
+    &__submit {
+        @include fluid-size(bottom, 24px, 25px);;
+        position: absolute;
     }
 
 }

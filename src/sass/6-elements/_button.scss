@@ -9,4 +9,20 @@
         display: none;
     }
 
+    &--round {
+        background-color: $primary-color;
+        border-radius: 10px;
+        box-shadow:
+            -2px -2px 4px rgba($color-blue-light, 0.57),
+            3px 3px 6px rgba($color-black, 0.43);
+        color: $secondary-color;
+        @include fluid-size(font-size, 16px, 18px);
+        font-weight: $font-semi-bold;
+        height: 41px;
+        @include fluid-size(line-height, 20px, 22px);
+        @include fluid-size(padding-left, 18px, 25px);
+        @include fluid-size(padding-right, 18px, 25px);
+        text-transform: uppercase;
+    }
+
 }

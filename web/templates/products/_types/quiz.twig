@@ -1,22 +1,25 @@
-<h1>{{ entry.title }}</h1>
-
-{{ entry.type }}
-{{ entry.level }}
-
 {% set questions = entry.quiz.all() %}
+
+<div class="c-quiz">
+    
+    <h3 class="h1 c-quiz__title">
+        <span>Test</span>
+    </h3>
+
+    <h4 class="h2 c-quiz__subtitle"><span class="fw-medium">{{ entry.parent.title }} - </span><span class="fw-light">{{ entry.parent.productBrand }}</span></h4>
+    
+    <div class="c-quiz__progress">
+        <div class="c-quiz__fraction">
+            Question <span></span>
+        </div>
+        <div class="swiper-pagination c-quiz__bar"></div>
+    </div>
 
     {% if questions|length %}
     <div
-        class="swiper c-quiz"
+        class="swiper c-quiz__swiper"
         data-csrf-token-value="{{ craft.app.request.getCsrfToken() }}"
         data-csrf-token-name="{{ craft.app.config.general.csrfTokenName }}">
-
-        <div class="c-quiz__progress">
-            <div class="c-quiz__fraction">
-                Question <span></span>
-            </div>
-            <div class="swiper-pagination c-quiz__bar"></div>
-        </div>
 
         <div class="swiper-wrapper">
 
@@ -36,8 +39,10 @@
                 {% if answers|length %}
                 <div class="c-quiz__answers">
                     {% for answer in answers %}
-                    <input type="radio" name="question{{ qNum }}" id="q{{ qNum }}a{{ loop.index }}" value="{{ answer.correct }}" />
-                    <label for="q{{ qNum }}a{{ loop.index }}">{{ answer.answer }}</label>
+                    <div class="c-quiz__answer">
+                        <input type="radio" name="question{{ qNum }}" id="q{{ qNum }}a{{ loop.index }}" value="{{ answer.correct }}" />
+                        <label for="q{{ qNum }}a{{ loop.index }}">{{ answer.answer }}</label>
+                    </div>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -47,14 +52,16 @@
 
         </div>
 
-        <button class="e-button e-button--disabled swiper-button-next c-quiz__next">
-            Next question
-        </button>
-
-        <button class="e-button e-button--hide e-button--disabled c-quiz__submit">
-            Submit
-        </button>
-
     </div>
+    
+    <button class="e-button e-button--round e-button--disabled swiper-button-next c-quiz__next">
+        Next question
+    </button>
 
-{% endif %}
+    <button class="e-button e-button--round e-button--hide e-button--disabled c-quiz__submit">
+        Submit
+    </button>
+
+    {% endif %}
+
+</div>

@@ -1,10 +1,17 @@
 .o-main {
+    display: flex;
+    flex-direction: column;
     height: calc( 100vh - $header-height - $footer-height );
-    max-width: $main-width;
+    @include fluid-size(max-width, $main-width, calc($main-width + 400px), $font-lock-max, calc($font-lock-max + 400px));
+    position: relative;
     width: 100%;
+    
+    &--center {
+        justify-content: center;
+    }
 
     &--wide {
-        max-width: $main-width-wide;
+        @include fluid-size(max-width, $main-width-wide, calc($main-width-wide + 400px), $font-lock-max, calc($font-lock-max + 400px));
     }
 
     &--shadow {

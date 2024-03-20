@@ -7,7 +7,7 @@ const storage = window.localStorage
 let score = JSON.parse( storage.getItem('score') )
 
 const fraction = document.querySelector( '.c-quiz__fraction span' )
-const slides = document.querySelectorAll( '.c-quiz .swiper-slide' )
+const slides = document.querySelectorAll( '.c-quiz__swiper .swiper-slide' )
 let slideCount
 if ( fraction && slides ) {
     slideCount = slides.length;
@@ -21,14 +21,14 @@ const initialize = () => {
     if ( fraction && slides ) {
         setupSwiper()
 
-        answerTrigger( document.querySelector('.c-quiz .swiper-slide-1') )
+        answerTrigger( document.querySelector('.c-quiz__swiper .swiper-slide-1') )
 
         submitAnswers()
     }
 }
 
 const setupSwiper = () => {
-    const swiper = new Swiper('.c-quiz', {
+    const swiper = new Swiper('.c-quiz__swiper', {
         modules: [ Navigation, Pagination ],
         navigation: {
             nextEl: '.c-quiz__next',
@@ -54,7 +54,7 @@ const onSlideChange = swiper => {
     nextButton.classList.add( 'e-button--disabled' )
     submitButton.classList.add( 'e-button--disabled' )
 
-    answerTrigger( document.querySelector( '.c-quiz .swiper-slide-' + index ) )
+    answerTrigger( document.querySelector( '.c-quiz__swiper .swiper-slide-' + index ) )
 
     swapNextSubmit( index, slideCount )
 }
@@ -84,29 +84,36 @@ const submitAnswers = () => {
 }
 
 const getScore = () => {
-    const answers = document.querySelectorAll('.c-quiz input:checked')
-    score = 0
+    const questions = document.querySelectorAll('.c-quiz__item').length
+    const answers = document.querySelectorAll('.c-quiz__swiper input:checked')
+    const passRate = 70
+    let score = 0
+    let passed = 0
     
     answers.forEach( answer => {
         score = score + Number( answer.value )
     })
 
-    saveScore( score )
+    if ( ( (100 * score) / questions ) > passRate ) {
+        passed = 1
+    }
+
+    saveScore( score, passed )
 }
 
-const saveScore = score => {
+const saveScore = ( score, passed ) => {
     storage.setItem('score', score);
+    storage.setItem('passed', passed);
 
     if ( this === undefined ) {
-        console.log('This is NOT Cordova')
-        sendToCms( score )
+        sendToCms( score, passed )
     }
 }
 
-const sendToCms = score => {
+const sendToCms = ( score, passed ) => {
     getSessionInfo()
     .then( session => {
-        pushScore( session, score )
+        pushScore( session, score, passed )
     })
 }
 

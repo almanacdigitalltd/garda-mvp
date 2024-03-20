@@ -1,4 +1,4 @@
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: $font-semi-bold;
     text-transform: uppercase;
 }
@@ -9,8 +9,8 @@ h1, .h1 {
 }
 
 h2, .h2 {
-    @include fluid-size(font-size, 16px, 19px);
-    @include fluid-size(line-height, 20px, 23px);
+    @include fluid-size(font-size, 16px, 23px);
+    @include fluid-size(line-height, 20px, 28px);
 }
 
 h3, .h3 {
@@ -24,8 +24,10 @@ p {
 }
 
 label {
-    @include fluid-size(font-size, 16px, 20px);
-    @include fluid-size(line-height, 24px, 26px);
+    @include fluid-size(font-size, 16px, 15px);
+    font-weight: $font-light;
+    @include fluid-size(line-height, 24px, 19px);
+    text-transform: uppercase;
 }
 
 .fw-light {

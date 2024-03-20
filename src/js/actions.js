@@ -7,11 +7,12 @@ const getSessionInfo = () => {
     .then(response => response.json());
 }
 
-const pushScore = ( session, score ) => {
+const pushScore = ( session, score, passed ) => {
     const params = new FormData();
 
     params.append( 'userId', session.id );
     params.append( 'fields[score]', score )
+    params.append( 'fields[testPass]', passed )
 
     fetch('/actions/users/save-user', {
         method: 'POST',
