@@ -31,4 +31,5 @@ return GeneralConfig::create()
         '@webroot' => dirname(__DIR__) . '/web'
     ])
     ->postLoginRedirect('/')
+    // ->errorTemplatePrefix('_')
 ;
