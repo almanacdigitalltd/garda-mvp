@@ -14,6 +14,13 @@ body {
 	font-family: $font-primary;
 	font-weight: $font-light;
 	overflow-x: hidden;
+
+	&.login {
+		background-image: url(@assets/img/id.svg);
+		background-position: center left;
+		background-repeat: no-repeat;
+		background-size: auto;
+	}
 }
 
 * {

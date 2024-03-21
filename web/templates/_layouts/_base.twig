@@ -3,7 +3,7 @@
 
   {% include "_layouts/_head" %}
   
-  <body class="ltr">
+  <body class="ltr{% if classAlternate is defined %} {{ classAlternate }}{% endif %}">
 
     {% include "parts/user" %}
 

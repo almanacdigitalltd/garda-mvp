@@ -1,4 +1,9 @@
 .e-button {
+    color: $secondary-color;
+    @include fluid-size(font-size, 18px, 22px);
+    font-weight: $font-medium;
+    @include fluid-size(line-height, 23px, 27px);
+    text-transform: uppercase;
 
     &--disabled {
         opacity: 0.5;

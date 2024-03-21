@@ -10,6 +10,10 @@
         justify-content: center;
     }
 
+    &--narrow {
+        @include fluid-size(max-width, $main-width-narrow, calc($main-width-narrow + 200px), $font-lock-max, calc($font-lock-max + 200px));
+    }
+    
     &--wide {
         @include fluid-size(max-width, $main-width-wide, calc($main-width-wide + 400px), $font-lock-max, calc($font-lock-max + 400px));
     }

@@ -1,40 +1,45 @@
 {% extends "_layouts/_base" %}
 
+{% set classAlternate = 'login' %}
+
 {% block content %}
 
-    {% include "_layouts/_header" with {
-        title: "Training - Centre"
-    } %}
+    {% include "_layouts/_header" %}
 
-    <div class="o-main">
+    <div class="o-main o-main--narrow o-main--center">
 
-        <form method="post" accept-charset="UTF-8">
-            {{ csrfInput() }}
-            {{ actionInput('users/login') }}
+        <div class="c-login">
 
-            <label for="loginName">Username or email</label>
-            {{ input('text', 'loginName', craft.app.user.rememberedUsername, {
-                id: 'loginName'
-            }) }}
+            <h1 class="fw-medium c-login__title">Welcome to The Grid</h1>
 
-            <label for="password">Password</label>
-            {{ input('password', 'password', null, {
-                id: 'password',
-            }) }}
+            <form method="post" accept-charset="UTF-8">
+                {{ csrfInput() }}
+                {{ actionInput('users/login') }}
 
-            <label>
-                {{ input('checkbox', 'rememberMe', '1') }}
-                Remember me
-            </label>
+                {{ input('text', 'loginName', craft.app.user.rememberedUsername, {
+                    id: 'loginName',
+                    placeholder: 'User name'
+                }) }}
 
-            <button>Login</button>
+                {{ input('password', 'password', null, {
+                    id: 'password',
+                    placeholder: 'Password'
+                }) }}
+                
+                <a class="c-login__forgotten" href="{{ url('reset-password') }}">Forgotten password</a>
 
-            {% if errorMessage is defined %}
-                <p>{{ errorMessage }}</p>
-            {% endif %}
-        </form>
+                <button class="e-button e-button--sign-in c-login__sign-in">
+                    <i></i>
+                    Sign in
+                </button>
 
-        {# <p><a href="{{ url('reset-password') }}">Forgot your password?</a></p> #}
+                {% if errorMessage is defined %}
+                    <p>{{ errorMessage }}</p>
+                {% endif %}
+            </form>
+
+
+        </div>
 
     </div>
 
