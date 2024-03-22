@@ -50,9 +50,30 @@
         padding: 25px;
     }
 
+    &__link {
+        align-items: center;
+        display: flex;
+        @include fluid-size(column-gap, 20px, 30px);
+    }
+
     &__brand {
         align-items: center;
         display: flex;
         padding: 25px;
+    }
+
+    &__status {
+        border-radius: 100%;
+        display: inline-block;
+        height: 21px;
+        width: 21px;
+        
+        &--failed {
+            background-color: $color-fail;
+        }
+
+        &--passed {
+            background-color: $color-pass;
+        }
     }
 }
