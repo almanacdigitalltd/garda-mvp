@@ -1,7 +1,17 @@
+{% set trainingCenterHide = trainingCenterHide ?? false %}
+
 <div class="o-footer">
 
-    {% if currentUser %}
-    <a href="{{ logoutUrl }}">Logout</a>
+{% if currentUser %}
+
+    <a class="e-button" href="{{ logoutUrl }}">Logout</a>
+
+    {% if trainingCenterHide != true %}
+    <a class="e-button" href="/">Training centre</a>
     {% endif %}
+
+    <input class="c-search" placeholder="Search" />
+
+{% endif %}
 
 </div>

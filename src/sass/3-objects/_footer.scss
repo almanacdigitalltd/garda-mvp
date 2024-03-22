@@ -1,5 +1,9 @@
 .o-footer {
+    align-items: center;
+    @include fluid-size(column-gap, 36px, 50px);
     display: flex;
     height: $footer-height;
+    @include fluid-size(padding-left, 24px, 38px);
+    @include fluid-size(padding-right, 24px, 38px);
     width: 100vw;
 }
