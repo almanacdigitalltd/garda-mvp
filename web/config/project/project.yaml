@@ -1,4 +1,4 @@
-dateModified: 1710952319
+dateModified: 1711123313
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
@@ -50,6 +50,7 @@ meta:
     e8d22a20-c9ae-4c66-8549-5785f9701cc5: 'Product Image' # Product Image
     e674d4ca-c17d-405f-81ec-52e3f33bd2d0: 'Product Brand' # Product Brand
     e877a5dc-7e22-4b93-b7f9-98e7b6ff5f21: Product # Product
+    ea825d98-aa99-4601-9433-a59b359e881f: Image # Image
     f497f8b0-4e14-4f6f-a824-cb5f0b694997: 'Product Categories' # Product Categories
 system:
   edition: pro

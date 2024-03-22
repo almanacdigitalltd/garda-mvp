@@ -7,28 +7,19 @@
     text-transform: uppercase;
     text-decoration: none;
 
-    &--disabled {
-        opacity: 0.5;
-        pointer-events: none;
-    }
-
-    &--hide {
-        display: none;
-    }
-
     &--small {
         @include fluid-size(font-size, 14px, 17px);
         font-weight: $font-semi-bold;
         @include fluid-size(line-height, 19px, 22px);
     }
-
+    
     &--round {
         align-items: center;
         background-color: $primary-color;
         border-radius: 10px;
         box-shadow:
-            -2px -2px 4px rgba($color-blue-light, 0.57),
-            3px 3px 6px rgba($color-black, 0.43);
+        -2px -2px 4px rgba($color-blue-light, 0.57),
+        3px 3px 6px rgba($color-black, 0.43);
         color: $secondary-color;
         display: inline-flex;
         @include fluid-size(font-size, 16px, 18px);
@@ -37,6 +28,15 @@
         @include fluid-size(line-height, 20px, 22px);
         @include fluid-size(padding-left, 18px, 25px);
         @include fluid-size(padding-right, 18px, 25px);
+    }
+    
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &--hide {
+        display: none;
     }
 
 }

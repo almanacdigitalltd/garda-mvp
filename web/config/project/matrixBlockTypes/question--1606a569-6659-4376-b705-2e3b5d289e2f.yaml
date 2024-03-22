@@ -7,6 +7,18 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: ea825d98-aa99-4601-9433-a59b359e881f # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 501325fe-44ca-4860-b93c-4e71886459f8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 426c78b9-21d0-4b95-b8d9-8945bab17d5f # Section
             instructions: null
             label: null
@@ -145,6 +157,44 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Table
+  ea825d98-aa99-4601-9433-a59b359e881f: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:d436e4d8-e259-4054-b435-ca4a550559dc' # Product Images
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:53da4b2e-b470-4683-844d-756244a017de' # Product Videos
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:d436e4d8-e259-4054-b435-ca4a550559dc' # Product Images
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
 handle: question
 name: Question
 sortOrder: 1
