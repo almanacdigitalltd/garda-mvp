@@ -25,38 +25,42 @@
 
             {% for question in questions %}
             {% set qNum = loop.index %}
-            <div class="swiper-slide swiper-slide-{{ qNum }} c-quiz__item">
+            <div class="swiper-slide swiper-slide-{{ qNum }}">
 
-                <div class="c-quiz__main">
-            
-                    <div class="c-quiz__section">
-                        {{ question.question_section }}
-                    </div>
+                <div class="c-quiz__item">
 
-                    <div class="c-quiz__question">
-                        {{ question.question }}
-                    </div>
-
-                    {% set answers = question.answers %}
-                    {% if answers|length %}
-                    <div class="c-quiz__answers">
-                        {% for answer in answers %}
-                        <div class="c-quiz__answer">
-                            <input type="radio" name="question{{ qNum }}" id="q{{ qNum }}a{{ loop.index }}" value="{{ answer.correct }}" />
-                            <label for="q{{ qNum }}a{{ loop.index }}">{{ answer.answer }}</label>
+                    <div class="c-quiz__main">
+                
+                        <div class="c-quiz__section">
+                            {{ question.question_section }}
                         </div>
-                        {% endfor %}
+
+                        <div class="c-quiz__question">
+                            {{ question.question }}
+                        </div>
+
+                        {% set answers = question.answers %}
+                        {% if answers|length %}
+                        <div class="c-quiz__answers">
+                            {% for answer in answers %}
+                            <div class="c-quiz__answer">
+                                <input type="radio" name="question{{ qNum }}" id="q{{ qNum }}a{{ loop.index }}" value="{{ answer.correct }}" />
+                                <label for="q{{ qNum }}a{{ loop.index }}">{{ answer.answer }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                    {% set questionImage = question.image.all() %}
+                    {% if questionImage[0] %}
+                    <div class="c-quiz__image">
+                        {{ questionImage[0].getImg() }}
                     </div>
                     {% endif %}
 
                 </div>
-
-                {% set questionImage = question.image.all() %}
-                {% if questionImage[0] %}
-                <div class="c-quiz__image">
-                    {{ questionImage[0].getImg() }}
-                </div>
-                {% endif %}
             
             </div>
             {% endfor %}
@@ -65,13 +69,19 @@
 
     </div>
 
-    <button class="e-button e-button--round e-button--disabled swiper-button-next c-quiz__next">
-        Next question
-    </button>
+    <div class="c-quiz__footer">
 
-    <button class="e-button e-button--round e-button--hide e-button--disabled c-quiz__submit" data-results="{{ entry.parent.url }}/result">
-        Submit
-    </button>
+        <button class="e-button e-button--round e-button--disabled swiper-button-next c-quiz__next">
+            Next question
+        </button>
+
+        <button class="e-button e-button--round e-button--hide e-button--disabled c-quiz__submit" data-results="{{ entry.parent.url }}/result">
+            Submit
+        </button>
+
+        <a class="e-button e-button--small" href="/">Exit test</a>
+
+    </div>
 
     {% endif %}
 

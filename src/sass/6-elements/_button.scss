@@ -18,8 +18,8 @@
         background-color: $primary-color;
         border-radius: 10px;
         box-shadow:
-        -2px -2px 4px rgba($color-blue-light, 0.57),
-        3px 3px 6px rgba($color-black, 0.43);
+            -2px -2px 4px rgba($color-blue-light, 0.57),
+            3px 3px 6px rgba($color-black, 0.43);
         color: $secondary-color;
         display: inline-flex;
         @include fluid-size(font-size, 16px, 18px);
