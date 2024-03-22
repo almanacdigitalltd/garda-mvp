@@ -35,6 +35,13 @@
         }
     }
 
+    &__title,
+    &__link {
+        color: $secondary-color;
+        text-decoration: none;
+
+    }
+
     &__title {
         align-items: center;
         border-left: 3px solid $color-grey-dark;

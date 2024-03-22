@@ -1,0 +1,42 @@
+.c-result {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include fluid-size(padding-left, 24px, 36px);
+    @include fluid-size(padding-right, 24px, 36px);
+    position: relative;
+
+    &__pass-text {
+        @include fluid-size(margin-bottom, 18px, 22px);
+        text-align: center;
+    }
+
+    &__score {
+        @include fluid-size(font-size, 16px, 20px);
+        font-weight: $font-bold;
+        @include fluid-size(line-height, 22px, 26px);
+        text-align: center;
+
+        &--fail {
+            color: $color-fail;
+        }
+
+        &--pass {
+            color: $color-pass;
+        }
+    }
+
+    &__reset {
+        display: flex;
+        @include fluid-size(column-gap, 50px, 65px);
+        justify-content: center;
+        @include fluid-size(margin-top, 42px, 58px);
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        @include fluid-size(margin-bottom, 26px, 34px);
+        margin-top: auto;
+    }
+}

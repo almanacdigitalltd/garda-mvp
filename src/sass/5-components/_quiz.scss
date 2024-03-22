@@ -19,6 +19,18 @@
             @include fluid-size(padding-right, 25px, 37px);
             @include fluid-size(padding-top, 9px, 13px);
         }
+
+        &--fail {
+            span {
+                background-color: $color-fail;
+            }
+        }
+
+        &--pass {
+            span {
+                background-color: $color-pass;
+            }
+        }
     }
 
     &__subtitle {

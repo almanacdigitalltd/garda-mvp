@@ -78,12 +78,12 @@ const swapNextSubmit = ( index, slideCount ) => {
 }
 
 const submitAnswers = () => {
-    submitButton.addEventListener('click', () => {
-        getScore()
+    submitButton.addEventListener('click', ( ev ) => {
+        getScore( ev.currentTarget.dataset.results )
     })
 }
 
-const getScore = () => {
+const getScore = resultsPath => {
     const questions = document.querySelectorAll('.c-quiz__item').length
     const answers = document.querySelectorAll('.c-quiz__swiper input:checked')
     const passRate = 70
@@ -99,6 +99,15 @@ const getScore = () => {
     }
 
     saveScore( score, passed )
+    .then(
+        response => {
+            console.log('score saved', response)
+            window.location.href = resultsPath
+        },
+        response => {
+            console.log('score NOT saved', response)
+        }
+    )
 }
 
 const saveScore = ( score, passed ) => {
@@ -106,15 +115,38 @@ const saveScore = ( score, passed ) => {
     storage.setItem('passed', passed);
 
     if ( this === undefined ) {
-        sendToCms( score, passed )
+        return sendToCms( score, passed )
+        .then(
+            response => {
+                return Promise.resolve( response )
+            },
+            result => {
+                return Promise.reject( result )
+            }
+        )
+    } else {
+        return Promise.resolve()
     }
 }
 
 const sendToCms = ( score, passed ) => {
-    getSessionInfo()
-    .then( session => {
-        pushScore( session, score, passed )
-    })
+    return getSessionInfo()
+    .then(
+        session => {
+            return pushScore( session, score, passed )
+            .then(
+                response => {
+                    return Promise.resolve( response )
+                },
+                result => {
+                    return Promise.reject( result )
+                }
+            )
+        },
+        () => {
+            return Promise.reject()
+        }
+    )
 }
 
 export default initialize;

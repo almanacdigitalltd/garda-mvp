@@ -1,1 +1,55 @@
-<h1>Result</h1>
+{% set quiz = craft.entries()
+  .prevSiblingOf(entry)
+  .one() %}
+{% set questions = quiz.quiz.all() %}
+
+<div class="c-result">
+    
+    <h3 class="h1 c-quiz__title{% if currentUser.testPass == 1 %} c-quiz__title--pass{% else %} c-quiz__title--fail{% endif %}">
+        <span>Test</span>
+    </h3>
+
+    <h4 class="h2 c-quiz__subtitle"><span class="fw-medium">{{ entry.parent.title }} - </span><span class="fw-light">{{ entry.parent.productBrand }}</span></h4>
+
+    <div class="c-quiz__progress">
+        <div class="c-quiz__fraction">
+            Question {{ currentUser.score }} of {{ questions|length }}
+        </div>
+        <div class="swiper-pagination c-quiz__bar">
+            {% for question in questions %}
+            <span class="swiper-pagination-bullet"></span>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if currentUser.testPass == 1 %}
+        IMAGE HERE
+    {% endif %}
+
+    <h5 class="h1 fw-light c-result__pass-text">
+    {% if currentUser.testPass == 1 %}
+        Congratulations you have passed
+    {% else %}
+        Sorry you have not passed
+    {% endif %}
+    </h5>
+
+    <h6 class="c-result__score{% if currentUser.testPass == 1 %} c-result__score--pass{% else %} c-result__score--fail{% endif %}">
+        You scored {{ currentUser.score }} out of {{ questions|length }}
+    </h6>
+
+    {% if currentUser.testPass != 1 %}
+    <div class="c-result__reset">
+        <a class="e-button e-button--round" href="{{ entry.parent.url }}">Watch film again</a>
+    
+        <a class="e-button e-button--round" href="{{ quiz.url }}">Retake test</a>
+    </div>
+    {% endif %}
+
+    <div class="c-result__footer">
+        <a class="e-button e-button--small" href="#">Give feedback</a>
+
+        <a class="e-button e-button--small" href="/">Exit test</a>
+    </div>
+
+</div>

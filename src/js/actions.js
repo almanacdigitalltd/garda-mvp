@@ -14,7 +14,7 @@ const pushScore = ( session, score, passed ) => {
     params.append( 'fields[score]', score )
     params.append( 'fields[testPass]', passed )
 
-    fetch('/actions/users/save-user', {
+    return fetch('/actions/users/save-user', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -24,7 +24,7 @@ const pushScore = ( session, score, passed ) => {
         body: params,
     })
     .then( response => response.json() )
-    .then( result => console.log( result ) );
+    .then( result => result )
 }
 
 export {
