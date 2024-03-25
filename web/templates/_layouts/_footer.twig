@@ -4,7 +4,7 @@
 
 {% if currentUser %}
 
-    <a class="e-button" href="{{ logoutUrl }}">Logout</a>
+    <a class="e-button js-modal" data-modal-type="logout" href="{{ logoutUrl }}">Logout</a>
 
     {% if trainingCenterHide != true %}
     <a class="e-button" href="/">Training centre</a>
