@@ -3,6 +3,13 @@
         border-bottom: 3px solid $color-grey-dark;
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
+
+        // OFF FOR MVP
+        pointer-events: none;
+
+        &:last-of-type {
+            pointer-events: all;
+        }
     }
 
     &__meta {

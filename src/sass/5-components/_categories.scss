@@ -16,6 +16,9 @@
         justify-content: center;
         text-align: center;
         text-decoration: none;
+
+        // OFF FOR MVP
+        pointer-events: none;
         
         &:active {
             box-shadow:
@@ -29,6 +32,10 @@
                     display: block;
                 }
             }
+        }
+
+        &:last-of-type {
+            pointer-events: all;
         }
     }
 
