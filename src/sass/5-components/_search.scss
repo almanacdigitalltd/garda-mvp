@@ -13,4 +13,7 @@
     @include fluid-size(padding-right, 15px, 18px);
     text-transform: uppercase;
     width: 226px;
+
+    // OFF FOR MVP
+    pointer-events: none;
 }
