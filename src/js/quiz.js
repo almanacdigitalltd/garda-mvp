@@ -106,6 +106,7 @@ const getScore = resultsPath => {
         },
         response => {
             console.log('score NOT saved', response)
+            window.location.href = resultsPath
         }
     )
 }
