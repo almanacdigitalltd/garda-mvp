@@ -30,6 +30,9 @@ const setOffline = () => {
         window.location = landingPage
     }
 
+    console.log( 'SCORE: ', storage.getItem('score') )
+    console.log( 'PASS: ', storage.getItem('passed') )
+
     if ( ! storage.getItem('user') ) {
         window.location = noAccessPage
     }
@@ -49,7 +52,6 @@ const pollingBrowserWindow = onlineUrl => {
             },
             values => {
                 const user = values[ 0 ];
-                console.log( user )
     
                 if ( user ) {
                     clearInterval( loop )

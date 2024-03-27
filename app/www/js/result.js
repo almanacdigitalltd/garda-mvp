@@ -1,9 +1,10 @@
-let failedContent, passedContent, scoreContent, passed, score
+let title, failedContent, passedContent, scoreContent, passed, score
 
 const initialize = () => { 
     const result = document.querySelector('.js-result')
 
     if ( result ) {
+        title = document.querySelector('.js-title')
         failedContent = document.querySelector( '.js-failed' )
         passedContent = document.querySelector( '.js-passed' )
         scoreContent = document.querySelectorAll( '.js-score' )
@@ -23,9 +24,13 @@ const setContent = () => {
         el.textContent = score
     });
 
-    if ( passed ) {
+    if ( passed == 1 ) {
+        title.classList.remove('c-quiz__title--fail')
+        title.classList.add('c-quiz__title--pass')
         passedContent.classList.remove('js-hide')
     } else {
+        title.classList.remove('c-quiz__title--pass')
+        title.classList.add('c-quiz__title--fail')
         failedContent.classList.remove('js-hide')
     }
 }
