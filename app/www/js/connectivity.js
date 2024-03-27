@@ -30,9 +30,6 @@ const setOffline = () => {
         window.location = landingPage
     }
 
-    console.log( 'SCORE: ', storage.getItem('score') )
-    console.log( 'PASS: ', storage.getItem('passed') )
-
     if ( ! storage.getItem('user') ) {
         window.location = noAccessPage
     }
@@ -46,6 +43,24 @@ const setOnline = () => {
 
 const pollingBrowserWindow = onlineUrl => {
     onlineUrl.addEventListener( "loadstop", () => {
+
+        let localScore = storage.getItem('score')
+        let localPass = storage.getItem('passed')
+
+        onlineUrl.executeScript({ code: "\
+            if ( " + localScore + " && " + localPass + " ) {\
+                saveScore( " + localScore + ", " + localPass + " )\
+                .then(\
+                    response => {\
+                        console.log('score saved', response)\
+                    },\
+                    response => {\
+                        console.log('score NOT saved', response)\
+                    }\
+                )\
+            }"
+        })
+
         var loop = setInterval( () => {
             onlineUrl.executeScript({
                 code: "window.localStorage.getItem( 'user' )"
