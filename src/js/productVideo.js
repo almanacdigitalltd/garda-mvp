@@ -13,6 +13,7 @@ const initialize = () => {
 }
 
 const events = (video) => {
+    if(!video) return
     video.addEventListener('click', playVideo);
     videoPlay.addEventListener('click', playVideo);
 
