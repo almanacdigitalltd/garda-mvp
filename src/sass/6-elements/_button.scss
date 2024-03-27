@@ -1,11 +1,17 @@
 .e-button {
+    align-items: center;
     color: $secondary-color;
-    display: inline-block;
+    display: inline-flex;
     @include fluid-size(font-size, 18px, 22px);
     font-weight: $font-medium;
     @include fluid-size(line-height, 23px, 27px);
     text-transform: uppercase;
     text-decoration: none;
+
+    i {
+        background-size: contain;
+        display: block;
+    }
 
     &--small {
         @include fluid-size(font-size, 14px, 17px);

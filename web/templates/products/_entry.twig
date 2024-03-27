@@ -21,6 +21,13 @@
         {% include "products/_types/" ~ entry.type %}
     </div>
 
-    {% include "_layouts/_footer" with {} %}
+    {% set footerSettings = {} %}
+    {% if entry.type.handle != 'product' %}
+        {% set footerSettings = {
+            takeQuizHide: true
+        } %}
+    {% endif %}
+
+    {% include "_layouts/_footer" with footerSettings %}
 
 {% endblock %}

@@ -39,4 +39,36 @@
         @include fluid-size(margin-bottom, 20px, 24px);
         margin-top: auto;
     }
+
+    &__again {
+        padding-left: 20px !important; // Sorry!
+
+        i {
+            background-image: url(@assets/img/icon-rewatch.svg);
+            height: 26px;
+            margin-right: 14px;
+            width: 29px;
+        }
+    }
+
+    &__retake {
+        padding-left: 20px !important; // Sorry!
+
+        i {
+            background-image: url(@assets/img/icon-test.svg);
+            height: 26px;
+            margin-right: 14px;
+            width: 24px;
+        }
+    }
+    
+    &__feedback {
+        i {
+            background-image: url(@assets/img/icon-comment.svg);
+            height: 24px;
+            margin-right: 14px;
+            margin-top: 4px;
+            width: 24px;
+        }
+    }
 }

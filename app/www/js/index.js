@@ -1,4 +1,5 @@
 import connectivity from "./connectivity.js"
+import result from "./result.js"
 
 document.addEventListener('deviceready', onDeviceReady, false)
 
@@ -8,4 +9,6 @@ function onDeviceReady() {
     StatusBar.hide()
 
     connectivity()
+
+    result()
 }
