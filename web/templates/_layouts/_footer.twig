@@ -1,16 +1,37 @@
 {% set trainingCenterHide = trainingCenterHide ?? false %}
+{% set takeQuizHide = takeQuizHide ?? false %}
 
 <div class="o-footer">
 
 {% if currentUser %}
 
-    <a class="e-button" href="{{ logoutUrl }}">Logout</a>
+    <a class="e-button o-footer__logout js-modal" data-modal-type="logout" href="{{ logoutUrl }}">
+        <i></i>
+        Logout
+    </a>
 
     {% if trainingCenterHide != true %}
-    <a class="e-button" href="/">Training centre</a>
+    <a class="e-button o-footer__training" href="/">
+        <i></i>
+        Training centre
+    </a>
     {% endif %}
 
-    <input class="c-search" placeholder="Search" />
+    <div class="o-footer__right">
+
+        {% if takeQuizHide != true %}
+        <a class="e-button e-button--round o-footer__take-quiz" href="{{ craft.app.request.url }}/quiz">
+            <i></i>
+            Go to test
+        </a>
+        {% endif %}
+
+        <form class="c-search">
+            <input type="text" placeholder="Search" />
+            <input type="submit" value="" />
+        </form>
+
+    </div>
 
 {% endif %}
 

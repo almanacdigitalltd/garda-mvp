@@ -1,9 +1,42 @@
 .o-footer {
     align-items: center;
-    @include fluid-size(column-gap, 36px, 50px);
+    @include fluid-size(column-gap, 40px, 54px);
     display: flex;
     height: $footer-height;
     @include fluid-size(padding-left, 24px, 38px);
     @include fluid-size(padding-right, 24px, 38px);
     width: 100vw;
+
+    &__right {
+        @include fluid-size(column-gap, 20px, 25px);
+        display: flex;
+        margin-left: auto;
+    }
+    
+    &__logout {
+        i {
+            background-image: url(@assets/img/icon-log-out.svg);
+            height: 20px;
+            margin-right: 20px;
+            width: 30px;
+        }
+    }
+
+    &__training {
+        i {
+            background-image: url(@assets/img/icon-training-centre.svg);
+            height: 17px;
+            margin-right: 20px;
+            width: 35px;
+        }
+    }
+
+    &__take-quiz {
+        i {
+            background-image: url(@assets/img/icon-test.svg);
+            height: 22px;
+            margin-right: 12px;
+            width: 19px;
+        }
+    }
 }

@@ -7,107 +7,460 @@
         <meta charset="utf-8">
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self' https://phpstack-1230980-4394122.cloudwaysapps.com/';
-            script-src 'self' https://phpstack-1230980-4394122.cloudwaysapps.com/* 'unsafe-eval';
+            content="default-src 'self' phpstack-1238463-4426574.cloudwaysapps.com;
             font-src 'self' data:;"
         >
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="color-scheme" content="light dark">
 
         <link rel="stylesheet" href="css/index.css">
 
-        <title>Categories - The Grid</title>
+        <title>Quiz - The Grid</title>
 
     </head>
 
-    <body>
+    <body class="ltr">
 
-        <div class="app">
-            
-            <div class="swiper c-quiz">
+        <div class="o-logo"></div>
 
-                <div class="c-quiz__progress">
-                    <div class="c-quiz__fraction">
-                        Question <span></span>
-                    </div>
-                    <div class="swiper-pagination c-quiz__bar"></div>
-                </div>
-        
-                <div class="swiper-wrapper">
-        
-                    <div class="swiper-slide swiper-slide-1 c-quiz__item">
+        <div class="o-container">
+
+            <div class="o-header">
+                <h1>Training - Centre</h1>
+                <h2 class="fw-medium">UAV &amp; Counter UAV</h2>
+            </div>
+
+            <div class="o-main o-main--shadow">
+                <div class="c-quiz">
+    
+                    <h3 class="h1 c-quiz__title">
+                        <span>Test</span>
+                    </h3>
+                
+                    <h4 class="h2 c-quiz__subtitle"><span class="fw-medium">Spot System - </span><span class="fw-light">Boston Dynamics</span></h4>
                     
-                        <div class="c-quiz__section">
-                            Section 1 - Operation
+                    <div class="c-quiz__progress">
+                        <div class="c-quiz__fraction">
+                            Question <span></span>
                         </div>
-        
-                        <div class="c-quiz__question">
-                            This is question 1
-                        </div>
-        
-                        <div class="c-quiz__answers">
-                                                <input type="radio" name="question1" id="q1a1" value="1" />
-                            <label for="q1a1">Answer 1</label>
+                        <div class="swiper-pagination c-quiz__bar"></div>
+                    </div>
+                
+                        <div
+                        class="swiper c-quiz__swiper">
+                
+                        <div class="swiper-wrapper">
+                
+                            <div class="swiper-slide swiper-slide-1">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 1 - CONFIGURATION
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            When lifting Spot from the storage box what should you NOT use as a lifting handle?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question1" id="q1a1" value="" />
+                                                <label for="q1a1">Front leg lifting handles</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
                                                 <input type="radio" name="question1" id="q1a2" value="" />
-                            <label for="q1a2">Answer 2</label>
-                                                <input type="radio" name="question1" id="q1a3" value="" />
-                            <label for="q1a3">Answer 3</label>
-                        </div>
+                                                <label for="q1a2">Rear leg lifting handles</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question1" id="q1a3" value="1" />
+                                                <label for="q1a3">The data cable situated on the back of Spot</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_1.jpg" width="1343" height="1343">
+                                    </div>
                                     
-                    </div>
-                    <div class="swiper-slide swiper-slide-2 c-quiz__item">
-                    
-                        <div class="c-quiz__section">
-                            Section 2 - Operation
-                        </div>
-        
-                        <div class="c-quiz__question">
-                            This is question 2
-                        </div>
-        
-                        <div class="c-quiz__answers">
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-2">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 2 - CONFIGURATION
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            When connecting the green power cable, it should it be fitted to the?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
                                                 <input type="radio" name="question2" id="q2a1" value="" />
-                            <label for="q2a1">Answer 1</label>
-                                                <input type="radio" name="question2" id="q2a2" value="1" />
-                            <label for="q2a2">Answer 2</label>
-                                                <input type="radio" name="question2" id="q2a3" value="" />
-                            <label for="q2a3">Answer 3</label>
-                        </div>
+                                                <label for="q2a1">Spot body</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question2" id="q2a2" value="" />
+                                                <label for="q2a2">Mesh radio</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question2" id="q2a3" value="1" />
+                                                <label for="q2a3">Base of LiDAR unit</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_2.jpg" width="1343" height="1343">
+                                    </div>
                                     
-                    </div>
-                    <div class="swiper-slide swiper-slide-3 c-quiz__item">
-                    
-                        <div class="c-quiz__section">
-                            Section 3 - Operation
-                        </div>
-        
-                        <div class="c-quiz__question">
-                            This is question 3
-                        </div>
-        
-                        <div class="c-quiz__answers">
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-3">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 3 - START-UP
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            The safety operating distance on start up is
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
                                                 <input type="radio" name="question3" id="q3a1" value="" />
-                            <label for="q3a1">Answer 1</label>
-                                                <input type="radio" name="question3" id="q3a2" value="" />
-                            <label for="q3a2">Answer 2</label>
-                                                <input type="radio" name="question3" id="q3a3" value="1" />
-                            <label for="q3a3">Answer 3</label>
-                        </div>
+                                                <label for="q3a1">10m</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question3" id="q3a2" value="1" />
+                                                <label for="q3a2">2m</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question3" id="q3a3" value="" />
+                                                <label for="q3a3">30m</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_3.jpg" width="1343" height="1343">
+                                    </div>
                                     
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-4">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 4 - START-UP
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            To operate the LiDAR, what function do you press on the tablet?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question4" id="q4a1" value="1" />
+                                                <label for="q4a1">Exyn view app</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question4" id="q4a2" value="" />
+                                                <label for="q4a2">start button</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question4" id="q4a3" value="" />
+                                                <label for="q4a3">on/off switch</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_4.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                             <div class="swiper-slide swiper-slide-5">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 5 - START-UP
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            What is the colour confirmation for the MESH radios when synced and operational?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question5" id="q5a1" value="" />
+                                                <label for="q5a1">Red</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question5" id="q5a2" value="" />
+                                                <label for="q5a2">Amber </label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question5" id="q5a3" value="1" />
+                                                <label for="q5a3">Green</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_5.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-6">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 6 - OPERATION
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            What button/buttons should be pressed to enable the motors on Spot?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question6" id="q6a1" value="" />
+                                                <label for="q6a1">The rear button on spot</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question6" id="q6a2" value="" />
+                                                <label for="q6a2">The LiDAR battery button</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question6" id="q6a3" value="1" />
+                                                <label for="q6a3">The top two shoulder buttons and right arrow on the right d-pad</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_6.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-7">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 7 - POST-DEPLOYMENT
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            When unplugging the cables on Spot how far should the robot arm be rotated to allow access to the ports?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question7" id="q7a1" value="" />
+                                                <label for="q7a1">180 degrees</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question7" id="q7a2" value="" />
+                                                <label for="q7a2">45 degrees </label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question7" id="q7a3" value="1" />
+                                                <label for="q7a3">90 degrees</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_7.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-8">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 8 - POST-DEPLOYMENT
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            The final stage to shutdown Spot is to?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question8" id="q8a1" value="" />
+                                                <label for="q8a1">Pull out all ethernet cables </label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question8" id="q8a2" value="1" />
+                                                <label for="q8a2">Press and hold the rear button on Spot</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question8" id="q8a3" value="" />
+                                                <label for="q8a3">Remove battery, it will turn off</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_8.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-9">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 9 - POST-DEPLOYMENT
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            Before stowing the Spot system, you must remember to?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question9" id="q9a1" value="" />
+                                                <label for="q9a1">Clean it down</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question9" id="q9a2" value="" />
+                                                <label for="q9a2">correctly stow legs</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question9" id="q9a3" value="1" />
+                                                <label for="q9a3">Remove battery to avoid damage</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_9.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            <div class="swiper-slide swiper-slide-10">
+                
+                                <div class="c-quiz__item">
+                
+                                    <div class="c-quiz__main">
+                                
+                                        <div class="c-quiz__section">
+                                            Section 10 - POST-DEPLOYMENT
+                                        </div>
+                
+                                        <div class="c-quiz__question">
+                                            How do you align Spot for stowage?
+                                        </div>
+                
+                                        <div class="c-quiz__answers">
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question10" id="q10a1" value="1" />
+                                                <label for="q10a1">Match and align tape on Spot with tape box</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question10" id="q10a2" value="" />
+                                                <label for="q10a2">Remember the way it came out of the box</label>
+                                            </div>
+                                            <div class="c-quiz__answer">
+                                                <input type="radio" name="question10" id="q10a3" value="" />
+                                                <label for="q10a3">It will fit in the box either way</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                
+                                    <div class="c-quiz__image">
+                                        <img src="img/quiz/QUESTION_10.jpg" width="1343" height="1343">
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            
+                        </div>
+                
                     </div>
-                    
+                
+                    <div class="c-quiz__footer">
+                
+                        <button class="e-button e-button--round e-button--disabled swiper-button-next c-quiz__next">
+                            Next question
+                        </button>
+                
+                        <button class="e-button e-button--round e-button--hide e-button--disabled c-quiz__submit" data-results="result.html">
+                            Submit
+                        </button>
+                
+                        <a class="e-button e-button--small js-modal" data-modal-type="exit" href="/">Exit test</a>
+                
+                    </div>
+                
                 </div>
-        
-                <button class="e-button e-button--disabled swiper-button-next c-quiz__next">
-                    Next question
-                </button>
-        
-                <button class="e-button e-button--hide e-button--disabled c-quiz__submit">
-                    Submit
-                </button>
-        
+            </div>
+
+            <div class="o-footer">
+                
+                <a class="e-button" href="#">Logout</a>
+            
+                <input class="c-search" placeholder="Search" />
+            
             </div>
 
         </div>

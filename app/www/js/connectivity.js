@@ -4,6 +4,7 @@ let onlineUrl
 
 const landingPage = 'index.html'
 const noAccessPage = 'blank.html'
+const site = 'https://phpstack-1238463-4426574.cloudwaysapps.com'
 
 const initialize = () => { 
     checkConnection()
@@ -29,15 +30,13 @@ const setOffline = () => {
         onlineUrl.close()
     }
 
-    if ( user ) {
-        window.location = landingPage;
-    } else {
-        window.location = noAccessPage;
+    if ( ! user ) {
+        window.location = noAccessPage
     }
 }
 
 const setOnline = () => {
-    onlineUrl = window.open('https://phpstack-1230980-4394122.cloudwaysapps.com/', '_blank', 'location=no,zoom=no')
+    onlineUrl = window.open(site, '_blank', 'location=no,zoom=no')
 
     pollingBrowserWindow( onlineUrl )
 }
@@ -58,6 +57,7 @@ const pollingBrowserWindow = onlineUrl => {
                 if ( user ) {
                     clearInterval( loop )
                     storage.setItem('user', user)
+                    window.location = landingPage
                 }
             })
         })

@@ -1,0 +1,69 @@
+.o-modal {
+    align-items: center;
+    background-color: rgba($primary-color, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 3;
+
+    &__content {
+        background-color: $primary-color;
+        box-shadow:
+            inset 3px 3px 3px rgba($color-black, 0.13),
+            6px 6px 10px rgba($color-black, 0.56);
+        @include fluid-size(padding-bottom, 30px, 50px);
+        @include fluid-size(padding-left, 40px, 70px);
+        @include fluid-size(padding-right, 40px, 70px);
+        @include fluid-size(padding-top, 30px, 50px);
+        text-align: center;
+        @include fluid-size(width, 80%, 510px);
+    }
+
+    &__header {
+        font-weight: $font-medium;
+        @include fluid-size(margin-bottom, 30px, 40px);
+    }
+
+    &__text {
+        @include fluid-size(font-size, 19px, 22px);
+        @include fluid-size(line-height, 23px, 26px);
+    }
+
+    &__button {
+        @include fluid-size(margin-left, 30px, 40px);
+        @include fluid-size(margin-right, 30px, 40px);
+        @include fluid-size(margin-top, 40px, 60px);
+    }
+
+    &__yes,
+    &__no {
+        padding-left: 51px;
+        position: relative;
+
+        &:before {
+            background-size: contain;
+            content: '';
+            position: absolute;
+            height: 34px;
+            left: 0;
+            width: 37px;
+        }
+    }
+
+    &__yes {
+        &:before {
+            background-image: url(@assets/img/icon-yes.svg);
+        }
+    }
+
+    &__no {
+        &:before {
+            background-image: url(@assets/img/icon-no.svg);
+        }
+    }
+}

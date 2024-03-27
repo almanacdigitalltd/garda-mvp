@@ -72,14 +72,19 @@
     <div class="c-quiz__footer">
 
         <button class="e-button e-button--round e-button--disabled swiper-button-next c-quiz__next">
+            <i></i>
             Next question
         </button>
 
         <button class="e-button e-button--round e-button--hide e-button--disabled c-quiz__submit" data-results="{{ entry.parent.url }}/result">
+            <i></i>
             Submit
         </button>
 
-        <a class="e-button e-button--small" href="/">Exit test</a>
+        <a class="e-button e-button--small c-quiz__exit js-modal" data-modal-type="exit" href="/">
+            <i></i>
+            Exit test
+        </a>
 
     </div>
 
