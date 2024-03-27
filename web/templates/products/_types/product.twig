@@ -9,34 +9,44 @@
 
     <div class="c-product__video-player">
 
-        {% if productVideo %}
-            <video class="c-product__video productVideo" src="{{ productVideo.url }}"></video>
-        {% endif %}
-
-        <div class="c-product__video-nav">
-            
-            {% if videoSections %}
-            <div class="c-product__chapters">
-
-                {% for section in videoSections %}
-                <div class="c-product__chapter productChapter" data-chapter-start="{{ section.sectionTime }}">
-                    <div class="c-product__section-num">Section {{ loop.index }}</div>
-                    <div class="c-product__section-title">
-                        {{ section.sectionTitle }}
-                    </div>
-                </div>
-                {% endfor %}
-                
-            </div>
-            {% endif %}
-            
-            <progress class="c-product__progess productProgress" max="100" value="0">
-            
-            </progress>
+        <div class="c-product__video-view">
         
+            {% if productVideo %}
+                <video class="c-product__video productVideo" src="{{ productVideo.url }}"></video>
+            {% endif %}
+
+            <div class="c-product__video-nav">
+                
+                {% if videoSections %}
+                <div class="c-product__chapters">
+
+                    {% for section in videoSections %}
+                    <div class="c-product__chapter productChapter" data-chapter-start="{{ section.sectionTime }}">
+                        <div class="c-product__section-num">Section {{ loop.index }}</div>
+                        <div class="c-product__section-title">
+                            {{ section.sectionTitle }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+                {% endif %}
+                
+                <progress class="c-product__progess productProgress" max="100" value="0"></progress>
+            
+            </div>
+
         </div>
 
-        <div class="c-product__video-controls"></div>
+        <div class="c-product__video-controls">
+            <div class="c-product__video-play videoPlay">Play</div>
+            <div class="c-product__video-next videoNext">Next</div>
+            <div class="c-product__video-volume">
+                <input type="range" min="0" max="1" step="0.01">
+            </div>
+            <div class="c-product__video-fullscreen"></div>
+            <div class="c-product__video-download"></div>
+        </div>
 
     </div>
 
