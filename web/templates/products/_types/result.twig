@@ -40,16 +40,28 @@
 
     {% if currentUser.testPass != 1 %}
     <div class="c-result__reset">
-        <a class="e-button e-button--round" href="{{ entry.parent.url }}">Watch film again</a>
+        <a class="e-button e-button--round c-result__again" href="{{ entry.parent.url }}">
+            <i></i>
+            Watch film again
+        </a>
     
-        <a class="e-button e-button--round" href="{{ quiz.url }}">Retake test</a>
+        <a class="e-button e-button--round c-result__retake" href="{{ quiz.url }}">
+            <i></i>
+            Retake test
+        </a>
     </div>
     {% endif %}
 
     <div class="c-result__footer">
-        <a class="e-button e-button--small" href="#">Give feedback</a>
+        <a class="e-button e-button--small c-result__feedback" href="#">
+            <i></i>
+            Give feedback
+        </a>
 
-        <a class="e-button e-button--small" href="/">Exit test</a>
+        <a class="e-button e-button--small c-quiz__exit" href="/">
+            <i></i>
+            Exit test
+        </a>
     </div>
 
 </div>

@@ -39,4 +39,31 @@
         @include fluid-size(margin-right, 30px, 40px);
         @include fluid-size(margin-top, 40px, 60px);
     }
+
+    &__yes,
+    &__no {
+        padding-left: 51px;
+        position: relative;
+
+        &:before {
+            background-size: contain;
+            content: '';
+            position: absolute;
+            height: 34px;
+            left: 0;
+            width: 37px;
+        }
+    }
+
+    &__yes {
+        &:before {
+            background-image: url(@assets/img/icon-yes.svg);
+        }
+    }
+
+    &__no {
+        &:before {
+            background-image: url(@assets/img/icon-no.svg);
+        }
+    }
 }
