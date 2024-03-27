@@ -16,9 +16,18 @@ const initialize = () => {
 }
 
 const setContent = () => {
-    console.log( 'PASSED: ', passed )
-    console.log( 'SCORE: ', score )
-    console.log( 'SCORE CONTENT: ', scoreContent )
+    passedContent.classList.add('js-hide')
+    failedContent.classList.add('js-hide')
+
+    scoreContent.forEach( el => {
+        el.textContent = score
+    });
+
+    if ( passed ) {
+        passedContent.classList.remove('js-hide')
+    } else {
+        failedContent.classList.remove('js-hide')
+    }
 }
 
 export default initialize

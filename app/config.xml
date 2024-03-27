@@ -16,5 +16,5 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="landscape" />
 
-     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
 </widget>
