@@ -2,21 +2,43 @@
 {% set productVideo = entry.productVideo.one() %}
 {% set videoSections = entry.videoSections.all() %}
 
-<h1>{{ entry.title }} - {{ entry.productBrand }}</h1>
 
-<div>
-    {% if productVideo %}
-    <video src="{{ productVideo.url }}"></video>
-    {% endif %}
+<div class="c-product">
 
-    {% if videoSections %}
-    <div>
-        {% for section in videoSections %}
-            {{ section.sectionTitle }}
-            {{ section.sectionTime }}
-        {% endfor %}
+    <h3 class="c-product__title h2">{{ entry.title }} - <span>{{ entry.productBrand }}</span></h3>
+
+    <div class="c-product__video-player">
+
+        {% if productVideo %}
+            <video class="c-product__video productVideo" src="{{ productVideo.url }}"></video>
+        {% endif %}
+
+        <div class="c-product__video-nav">
+            
+            {% if videoSections %}
+            <div class="c-product__chapters">
+
+                {% for section in videoSections %}
+                <div class="c-product__chapter productChapter" data-chapter-start="{{ section.sectionTime }}">
+                    <div class="c-product__section-num">Section {{ loop.index }}</div>
+                    <div class="c-product__section-title">
+                        {{ section.sectionTitle }}
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+            {% endif %}
+            
+            <progress class="c-product__progess productProgress" max="100" value="0">
+            
+            </progress>
+        
+        </div>
+
+        <div class="c-product__video-controls"></div>
+
     </div>
-    {% endif %}
-</div>
 
-<a href="{{ craft.app.request.url }}/quiz">Go to Quiz?</a>
+    <a href="{{ craft.app.request.url }}/quiz">Go to Quiz?</a>
+</div>

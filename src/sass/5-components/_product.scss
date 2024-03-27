@@ -1,0 +1,45 @@
+.c-product {
+
+    @include fluid-size(padding-top, 24px, 36px);
+    @include fluid-size(padding-left, 24px, 36px);
+    @include fluid-size(padding-right, 24px, 36px);
+
+    &__title {
+        text-align: center;
+        @include fluid-size(margin-bottom, 18px, 18epx);
+
+        span {
+            font-weight: $font-medium;
+        }
+    }
+
+    &__video-player {
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+
+    &__video {
+        width: 100%;
+    }
+
+    &__video-nav {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    &__chapters {
+        display: flex;
+    }
+
+    &__chapter {
+        
+    }
+    
+    &__progess {
+        display: flex;
+        width: 100%;
+        border-radius: 0;
+    }
+}
