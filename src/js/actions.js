@@ -1,3 +1,44 @@
+const storage = window.localStorage
+
+const saveScore = ( score, passed ) => {
+    storage.setItem('score', score);
+    storage.setItem('passed', passed);
+
+    if ( this === undefined ) {
+        return sendToCms( score, passed )
+        .then(
+            response => {
+                return Promise.resolve( response )
+            },
+            result => {
+                return Promise.reject( result )
+            }
+        )
+    } else {
+        return Promise.resolve()
+    }
+}
+
+const sendToCms = ( score, passed ) => {
+    return getSessionInfo()
+    .then(
+        session => {
+            return pushScore( session, score, passed )
+            .then(
+                response => {
+                    return Promise.resolve( response )
+                },
+                result => {
+                    return Promise.reject( result )
+                }
+            )
+        },
+        () => {
+            return Promise.reject()
+        }
+    )
+}
+
 const getSessionInfo = () => {
     return fetch('/actions/users/session-info', {
         headers: {
@@ -19,7 +60,6 @@ const pushScore = ( session, score, passed ) => {
         headers: {
             'Accept': 'application/json',
             'X-CSRF-Token': session.csrfTokenValue,
-            'X-Requested-With': 'XMLHttpRequest',
         },
         body: params,
     })
@@ -27,7 +67,4 @@ const pushScore = ( session, score, passed ) => {
     .then( result => result )
 }
 
-export {
-    getSessionInfo,
-    pushScore
-}
+export default saveScore

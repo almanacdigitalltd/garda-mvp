@@ -1,7 +1,7 @@
 import Swiper from "@modules/swiper"
 import { Navigation, Pagination } from "@modules/swiper/modules"
 
-import { getSessionInfo, pushScore } from './actions'
+import saveScore from './actions'
 
 const storage = window.localStorage
 let score = JSON.parse( storage.getItem('score') )
@@ -107,45 +107,6 @@ const getScore = resultsPath => {
         response => {
             console.log('score NOT saved', response)
             window.location.href = resultsPath
-        }
-    )
-}
-
-const saveScore = ( score, passed ) => {
-    storage.setItem('score', score);
-    storage.setItem('passed', passed);
-
-    if ( this === undefined ) {
-        return sendToCms( score, passed )
-        .then(
-            response => {
-                return Promise.resolve( response )
-            },
-            result => {
-                return Promise.reject( result )
-            }
-        )
-    } else {
-        return Promise.resolve()
-    }
-}
-
-const sendToCms = ( score, passed ) => {
-    return getSessionInfo()
-    .then(
-        session => {
-            return pushScore( session, score, passed )
-            .then(
-                response => {
-                    return Promise.resolve( response )
-                },
-                result => {
-                    return Promise.reject( result )
-                }
-            )
-        },
-        () => {
-            return Promise.reject()
         }
     )
 }
