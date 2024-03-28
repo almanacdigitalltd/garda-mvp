@@ -22,7 +22,7 @@
         <icon density="xxhdpi" foreground="res/android/icon/drawable-xxhdpi-icon.png" background="res/android/icon/drawable-xxhdpi-icon-bg.png" />
         <icon density="xxxhdpi" foreground="res/android/icon/drawable-xxxhdpi-icon.png" background="res/android/icon/drawable-xxxhdpi-icon-bg.png" />
         
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash.png" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/android/screen/splash.png" />
         <preference name="AndroidWindowSplashScreenBackground" value="#000000" />
         <preference name="SplashScreenDelay" value="1000" />
         <preference name="FadeSplashScreen" value="true"/>
