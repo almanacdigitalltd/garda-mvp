@@ -6,15 +6,26 @@
         Almanac Digital
     </author>
     <content src="index.html" />
-
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
-
     <preference name="android-minSdkVersion" value="33" />
-
+    <preference name="android-targetSdkVersion" value="33" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="landscape" />
-
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <platform name="android">
+        <icon density="ldpi" foreground="res/android/icon/drawable-ldpi-icon.png" background="res/android/icon/drawable-ldpi-icon-bg.png" />
+        <icon density="mdpi" foreground="res/android/icon/drawable-mdpi-icon.png" background="res/android/icon/drawable-mdpi-icon-bg.png" />
+        <icon density="hdpi" foreground="res/android/icon/drawable-hdpi-icon.png" background="res/android/icon/drawable-hdpi-icon-bg.png" />
+        <icon density="xhdpi" foreground="res/android/icon/drawable-xhdpi-icon.png" background="res/android/icon/drawable-xhdpi-icon-bg.png" />
+        <icon density="xxhdpi" foreground="res/android/icon/drawable-xxhdpi-icon.png" background="res/android/icon/drawable-xxhdpi-icon-bg.png" />
+        <icon density="xxxhdpi" foreground="res/android/icon/drawable-xxxhdpi-icon.png" background="res/android/icon/drawable-xxxhdpi-icon-bg.png" />
+        
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash.png" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#000000" />
+        <preference name="SplashScreenDelay" value="1000" />
+        <preference name="FadeSplashScreen" value="true"/>
+        <preference name="FadeSplashScreenDuration" value="1000"/>
+    </platform>
 </widget>
