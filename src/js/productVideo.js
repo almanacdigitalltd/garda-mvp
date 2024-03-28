@@ -5,6 +5,7 @@ const productProgress = document.querySelector('.productProgress');
 // Controls
 const videoPlay = document.querySelector('.videoPlay')
 const videoNext = document.querySelector('.videoNext')
+const videoVolume = document.querySelector('.videoVolume')
 
 const initialize = () => {
     setChapterEndtime()
@@ -15,9 +16,10 @@ const initialize = () => {
 const events = (video) => {
     if(!video) return
     video.addEventListener('click', playVideo);
+    
     videoPlay.addEventListener('click', playVideo);
-
     videoNext.addEventListener('click', nextChapter);
+    videoVolume.addEventListener('input', setVolume);
 
     video.addEventListener('timeupdate', updateTime)
 
@@ -92,6 +94,10 @@ const nextChapter = () => {
             productVideo.currentTime = chapter.nextElementSibling.getAttribute('data-chapter-start')
         }
     })
+}
+
+const setVolume = (e) => {
+    productVideo.volume = e.target.value
 }
 
 export default initialize;
