@@ -44,7 +44,7 @@
                 <div class="c-product-list__title">
                     <h2>
                         <a class="c-product-list__link" href="{{ product.url }}">
-                            <span class="c-product-list__status{% if product.slug == 'spot-system' and currentUser.testPass %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}"></span>
+                            <span class="c-product-list__status{% if product.slug == 'spot-system' and currentUser.testPass %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}{% if loop.index == 1 or loop.index == 2 %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}"></span>
                             {{ product.title }}
                         </a>
                     </h2>
