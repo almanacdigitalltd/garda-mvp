@@ -2,22 +2,32 @@ const productVideo = document.querySelector('.productVideo');
 const productChapter = document.querySelectorAll('.productChapter');
 const productProgress = document.querySelector('.productProgress');
 
+const productView = document.querySelector('.c-product__video-view');
+
 // Controls
 const videoPlay = document.querySelector('.videoPlay')
 const videoNext = document.querySelector('.videoNext')
+const videoVolume = document.querySelector('.videoVolume')
 
 const initialize = () => {
-    setChapterEndtime()
-    renderChapterSize()
+    setTimeout(()=> {
+        setChapterEndtime()
+        renderChapterSize()
+    }, 200)
+
+    if(!productVideo) return
     events(productVideo);
 }
 
 const events = (video) => {
-    if(!video) return
+    
     video.addEventListener('click', playVideo);
+    
     videoPlay.addEventListener('click', playVideo);
-
     videoNext.addEventListener('click', nextChapter);
+    videoVolume.addEventListener('input', setVolume);
+
+    productProgress.addEventListener('click', changeProgress);
 
     video.addEventListener('timeupdate', updateTime)
 
@@ -31,10 +41,10 @@ const events = (video) => {
 const playVideo = (e) => {
     if ( productVideo.paused ) {
         productVideo.play();
-        videoPlay.textContent = 'Pause'
+        productView.classList.add('videoActive')
     } else {
         productVideo.pause();
-        videoPlay.textContent = 'Play'
+        productView.classList.remove('videoActive')
     }
 }
 
@@ -86,12 +96,24 @@ const setProgress = () => {
     Math.round(productProgress.value = productVideo.currentTime/productVideo.duration*100)
 }
 
+const changeProgress = (e) => {
+    console.log(productProgress.offsetWidth)
+    console.log((e.offsetX/e.srcElement.clientWidth)*productVideo.duration)
+    console.log(e.offsetX)
+
+    productVideo.currentTime = (e.offsetX/e.srcElement.clientWidth)*productVideo.duration
+}
+
 const nextChapter = () => {
     productChapter.forEach((chapter) => {
         if( chapter.classList.contains('active') ) {
             productVideo.currentTime = chapter.nextElementSibling.getAttribute('data-chapter-start')
         }
     })
+}
+
+const setVolume = (e) => {
+    productVideo.volume = e.target.value
 }
 
 export default initialize;
