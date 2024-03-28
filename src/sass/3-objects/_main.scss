@@ -24,3 +24,9 @@
             inset -4px -4px 5px rgba($color-grey, 0.1);
     }
 }
+
+body.app {
+    .o-main {
+        height: calc( 100vh - $header-height - $footer-height - 53px );
+    }
+}

@@ -1,10 +1,9 @@
 const storage = window.localStorage
-let user = storage.getItem('user')
 let onlineUrl
 
 const landingPage = 'index.html'
 const noAccessPage = 'blank.html'
-const site = 'https://phpstack-1238463-4426574.cloudwaysapps.com'
+const site = 'https://thegrid.training'
 
 const initialize = () => { 
     checkConnection()
@@ -28,9 +27,10 @@ const checkConnection = () => {
 const setOffline = () => {
     if ( onlineUrl ) {
         onlineUrl.close()
+        window.location = landingPage
     }
 
-    if ( ! user ) {
+    if ( ! storage.getItem('user') ) {
         window.location = noAccessPage
     }
 }
@@ -43,13 +43,27 @@ const setOnline = () => {
 
 const pollingBrowserWindow = onlineUrl => {
     onlineUrl.addEventListener( "loadstop", () => {
-        onlineUrl.executeScript({
-            code: "localStorage.setItem( 'user', '' );"
-        });
+
+        let localScore = storage.getItem('score')
+        let localPass = storage.getItem('passed')
+
+        onlineUrl.executeScript({ code: "\
+            if ( " + localScore + " && " + localPass + " ) {\
+                saveScore( " + localScore + ", " + localPass + " )\
+                .then(\
+                    response => {\
+                        console.log('score saved', response)\
+                    },\
+                    response => {\
+                        console.log('score NOT saved', response)\
+                    }\
+                )\
+            }"
+        })
 
         var loop = setInterval( () => {
             onlineUrl.executeScript({
-                code: "localStorage.getItem( 'user' )"
+                code: "window.localStorage.getItem( 'user' )"
             },
             values => {
                 const user = values[ 0 ];
@@ -57,7 +71,6 @@ const pollingBrowserWindow = onlineUrl => {
                 if ( user ) {
                     clearInterval( loop )
                     storage.setItem('user', user)
-                    window.location = landingPage
                 }
             })
         })
