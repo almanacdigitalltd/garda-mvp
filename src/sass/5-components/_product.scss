@@ -53,6 +53,15 @@
         width: 100%;
         bottom: 0;
         padding: 0 30px 18px;
+        background: linear-gradient(0deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 100%);
+
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &.navActive {
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
     }
     
     &__chapters {
@@ -66,7 +75,6 @@
         flex-direction: column;
         justify-content: flex-end;
         color: $primary-color;
-        // margin-right: 4px;
         opacity: 0.7;
 
         &.active {
@@ -79,7 +87,6 @@
             width: 4px;
             height: 10px;
             bottom: -18px;
-            // left: 2px;
             background-color: $color-white;
         }
 
