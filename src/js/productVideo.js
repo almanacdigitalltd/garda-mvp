@@ -3,6 +3,7 @@ const productChapter = document.querySelectorAll('.productChapter');
 const productProgress = document.querySelector('.productProgress');
 
 const productView = document.querySelector('.c-product__video-view');
+const productNav = document.querySelector('.c-product__video-nav');
 
 // Controls
 const videoPlay = document.querySelector('.videoPlay')
@@ -13,6 +14,7 @@ const initialize = () => {
     setTimeout(()=> {
         setChapterEndtime()
         renderChapterSize()
+        progressNavDisplay()
     }, 200)
 
     if(!productVideo) return
@@ -36,15 +38,35 @@ const events = (video) => {
             playChapter(chapter);
         })
     });
+
+    productView.addEventListener('mouseover', () => {
+        if ( !productVideo.paused ) {
+            productNav.classList.add('navActive');
+        }
+        
+    }) 
+
+    productView.addEventListener('mouseleave', () => {
+        if ( !productVideo.paused ) {
+            setTimeout(() => {
+                productNav.classList.remove('navActive');
+            },1000)
+        }
+    }) 
 }
 
 const playVideo = (e) => {
     if ( productVideo.paused ) {
         productVideo.play();
         productView.classList.add('videoActive')
+
+        // setTimeout(() => {
+        //     progressNavDisplay()
+        // },3000)
     } else {
         productVideo.pause();
         productView.classList.remove('videoActive')
+        // progressNavDisplay()
     }
 }
 
@@ -114,6 +136,15 @@ const nextChapter = () => {
 
 const setVolume = (e) => {
     productVideo.volume = e.target.value
+}
+
+const progressNavDisplay = () => {
+    console.log('here')
+    if ( productVideo.paused ) {
+        productNav.classList.add('navActive');
+    } else {
+        productNav.classList.remove('navActive');
+    }
 }
 
 export default initialize;
