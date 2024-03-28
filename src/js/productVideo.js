@@ -42,11 +42,9 @@ const playVideo = (e) => {
     if ( productVideo.paused ) {
         productVideo.play();
         productView.classList.add('videoActive')
-        // videoPlay.textContent = 'Pause'
     } else {
         productVideo.pause();
         productView.classList.remove('videoActive')
-        // videoPlay.textContent = 'Play'
     }
 }
 

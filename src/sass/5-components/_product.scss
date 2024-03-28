@@ -101,7 +101,6 @@
         @include fluid-size(font-size, 8px, 8px);
 
         .active & {
-            // @include fluid-size(font-size, 10px, 10px);
             transform: scale(1.1);
         }
     }
@@ -111,7 +110,6 @@
         @include fluid-size(font-size, 10px, 10px);
 
         .active & {
-            // @include fluid-size(font-size, 11px, 11px);
             transform: scale(1.1);
         }
     }
