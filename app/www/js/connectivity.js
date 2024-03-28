@@ -45,21 +45,18 @@ const pollingBrowserWindow = onlineUrl => {
     onlineUrl.addEventListener( "loadstop", () => {
 
         let localScore = storage.getItem('score')
-        let localPass = storage.getItem('passed')
+        let localPassed = storage.getItem('passed')
 
-        onlineUrl.executeScript({ code: "\
-            if ( " + localScore + " && " + localPass + " ) {\
-                saveScore( " + localScore + ", " + localPass + " )\
-                .then(\
-                    response => {\
-                        console.log('score saved', response)\
-                    },\
-                    response => {\
-                        console.log('score NOT saved', response)\
-                    }\
-                )\
-            }"
-        })
+        onlineUrl.executeScript( {
+            code: `
+                    var eventHandshake = new CustomEvent( 'handshake', {
+                        detail: {
+                            score: ${ localScore },
+                            passed: ${ localPassed }
+                        }
+                    });
+                    document.dispatchEvent( eventHandshake );`
+        } )
 
         var loop = setInterval( () => {
             onlineUrl.executeScript({
@@ -74,6 +71,7 @@ const pollingBrowserWindow = onlineUrl => {
                 }
             })
         })
+
     })
 }
 

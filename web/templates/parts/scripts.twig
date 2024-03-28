@@ -12,4 +12,81 @@
     {% css "@web/assets/css/index.css" %}
 
     {% js "@web/assets/js/core.js" %}
+
+    {% js %}
+        const uuSaveScore = ( score, passed ) => {
+            return uuSendToCms( score, passed )
+            .then(
+                response => {
+                    return Promise.resolve( response )
+                },
+                result => {
+                    return Promise.reject( result )
+                }
+            )
+        }
+
+        const uuSendToCms = ( score, passed ) => {
+            return uuGetSessionInfo()
+            .then(
+                session => {
+                    return uuPushScore( session, score, passed )
+                    .then(
+                        response => {
+                            return Promise.resolve( response )
+                        },
+                        result => {
+                            return Promise.reject( result )
+                        }
+                    )
+                },
+                () => {
+                    return Promise.reject()
+                }
+            )
+        }
+
+        const uuGetSessionInfo = () => {
+            return fetch('/actions/users/session-info', {
+                headers: {
+                    'Accept': 'application/json',
+                },
+            })
+            .then(response => response.json());
+        }
+
+        const uuPushScore = ( session, score, passed ) => {
+            const params = new FormData();
+
+            params.append( 'userId', session.id );
+            params.append( 'fields[score]', score )
+            params.append( 'fields[testPass]', passed )
+
+            return fetch('/actions/users/save-user', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-CSRF-Token': session.csrfTokenValue,
+                },
+                body: params,
+            })
+            .then( response => response.json() )
+            .then( result => result )
+        }
+
+        document.addEventListener("handshake", ( ev ) => {
+            console.log( 'SCORE: ', ev.detail.score )
+            console.log( 'PASSED: ', ev.detail.passed )
+
+            uuSaveScore( ev.detail.score, ev.detail.passed )
+            .then(
+                response => {
+                    console.log('score saved', response)
+                },
+                response => {
+                    console.log('score NOT saved', response)
+                }
+            )
+        });
+    {% endjs %}
 {% endif %}
