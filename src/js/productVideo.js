@@ -44,7 +44,6 @@ const events = (video) => {
         if ( !productVideo.paused ) {
             productNav.classList.add('navActive');
         }
-        
     }) 
 
     productView.addEventListener('mouseleave', () => {
@@ -61,10 +60,12 @@ const playVideo = (e) => {
         productVideo.play();
         productView.classList.add('videoActive')
         videoPlay.classList.add('playActive')
+        hideNav();
     } else {
         productVideo.pause();
         productView.classList.remove('videoActive')
         videoPlay.classList.remove('playActive')
+        showNav();
     }
 }
 
@@ -126,6 +127,9 @@ const nextChapter = () => {
             productVideo.currentTime = chapter.nextElementSibling.getAttribute('data-chapter-start')
         }
     })
+    
+    showNav();
+    hideNav();
 }
 
 const setVolume = (e) => {
@@ -138,6 +142,20 @@ const progressNavDisplay = () => {
     } else {
         productNav.classList.remove('navActive');
     }
+}
+
+const hideNav = () => {
+    setTimeout(() => {
+        if ( !productVideo.paused ) {
+            productNav.classList.remove('navActive');
+        } else {
+            productNav.classList.add('navActive');
+        }
+    },3000)
+}
+
+const showNav = () => {
+    productNav.classList.add('navActive');
 }
 
 export default initialize;

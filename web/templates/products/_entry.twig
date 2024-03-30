@@ -11,23 +11,32 @@
 
 {% block content %}
 
-    {% include "_layouts/_header" with {
-        title: "Training - Centre",
-        subTitle: category.title,
-        subTitleWeight: 'medium'
-    } %}
-    
-    <div class="o-main o-main--shadow">
-        {% include "products/_types/" ~ entry.type %}
-    </div>
+    {% if entry.type != "productFullscreen" %}
 
-    {% set footerSettings = {} %}
-    {% if entry.type.handle != 'product' %}
-        {% set footerSettings = {
-            takeQuizHide: true
+        {% include "_layouts/_header" with {
+            title: "Training - Centre",
+            subTitle: category.title,
+            subTitleWeight: 'medium'
         } %}
+        
+        <div class="o-main o-main--shadow">
+            {% include "products/_types/" ~ entry.type %}
+        </div>
+
+        {% set footerSettings = {} %}
+        {% if entry.type.handle != 'product' %}
+            {% set footerSettings = {
+                takeQuizHide: true
+            } %}
+        {% endif %}
+
+        {% include "_layouts/_footer" with footerSettings %}
+
+    {% else %}
+
+        {% include "products/_types/" ~ entry.type %}
+        
     {% endif %}
 
-    {% include "_layouts/_footer" with footerSettings %}
 
 {% endblock %}

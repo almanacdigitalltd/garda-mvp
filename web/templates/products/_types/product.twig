@@ -1,16 +1,28 @@
-{% set productVideo = entry.productVideo.one() %}
-{% set videoSections = entry.videoSections.all() %}
+{% if entry.type == 'product' %}
 
+    {% set productVideo = entry.productVideo.one() %}
+    {% set productPlaceholder = entry.productPlaceholder.one() %}
+    {% set videoSections = entry.videoSections.all() %}
 
-<div class="c-product">
+{% else %}
 
+    {% set productVideo = entry.parent.productVideo.one() %}
+    {% set videoSections = entry.parent.videoSections.all() %}
+
+{% endif %}
+
+<div class="c-product{{entry.type == 'productFullscreen' ? ' c-product--fullscreen' : ''}}">
+
+    {% if entry.type == 'product' %}
     <h3 class="c-product__title h2">{{ entry.title }} - <span>{{ entry.productBrand }}</span></h3>
+    {% endif %}
 
     <div class="c-product__video-player videoPLayer">
 
         <div class="c-product__video-view">
 
             <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata"></video>
+            <div class="c-product__placeholder" style="background-image: url({{productPlaceholder.url}})"></div>
 
             <div class="c-product__video-nav">
                 
@@ -41,7 +53,7 @@
             <button class="c-product__video-mute videoMute"></button>
             <input class="c-product__video-volume videoVolume" type="range" min="0" max="1" step="0.01" value="1">
             <div class="c-product__video-controls-r">
-                <button class="c-product__video-fullscreen"></button>
+                <a class="c-product__video-fullscreen" href="{{ craft.app.request.url }}/fullscreen"></a>
                 <button class="c-product__video-download c-product__video-downloaded"></button>
             </div>
         </div>

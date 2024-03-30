@@ -69,6 +69,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 6f57477e-3632-4978-b8f7-e42004d6e3b0 # Product Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e793ec6c-8fe5-4868-98b7-86794d9d4592
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 77ed3694-98fe-460a-88b1-e12cd9e20787 # Product Video
             instructions: null
             label: null
