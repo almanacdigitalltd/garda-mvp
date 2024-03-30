@@ -7,6 +7,7 @@
 {% else %}
 
     {% set productVideo = entry.parent.productVideo.one() %}
+    {% set productPlaceholder = entry.parent.productPlaceholder.one() %}
     {% set videoSections = entry.parent.videoSections.all() %}
 
 {% endif %}
@@ -22,7 +23,7 @@
         <div class="c-product__video-view">
 
             <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata"></video>
-            <div class="c-product__placeholder" style="background-image: url({{productPlaceholder.url}})"></div>
+            <div class="c-product__placeholder" style="background-image: url(/assets/img/film-poster.jpg)"></div>
 
             <div class="c-product__video-nav">
                 
