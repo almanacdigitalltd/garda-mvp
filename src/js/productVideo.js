@@ -11,11 +11,12 @@ const videoNext = document.querySelector('.videoNext')
 const videoVolume = document.querySelector('.videoVolume')
 
 const initialize = () => {
-    setTimeout(()=> {
+    
+    productVideo.onloadedmetadata = (event) => {
         setChapterEndtime()
         renderChapterSize()
         progressNavDisplay()
-    }, 200)
+    }
 
     if(!productVideo) return
     events(productVideo);
@@ -59,14 +60,11 @@ const playVideo = (e) => {
     if ( productVideo.paused ) {
         productVideo.play();
         productView.classList.add('videoActive')
-
-        // setTimeout(() => {
-        //     progressNavDisplay()
-        // },3000)
+        videoPlay.classList.add('playActive')
     } else {
         productVideo.pause();
         productView.classList.remove('videoActive')
-        // progressNavDisplay()
+        videoPlay.classList.remove('playActive')
     }
 }
 
@@ -119,10 +117,6 @@ const setProgress = () => {
 }
 
 const changeProgress = (e) => {
-    console.log(productProgress.offsetWidth)
-    console.log((e.offsetX/e.srcElement.clientWidth)*productVideo.duration)
-    console.log(e.offsetX)
-
     productVideo.currentTime = (e.offsetX/e.srcElement.clientWidth)*productVideo.duration
 }
 
@@ -139,7 +133,6 @@ const setVolume = (e) => {
 }
 
 const progressNavDisplay = () => {
-    console.log('here')
     if ( productVideo.paused ) {
         productNav.classList.add('navActive');
     } else {

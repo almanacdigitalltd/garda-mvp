@@ -165,6 +165,12 @@
             height: 17px;
             background-image: url(@assets/img/icon-play.svg);
         }
+
+        &.playActive {
+            &:before {
+                background-image: url(@assets/img/icon-pause.svg);
+            }
+        }
     }
 
     &__video-next {
