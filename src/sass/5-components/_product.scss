@@ -5,11 +5,39 @@
     @include fluid-size(padding-right, 24px, 36px);
 
     &--fullscreen {
-        width: 100%;
+        padding: 0;
+        width: 94vw;
+
+        &::before,
+        &:after {
+            background-color: $color-black;
+            content: '';
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            width: 50vw;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            right: 0;
+        }
 
         .c-product__video-player {
-            width: 98%;
+            width: 100%;
         }
+
+        .c-product__video-fullscreen,
+        .c-product__video-download {
+            display: none;
+        }
+    }
+
+    &--back {
+        position: absolute;
     }
 
     &__title {
@@ -106,9 +134,13 @@
         &:last-child {
             text-align: right;
 
-            .c-product__section-num,
             .c-product__section-title {
-                margin-left: -107px;
+                position: absolute;
+                right: 0;
+            }
+
+            .c-product__section-num {
+                margin-bottom: 19px;
             }
         }
 
@@ -124,30 +156,19 @@
     &__section-title {
         display: none;
         text-transform: uppercase;
-        transition: transform 0.3s;
-        transform-origin: left;
-        transform: scale(1);
-        width: 220px;
+        white-space: nowrap;
     }
     
     &__section-num {
         font-weight: $font-medium;
         @include fluid-size(font-size, 16px, 18px);
         @include fluid-size(line-height, 17px, 19px);
-
-        .active & {
-            transform: scale(1.1);
-        }
     }
-
+    
     &__section-title {
         font-weight: $font-bold;
         @include fluid-size(font-size, 18px, 20px);
         @include fluid-size(line-height, 17px, 19px);
-
-        .active & {
-            transform: scale(1.1);
-        }
     }
 
     &__progress-wrap {
@@ -191,6 +212,7 @@
         display: flex;
         align-items: center;
         padding: 14px 24px 0;
+        position: relative;
     }
 
     &__video-play,

@@ -1,2 +1,4 @@
-{% include "products/_types/product.twig" %}
-<a class="e-button e-button--round e-button--back" href="javascript:history.back()">Go Back</a>
+<a class="e-button e-button--round e-button--back c-product--back" href="javascript:history.back()">Go Back</a>
+{% include "products/_types/product.twig" with {
+    classAlternate: 'fullscreen'
+} %}

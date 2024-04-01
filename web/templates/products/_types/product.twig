@@ -1,20 +1,20 @@
-{% if entry.type == 'product' %}
+{% if classAlternate is defined %}
+    {% set fullscreen = true %}
+{% endif %}
 
-    {% set productVideo = entry.productVideo.one() %}
-    {% set productPlaceholder = entry.productPlaceholder.one() %}
-    {% set videoSections = entry.videoSections.all() %}
-
-{% else %}
-
+{% if fullscreen is defined %}
     {% set productVideo = entry.parent.productVideo.one() %}
     {% set productPlaceholder = entry.parent.productPlaceholder.one() %}
     {% set videoSections = entry.parent.videoSections.all() %}
-
+{% else %}
+    {% set productVideo = entry.productVideo.one() %}
+    {% set productPlaceholder = entry.productPlaceholder.one() %}
+    {% set videoSections = entry.videoSections.all() %}
 {% endif %}
 
-<div class="c-product{{entry.type == 'productFullscreen' ? ' c-product--fullscreen' : ''}}">
+<div class="c-product{{fullscreen is defined ? ' c-product--fullscreen' : ''}}">
 
-    {% if entry.type == 'product' %}
+    {% if classAlternate is not defined %}
     <h3 class="c-product__title h2">{{ entry.title }} - <span>{{ entry.productBrand }}</span></h3>
     {% endif %}
 
@@ -22,7 +22,9 @@
 
         <div class="c-product__video-view">
 
-            <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata" poster="/assets/img/film-poster.jpg"></video>
+            <div class="c-product__video-wrap productWrap">
+                {# <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata" poster="/assets/img/film-poster.jpg"></video> #}
+            </div>
 
             <div class="c-product__video-nav">
                 

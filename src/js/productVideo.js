@@ -1,4 +1,5 @@
-const productVideo = document.querySelector('.productVideo');
+let productVideo
+const productWrap = document.querySelector('.productWrap');
 const productChapter = document.querySelectorAll('.productChapter');
 const productProgress = document.querySelector('.productProgress');
 const productSeek = document.querySelector('.productSeek');
@@ -14,21 +15,25 @@ const videoVolume = document.querySelector('.videoVolume')
 let videoDuration
 
 const initialize = () => {
-    if(!productVideo) return
+    if(!productWrap) return
+
+    productVideo = document.createElement('video')
+    productVideo.classList.add('c-product__video', 'productVideo')
+    productVideo.src = '/assets/videos/spot.mp4'
+    productVideo.setAttribute('poster', '/assets/img/film-poster.jpg')
+    productWrap.appendChild( productVideo )
     
     productVideo.addEventListener('loadedmetadata', () => {
-        setTimeout( () => {
-            videoDuration = Math.round( productVideo.duration )
-    
-            productSeek.setAttribute('max', videoDuration);
-            productProgress.setAttribute('max', videoDuration);
-    
-            setChapterEndtime()
-            renderChapterSize()
-            
-            events(productVideo);
-        }, 300)
-    })
+        videoDuration = Math.round( productVideo.duration )
+
+        productSeek.setAttribute('max', videoDuration);
+        productProgress.setAttribute('max', videoDuration);
+
+        setChapterEndtime()
+        renderChapterSize()
+        
+        events(productVideo);
+    }, true)
 }
 
 const events = (video) => {
