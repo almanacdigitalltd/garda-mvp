@@ -1,6 +1,7 @@
 const productVideo = document.querySelector('.productVideo');
 const productChapter = document.querySelectorAll('.productChapter');
 const productProgress = document.querySelector('.productProgress');
+const productSeek = document.querySelector('.productSeek');
 
 const productView = document.querySelector('.c-product__video-view');
 const productNav = document.querySelector('.c-product__video-nav');
@@ -10,90 +11,74 @@ const videoPlay = document.querySelector('.videoPlay')
 const videoNext = document.querySelector('.videoNext')
 const videoVolume = document.querySelector('.videoVolume')
 
-let isPlaying = false
+let videoDuration
 
 const initialize = () => {
     if(!productVideo) return
     
     productVideo.onloadedmetadata = () => {
         setTimeout( () => {
+            videoDuration = Math.round( productVideo.duration )
+
+            productSeek.setAttribute('max', videoDuration);
+            productProgress.setAttribute('max', videoDuration);
+
             setChapterEndtime()
             renderChapterSize()
-            progressNavDisplay()
-        }, 1)
+            
+            events(productVideo);
+        }, 100)
     }
-
-    events(productVideo);
 }
 
 const events = (video) => {
     
-    video.addEventListener('click', playVideo);
+    video.addEventListener('click', () => {
+        playVideo('initial')
+    });
     
-    videoPlay.addEventListener('click', playVideo);
+    videoPlay.addEventListener('click', () => {
+        playVideo('control')
+    });
 
     videoNext.addEventListener('click', nextChapter);
 
     videoVolume.addEventListener('input', setVolume);
 
-    productProgress.addEventListener('click', changeProgress);
+    productSeek.addEventListener('input', skipAhead);
 
-    video.addEventListener('timeupdate', updateTime)
-
-    productChapter.forEach((chapter) => {
-        chapter.addEventListener('click', () => {
-            playChapter(chapter);
-        })
-    });
-
-    productView.addEventListener('mouseover', () => {
-        if ( !productVideo.paused ) {
-            productNav.classList.add('navActive');
-        }
-    }) 
-
-    productView.addEventListener('mouseleave', () => {
-        if ( !productVideo.paused ) {
-            setTimeout(() => {
-                productNav.classList.remove('navActive');
-            },1000)
-        }
-    }) 
+    video.addEventListener('timeupdate', updateTime);
 }
 
-const playVideo = (e) => {
+const playVideo = (type = 'control') => {
     if ( productVideo.paused ) {
         productVideo.play();
         productView.classList.add('videoActive')
         videoPlay.classList.add('playActive')
         hideNav();
-
-        isPlaying = true
     } else {
-        productVideo.pause();
-        productView.classList.remove('videoActive')
+        if ( type == 'initial' ) {
+            showNav();
+        } else {
+            productVideo.pause();
+        }
+
         videoPlay.classList.remove('playActive')
-        showNav();
 
-        isPlaying = false
+        setTimeout(() => {
+            hideNav();
+        }, 3000)
     }
-}
-
-const playChapter = (chapter) => {
-    productVideo.currentTime = chapter.getAttribute('data-chapter-start');
 }
 
 const setChapterEndtime = () => {
     
     for(let i=0; i < productChapter.length; i++) {
-        let startTime;
         let endTime;
         
         if (i < productChapter.length-1) {
-            startTime = productChapter[i].getAttribute('data-chapter-start');
             endTime = productChapter[i+1].getAttribute('data-chapter-start');
         } else {
-            startTime = productChapter[i].getAttribute('data-chapter-start');
             endTime = Math.round(productVideo.duration);
         }
 
@@ -124,13 +109,14 @@ const chapterStatus = () => {
 }
 
 const setProgress = () => {
-    if ( isPlaying ) {
-        Math.round(productProgress.value = productVideo.currentTime/productVideo.duration*100)
-    }
+    productSeek.value = Math.floor( productVideo.currentTime )
+    productProgress.value = Math.floor( productVideo.currentTime )
 }
 
-const changeProgress = (e) => {
-    productVideo.currentTime = (e.offsetX/e.srcElement.clientWidth)*productVideo.duration
+const skipAhead = ev => {
+    const skipTo = ev.target.dataset.seek ? ev.target.dataset.seek : ev.target.value;
+    productVideo.currentTime = skipTo;
+    productProgress.value = skipTo;
 }
 
 const nextChapter = () => {
@@ -146,14 +132,6 @@ const nextChapter = () => {
 
 const setVolume = (e) => {
     productVideo.volume = e.target.value
-}
-
-const progressNavDisplay = () => {
-    if ( productVideo.paused ) {
-        productNav.classList.add('navActive');
-    } else {
-        productNav.classList.remove('navActive');
-    }
 }
 
 const hideNav = () => {

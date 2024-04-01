@@ -18,10 +18,6 @@
     <h3 class="c-product__title h2">{{ entry.title }} - <span>{{ entry.productBrand }}</span></h3>
     {% endif %}
 
-    {% if entry.parent.type == 'product' %}
-    <h3 class="c-product__title h2">{{ entry.parent.title }} - <span>{{ entry.parent.productBrand }}</span></h3>
-    {% endif %}
-
     <div class="c-product__video-player videoPLayer">
 
         <div class="c-product__video-view">
@@ -35,7 +31,7 @@
 
                     {% for section in videoSections %}
                     <div class="c-product__chapter productChapter" data-chapter-start="{{ section.sectionTime }}">
-                        <div class="c-product__section-num">Section {{ loop.index - 1 }}</div>
+                        <div class="c-product__section-num">Section {{ loop.index }}</div>
                         <div class="c-product__section-title">
                             {{ section.sectionTitle }}
                         </div>
@@ -45,7 +41,10 @@
                 </div>
                 {% endif %}
                 
-                <progress class="c-product__progess productProgress" max="100" value="0"></progress>
+                <div class="c-product__progress-wrap">
+                    <progress class="c-product__progress productProgress" value="0" min="0"></progress>
+                    <input class="c-product__progress productSeek" value="0" min="0" type="range" step="1">
+                </div>
             
             </div>
 
