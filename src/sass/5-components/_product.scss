@@ -60,12 +60,13 @@
     }
 
     &__video-nav {
+        backdrop-filter: blur(3px);
+        background-color: rgba($color-white, 0.6);
         display: none;
         position: absolute;
         width: 100%;
         bottom: 0;
-        padding: 0 30px 18px;
-        background: linear-gradient(0deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 100%);
+        padding: 20px 30px 28px;
         z-index: 2;
 
         &.navActive {

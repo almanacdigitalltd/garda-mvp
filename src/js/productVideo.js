@@ -27,7 +27,7 @@ const initialize = () => {
             renderChapterSize()
             
             events(productVideo);
-        }, 100)
+        }, 300)
     })
 }
 
@@ -64,9 +64,9 @@ const playVideo = (type = 'control') => {
     } else {
         if ( type == 'control' ) {
             productVideo.pause();
+            videoPlay.classList.remove('playActive')
         }
 
-        videoPlay.classList.remove('playActive')
     }
 }
 
