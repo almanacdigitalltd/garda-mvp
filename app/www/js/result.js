@@ -16,14 +16,11 @@ const initialize = () => {
     }
 }
 
-const setContent = () => {
-    passedContent.classList.add('js-hide')
-    failedContent.classList.add('js-hide')
-
+const setContent = () => {    
     scoreContent.forEach( el => {
         el.textContent = score
     });
-
+    
     if ( passed == 1 ) {
         title.classList.remove('c-quiz__title--fail')
         title.classList.add('c-quiz__title--pass')

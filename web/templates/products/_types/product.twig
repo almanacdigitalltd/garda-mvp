@@ -18,12 +18,15 @@
     <h3 class="c-product__title h2">{{ entry.title }} - <span>{{ entry.productBrand }}</span></h3>
     {% endif %}
 
+    {% if entry.parent.type == 'product' %}
+    <h3 class="c-product__title h2">{{ entry.parent.title }} - <span>{{ entry.parent.productBrand }}</span></h3>
+    {% endif %}
+
     <div class="c-product__video-player videoPLayer">
 
         <div class="c-product__video-view">
 
-            <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata"></video>
-            <div class="c-product__placeholder" style="background-image: url(/assets/img/film-poster.jpg)"></div>
+            <video class="c-product__video productVideo" src="/assets/videos/spot.mp4" preload="metadata" poster="/assets/img/film-poster.jpg"></video>
 
             <div class="c-product__video-nav">
                 

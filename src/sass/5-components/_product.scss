@@ -6,11 +6,15 @@
 
     &--fullscreen {
         width: 100%;
+
+        .c-product__video-player {
+            width: 98%;
+        }
     }
 
     &__title {
         text-align: center;
-        @include fluid-size(margin-bottom, 18px, 18epx);
+        @include fluid-size(margin-bottom, 18px, 18px);
 
         span {
             font-weight: $font-medium;
@@ -50,10 +54,13 @@
     }
 
     &__video {
+        position: relative;
         width: 100%;
+        z-index: 1;
     }
 
     &__placeholder {
+        background-image: url(@assets/img/film-poster.jpg);
         position: absolute;
         top: 0;
         left: 0;
@@ -73,6 +80,7 @@
         bottom: 0;
         padding: 0 30px 18px;
         background: linear-gradient(0deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 100%);
+        z-index: 2;
 
         opacity: 0;
         transition: opacity 0.3s;

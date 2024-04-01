@@ -23,7 +23,12 @@
     </div>
 
     {% if currentUser.testPass == 1 %}
-        IMAGE HERE
+        {% set resultImage = entry.resultImage.all() %}
+        {% if resultImage[0] %}
+        <div class="c-result__image">
+            {{ resultImage[0].getImg() }}
+        </div>
+        {% endif %}
     {% endif %}
 
     <h5 class="h1 fw-light c-result__pass-text">

@@ -1,5 +1,6 @@
 import connectivity from "./connectivity.js"
 import result from "./result.js"
+import status from "./status.js"
 
 document.addEventListener('deviceready', onDeviceReady, false)
 
@@ -11,4 +12,6 @@ function onDeviceReady() {
     connectivity()
 
     result()
+
+    status()
 }

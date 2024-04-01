@@ -10,15 +10,19 @@ const videoPlay = document.querySelector('.videoPlay')
 const videoNext = document.querySelector('.videoNext')
 const videoVolume = document.querySelector('.videoVolume')
 
+let isPlaying = false
+
 const initialize = () => {
+    if(!productVideo) return
     
-    productVideo.onloadedmetadata = (event) => {
-        setChapterEndtime()
-        renderChapterSize()
-        progressNavDisplay()
+    productVideo.onloadedmetadata = () => {
+        setTimeout( () => {
+            setChapterEndtime()
+            renderChapterSize()
+            progressNavDisplay()
+        }, 1)
     }
 
-    if(!productVideo) return
     events(productVideo);
 }
 
@@ -27,7 +31,9 @@ const events = (video) => {
     video.addEventListener('click', playVideo);
     
     videoPlay.addEventListener('click', playVideo);
+
     videoNext.addEventListener('click', nextChapter);
+
     videoVolume.addEventListener('input', setVolume);
 
     productProgress.addEventListener('click', changeProgress);
@@ -61,11 +67,15 @@ const playVideo = (e) => {
         productView.classList.add('videoActive')
         videoPlay.classList.add('playActive')
         hideNav();
+
+        isPlaying = true
     } else {
         productVideo.pause();
         productView.classList.remove('videoActive')
         videoPlay.classList.remove('playActive')
         showNav();
+
+        isPlaying = false
     }
 }
 
@@ -114,7 +124,9 @@ const chapterStatus = () => {
 }
 
 const setProgress = () => {
-    Math.round(productProgress.value = productVideo.currentTime/productVideo.duration*100)
+    if ( isPlaying ) {
+        Math.round(productProgress.value = productVideo.currentTime/productVideo.duration*100)
+    }
 }
 
 const changeProgress = (e) => {
@@ -151,7 +163,7 @@ const hideNav = () => {
         } else {
             productNav.classList.add('navActive');
         }
-    },3000)
+    }, 3000)
 }
 
 const showNav = () => {
