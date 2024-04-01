@@ -16,19 +16,19 @@ let videoDuration
 const initialize = () => {
     if(!productVideo) return
     
-    productVideo.onloadedmetadata = () => {
+    productVideo.addEventListener('loadedmetadata', () => {
         setTimeout( () => {
             videoDuration = Math.round( productVideo.duration )
-
+    
             productSeek.setAttribute('max', videoDuration);
             productProgress.setAttribute('max', videoDuration);
-
+    
             setChapterEndtime()
             renderChapterSize()
             
             events(productVideo);
         }, 100)
-    }
+    })
 }
 
 const events = (video) => {
@@ -47,6 +47,12 @@ const events = (video) => {
 
     productSeek.addEventListener('input', skipAhead);
 
+    productView.addEventListener('mouseover', videoOver);
+    productView.addEventListener('touchstart', videoOver);
+    productView.addEventListener('touchmove', videoOver);
+    productView.addEventListener('mouseout', videoOut);
+    productView.addEventListener('touchend', videoOut);
+
     video.addEventListener('timeupdate', updateTime);
 }
 
@@ -55,19 +61,12 @@ const playVideo = (type = 'control') => {
         productVideo.play();
         productView.classList.add('videoActive')
         videoPlay.classList.add('playActive')
-        hideNav();
     } else {
-        if ( type == 'initial' ) {
-            showNav();
-        } else {
+        if ( type == 'control' ) {
             productVideo.pause();
         }
 
         videoPlay.classList.remove('playActive')
-
-        setTimeout(() => {
-            hideNav();
-        }, 3000)
     }
 }
 
@@ -119,15 +118,20 @@ const skipAhead = ev => {
     productProgress.value = skipTo;
 }
 
+const videoOver = () => {
+    showNav()
+}
+
+const videoOut = () => {
+    hideNav()
+}
+
 const nextChapter = () => {
     productChapter.forEach((chapter) => {
         if( chapter.classList.contains('active') ) {
             productVideo.currentTime = chapter.nextElementSibling.getAttribute('data-chapter-start')
         }
     })
-    
-    showNav();
-    hideNav();
 }
 
 const setVolume = (e) => {
@@ -136,12 +140,8 @@ const setVolume = (e) => {
 
 const hideNav = () => {
     setTimeout(() => {
-        if ( !productVideo.paused ) {
-            productNav.classList.remove('navActive');
-        } else {
-            productNav.classList.add('navActive');
-        }
-    }, 3000)
+        productNav.classList.remove('navActive');
+    }, 7500)
 }
 
 const showNav = () => {

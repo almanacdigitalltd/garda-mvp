@@ -59,30 +59,14 @@
         z-index: 1;
     }
 
-    &__placeholder {
-        background-image: url(@assets/img/film-poster.jpg);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        pointer-events: none;
-
-        .videoActive & {
-            display: none;
-        }
-    }
-
     &__video-nav {
+        display: none;
         position: absolute;
         width: 100%;
         bottom: 0;
         padding: 0 30px 18px;
         background: linear-gradient(0deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 100%);
         z-index: 2;
-
-        display: block;
 
         &.navActive {
             display: block;
@@ -92,6 +76,8 @@
     &__chapters {
         display: flex;
         margin-bottom: 8px;
+        position: relative;
+        z-index: 2;
     }
 
     &__chapter {
@@ -118,6 +104,11 @@
 
         &:last-child {
             text-align: right;
+
+            .c-product__section-num,
+            .c-product__section-title {
+                margin-left: -107px;
+            }
         }
 
         &.active {
@@ -135,7 +126,7 @@
         transition: transform 0.3s;
         transform-origin: left;
         transform: scale(1);
-        width: 200px;
+        width: 220px;
     }
     
     &__section-num {
@@ -158,11 +149,17 @@
         }
     }
 
+    &__progress-wrap {
+        position: relative;
+        z-index: 1;
+    }
+
     &__progress {
         display: flex;
         width: 100%;
         height: 10px;
         border-radius: 0;
+        position: absolute;
         
         &::-webkit-progress-bar {
             background-color: $secondary-color;
@@ -170,6 +167,21 @@
 
         &::-webkit-progress-value {
             background-color: $color-black;
+        }
+    }
+
+    &__seek {
+        appearance: none;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            height: 20px;
+            margin-left: -5px;
+            margin-top: -5px;
+            width: 20px;
         }
     }
 
