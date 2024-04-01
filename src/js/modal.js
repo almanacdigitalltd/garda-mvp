@@ -50,10 +50,18 @@ const render = () => {
     modalContent.appendChild( modalText )
 
     if ( type == 'app-logout' ) {
+        const modalButtonYes = document.createElement( 'button' )
+        modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes', 'o-modal__hide' )
+        const buttonYesText = document.createTextNode( 'Ok' )
+        modalButtonYes.appendChild( buttonYesText )
+        
         const modalButtonNo = document.createElement( 'button' )
         modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
         const buttonNoText = document.createTextNode( 'Ok' )
         modalButtonNo.appendChild( buttonNoText )
+
+        modalContent.appendChild( modalButtonYes )
+        modalContent.appendChild( modalButtonNo )
     } else {
         const modalButtonYes = document.createElement( 'button' )
         modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes' )

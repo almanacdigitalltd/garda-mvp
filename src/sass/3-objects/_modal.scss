@@ -66,4 +66,10 @@
             background-image: url(@assets/img/icon-no.svg);
         }
     }
+
+    &__hide {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+    }
 }

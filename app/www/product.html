@@ -44,44 +44,46 @@
 
                         <div class="c-product__video-view">
 
-                            <video class="c-product__video productVideo" src="videos/spot.mp4" preload="metadata" poster="img/film-poster.jpg"></video>
+                            <div class="c-product__video-wrap productWrap">
+                                <!-- VIDEO DYNAMICALLY ADDED HERE -->
+                            </div>
 
                             <div class="c-product__video-nav">
                     
                                 <div class="c-product__chapters">
 
                                     <div class="c-product__chapter productChapter" data-chapter-start="0">
-                                        <div class="c-product__section-num">Section 0</div>
+                                        <div class="c-product__section-num">Section 1</div>
                                         <div class="c-product__section-title">
-                                            
+                                            INTRODUCTION
                                         </div>
                                     </div>
                                     <div class="c-product__chapter productChapter" data-chapter-start="60">
-                                        <div class="c-product__section-num">Section 1</div>
+                                        <div class="c-product__section-num">Section 2</div>
                                         <div class="c-product__section-title">
                                             PRE-DEPLOYMENT
                                         </div>
                                     </div>
                                     <div class="c-product__chapter productChapter" data-chapter-start="197">
-                                        <div class="c-product__section-num">Section 2</div>
+                                        <div class="c-product__section-num">Section 3</div>
                                         <div class="c-product__section-title">
                                             CONFIGURATION
                                         </div>
                                     </div>
                                     <div class="c-product__chapter productChapter" data-chapter-start="453">
-                                        <div class="c-product__section-num">Section 3</div>
+                                        <div class="c-product__section-num">Section 4</div>
                                         <div class="c-product__section-title">
                                             START-UP
                                         </div>
                                     </div>
                                     <div class="c-product__chapter productChapter" data-chapter-start="631">
-                                        <div class="c-product__section-num">Section 4</div>
+                                        <div class="c-product__section-num">Section 5</div>
                                         <div class="c-product__section-title">
                                             OPERATION
                                         </div>
                                     </div>
                                     <div class="c-product__chapter productChapter" data-chapter-start="940">
-                                        <div class="c-product__section-num">Section 5</div>
+                                        <div class="c-product__section-num">Section 6</div>
                                         <div class="c-product__section-title">
                                             POST-DEPLOYMENT
                                         </div>
@@ -89,7 +91,10 @@
                                                         
                                 </div>
                                                 
-                                <progress class="c-product__progess productProgress" max="100" value="0"></progress>
+                                <div class="c-product__progress-wrap">
+                                    <progress class="c-product__progress productProgress" value="0" min="0"></progress>
+                                    <input class="c-product__seek productSeek" value="0" min="0" type="range" step="1">
+                                </div>
                             
                             </div>
 
