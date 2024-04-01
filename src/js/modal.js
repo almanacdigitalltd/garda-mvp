@@ -1,3 +1,5 @@
+var isCordovaApp = !!window.cordova;
+
 let type, link
 
 const initialize = () => {
@@ -24,6 +26,10 @@ const render = () => {
         content = 'Your progress will NOT be saved. Are you sure you want to exit this test?'
     }
 
+    if ( type == 'app-logout' ) {
+        content = 'Log out disabled when tablet is offline'
+    }
+
     const modalContainer = document.createElement( 'div' )
     modalContainer.classList.add( 'o-modal' )
 
@@ -39,21 +45,29 @@ const render = () => {
     modalText.classList.add( 'o-modal__text' )
     const contentText = document.createTextNode( content )
     modalText.appendChild( contentText )
-
-    const modalButtonYes = document.createElement( 'button' )
-    modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes' )
-    const buttonYesText = document.createTextNode( 'Yes' )
-    modalButtonYes.appendChild( buttonYesText )
-
-    const modalButtonNo = document.createElement( 'button' )
-    modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
-    const buttonNoText = document.createTextNode( 'No' )
-    modalButtonNo.appendChild( buttonNoText )
-
+    
     modalContent.appendChild( modalHeader )
     modalContent.appendChild( modalText )
-    modalContent.appendChild( modalButtonYes )
-    modalContent.appendChild( modalButtonNo )
+
+    if ( type == 'app-logout' ) {
+        const modalButtonNo = document.createElement( 'button' )
+        modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
+        const buttonNoText = document.createTextNode( 'Ok' )
+        modalButtonNo.appendChild( buttonNoText )
+    } else {
+        const modalButtonYes = document.createElement( 'button' )
+        modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes' )
+        const buttonYesText = document.createTextNode( 'Yes' )
+        modalButtonYes.appendChild( buttonYesText )
+    
+        const modalButtonNo = document.createElement( 'button' )
+        modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
+        const buttonNoText = document.createTextNode( 'No' )
+        modalButtonNo.appendChild( buttonNoText )
+        
+        modalContent.appendChild( modalButtonYes )
+        modalContent.appendChild( modalButtonNo )
+    }
 
     modalContainer.appendChild( modalContent )
     modalContainer.classList.add( 'o-modal--show' )

@@ -21,7 +21,7 @@
             {% nav category in categories %}
             {% set categoryImage = category.categoryImage.all() %}
 
-            <a href="{{ category.url }}" class="c-categories__item">
+            <a href="{{ category.url }}" class="c-categories__item{% if loop.last and not currentUser.testPass %} c-categories__item--tag{% endif %}">
 
                 {% if categoryImage %}
                 <div class="c-categories__icon">
@@ -35,6 +35,8 @@
                 <h2 class="h3 c-categories__title">
                     {{ category.title }}
                 </h2>
+
+                <div class="c-categories__tag">1</div>
             </a>
             {% endnav %}
 

@@ -14,6 +14,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
         text-align: center;
         text-decoration: none;
 
@@ -32,11 +33,39 @@
                     display: block;
                 }
             }
+
+            .c-categories__tag {
+                background-color: rgba($color-fail, 0.5);
+                box-shadow: inset -6px 0px 3px 0 rgba(#FF6969, 0.31);
+            }
         }
 
         &:last-of-type {
             pointer-events: all;
         }
+
+        &--tag {
+            .c-categories__tag {
+                display: flex;
+            }
+        }
+    }
+
+    &__tag {
+        align-items: center;
+        background-color: $color-fail;
+        border-radius: 6px 0 0 6px;
+        box-shadow: inset -3px 0px 3px 0 #6E0000;
+        color: $primary-color;
+        display: none;
+        font-weight: $font-bold;
+        height: 34px;
+        justify-content: center;
+        margin-top: -17px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 40px;
     }
 
     &__icon {

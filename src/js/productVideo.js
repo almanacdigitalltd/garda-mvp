@@ -1,3 +1,5 @@
+var isCordovaApp = !!window.cordova;
+
 let productVideo
 const productWrap = document.querySelector('.productWrap');
 const productChapter = document.querySelectorAll('.productChapter');
@@ -13,14 +15,21 @@ const videoNext = document.querySelector('.videoNext')
 const videoVolume = document.querySelector('.videoVolume')
 
 let videoDuration
+let videoSrc = '/assets/videos/spot.mp4'
+let videoPoster = '/assets/img/film-poster.jpg'
+
+if ( isCordovaApp ) {
+    videoSrc = 'videos/spot.mp4'
+    videoPoster = 'img/film-poster.jpg'
+}
 
 const initialize = () => {
     if(!productWrap) return
 
     productVideo = document.createElement('video')
     productVideo.classList.add('c-product__video', 'productVideo')
-    productVideo.src = '/assets/videos/spot.mp4'
-    productVideo.setAttribute('poster', '/assets/img/film-poster.jpg')
+    productVideo.src = videoSrc
+    productVideo.setAttribute('poster', videoPoster)
     productWrap.appendChild( productVideo )
     
     productVideo.addEventListener('loadedmetadata', () => {

@@ -28,10 +28,10 @@
             3px 3px 6px rgba($color-black, 0.43);
         color: $secondary-color;
         display: inline-flex;
-        @include fluid-size(font-size, 16px, 18px);
+        @include fluid-size(font-size, 15px, 15px);
         font-weight: $font-semi-bold;
         height: 41px;
-        @include fluid-size(line-height, 20px, 22px);
+        @include fluid-size(line-height, 19px, 19px);
         @include fluid-size(padding-left, 18px, 25px);
         @include fluid-size(padding-right, 18px, 25px);
     }
@@ -46,7 +46,11 @@
     }
 
     &--back {
-        margin-bottom: 16px;
+        background-image: url(@assets/img/icon-minimise.svg);
+        background-size: contain;
+        height: 52px;
+        width: 60px;
+        z-index: 3;
     }
 
 }

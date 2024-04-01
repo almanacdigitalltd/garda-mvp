@@ -15,6 +15,7 @@ if ( fraction && slides ) {
 }
 
 const nextButton = document.querySelector( '.c-quiz__next' )
+const prevButton = document.querySelector( '.c-quiz__previous' )
 const submitButton = document.querySelector( '.c-quiz__submit' )
 
 const initialize = () => {
@@ -32,6 +33,7 @@ const setupSwiper = () => {
         modules: [ Navigation, Pagination ],
         navigation: {
             nextEl: '.c-quiz__next',
+            prevEl: '.c-quiz__previous',
         },
         pagination: {
             el: '.c-quiz__bar',
@@ -53,6 +55,12 @@ const onSlideChange = swiper => {
     fraction.textContent = `${index} of ${slideCount}`
     nextButton.classList.add( 'e-button--disabled' )
     submitButton.classList.add( 'e-button--disabled' )
+    
+    if ( index > 1 ) {
+        prevButton.classList.remove( 'e-button--disabled' )
+    } else {
+        prevButton.classList.add( 'e-button--disabled' )
+    }
 
     answerTrigger( document.querySelector( '.c-quiz__swiper .swiper-slide-' + index ) )
 
