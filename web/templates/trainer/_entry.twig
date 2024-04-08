@@ -1,0 +1,89 @@
+{% requireLogin %}
+{% requirePermission 'editUsers' %}
+
+{% set allProductCategories = craft.categories()
+    .group('productCategories')
+    .all() %}
+
+{% set allProducts = craft.entries()
+  .section('products')
+  .level('1')
+  .all() %}
+
+{% set allOperators = craft.users()
+    .group('operator')
+    .all() %}
+
+{% extends "_layouts/_base" %}
+
+{% block content %}
+
+    {% include "_layouts/_header" with {
+        title: "Training - Overview"
+    } %}
+
+    {% if allProductCategories %}
+    <div class="c-trainer-overview__categories">
+
+        {% nav category in allProductCategories %}
+
+            <button class="e-button e-button--round c-trainer-overview__button{% if loop.last %} c-trainer-overview__button--active{% endif %}">
+                {{ category.title }}
+            </button>
+
+        {% endnav %}
+
+    </div>
+    {% endif %}
+
+    <div class="o-main o-main--wide">
+
+        <div class="c-trainer-overview">
+
+            {% if allOperators %}
+            <div class="c-trainer-overview__users">
+
+                {% for user in allOperators %}
+
+                    <div class="c-trainer-overview__username">
+                        {{ user.username }}
+                    </div>
+
+                {% endfor %}
+
+            </div>
+            {% endif %}
+
+            {% if allOperators %}
+            <div class="c-trainer-overview__products-wrap">
+
+                {% for user in allOperators %}
+                
+                    {% if allProducts %}
+                    <div class="c-trainer-overview__products">
+
+                        {% for product in allProducts %}
+                        <div class="c-trainer-overview__product">
+                            <div class="c-trainer-overview__product-circle{% if product.slug == 'spot-system' and user.testPass %} c-trainer-overview__product-circle--pass{% endif %}"></div>
+                            <div class="c-trainer-overview__product-text">{{ product.title }}</div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    {% endif %}
+
+                {% endfor %}
+
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% set footerSettings = {
+        takeQuizHide: true
+    } %}    
+    {% include "_layouts/_footer" with footerSettings %}
+
+{% endblock %}

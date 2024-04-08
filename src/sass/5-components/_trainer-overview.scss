@@ -1,0 +1,74 @@
+.c-trainer-overview {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+    column-gap: 10px;
+
+    &__categories {
+        display: flex;
+        column-gap: 10px;
+        justify-content:space-between;
+        @include fluid-size(max-width, $main-width-wide, calc($main-width-wide + 400px), $font-lock-max, calc($font-lock-max + 400px));
+        width: 100%;
+    }
+
+    &__button {
+        @include fluid-size(font-size, 12px, 13px);
+        font-weight: $font-light;
+        @include fluid-size(line-height, 15px, 16px);
+        @include fluid-size(padding-left, 15px, 16px);
+        @include fluid-size(padding-right, 15px, 16px);
+
+        &--active {
+            box-shadow:
+                inset -1px -1px 4px rgba($color-blue-light, 0.44),
+                inset 4px 4px 4px rgba($color-black, 0.24);
+            font-weight: $font-bold;
+        }
+    }
+
+    &__users {
+        box-shadow:
+            inset 6px 6px 12px rgba($color-black, 0.25),
+            inset -4px -4px 5px rgba($color-grey, 0.1);
+        @include fluid-size(padding-bottom, 5px, 5px);
+        @include fluid-size(padding-left, 12px, 12px);
+        @include fluid-size(padding-right, 12px, 12px);
+        @include fluid-size(padding-top, 5px, 5px);
+    }
+
+    &__products-wrap {
+        box-shadow:
+            inset 6px 6px 12px rgba($color-black, 0.25),
+            inset -4px -4px 5px rgba($color-grey, 0.1);
+        overflow-y: scroll;
+        @include fluid-size(padding-bottom, 5px, 5px);
+        @include fluid-size(padding-left, 12px, 12px);
+        @include fluid-size(padding-right, 12px, 12px);
+        @include fluid-size(padding-top, 5px, 5px);
+        width: 100%;
+    }
+
+    &__products {
+        display: flex;
+        width: 100%;
+    }
+
+    &__product {
+        align-items: center;
+        display: flex;
+
+        &-circle {
+            background-color: $color-fail;
+            border-radius: 100%;
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+
+            &--pass {
+                background-color: $color-pass;
+            }
+        }
+    }
+
+}
