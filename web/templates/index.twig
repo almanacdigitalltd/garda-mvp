@@ -1,6 +1,7 @@
 {% requireLogin %}
 
-{% if currentUser.can('editUsers') %}
+
+{% if currentUser.groups[0].handle == 'trainer' %}
 {% redirect "trainer/overview" %}
 {% endif %}
 
