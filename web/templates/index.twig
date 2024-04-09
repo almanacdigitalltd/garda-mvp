@@ -1,8 +1,8 @@
 {% requireLogin %}
 
-{# {% if currentUser.groups[0].handle == 'trainer' %}
+{% if currentUser.groups[0].handle == 'trainer' and craft.app.request.referrer|split('/')[3] == 'login' %}
 {% redirect "trainer/overview" %}
-{% endif %} #}
+{% endif %}
 
 {% extends "_layouts/_base" %}
 
