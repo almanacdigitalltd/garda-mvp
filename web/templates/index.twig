@@ -1,5 +1,9 @@
 {% requireLogin %}
 
+{% if currentUser.can('editUsers') %}
+{% redirect "trainer/overview" %}
+{% endif %}
+
 {% extends "_layouts/_base" %}
 
 {# Get categories #}
