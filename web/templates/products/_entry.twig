@@ -30,6 +30,12 @@
             } %}
         {% endif %}
 
+        {% if currentUser.can('editUsers') %}
+            {% set footerSettings = footerSettings|merge({
+                manageUsersShow: true
+            }) %}
+        {% endif %}
+
         {% include "_layouts/_footer" with footerSettings %}
 
     {% else %}

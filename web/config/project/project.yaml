@@ -1,4 +1,4 @@
-dateModified: 1711979907
+dateModified: 1712674193
 email:
   fromEmail: info@almanac.digital
   fromName: Grid
@@ -23,6 +23,7 @@ meta:
     0d6d3be4-4982-411a-bdb4-d7b5423a23bc: Quiz # Quiz
     2ff8cdee-ebe4-488c-9b5c-4eefb0adccda: Quiz # Quiz
     5cd2d042-df9b-4694-a9d8-3e592c7c9092: Trainer # Trainer
+    5e872f78-9f74-43b8-b1bf-02e93249e93c: Default # Default
     5f98ca01-c165-422f-953a-52eb0af89714: Question # Question
     6f57477e-3632-4978-b8f7-e42004d6e3b0: 'Product Placeholder' # Product Placeholder
     51b22b87-9b56-4681-915e-e9b42177698f: Common # Common
@@ -44,6 +45,7 @@ meta:
     a5ac68a5-7d49-42e3-acad-1b4767bc31dd: 'Product Category' # Product Category
     b8bec7f1-2e09-4b73-b034-d67d1c224348: Operator # Operator
     b957da5d-2360-4243-9f15-e94ef786cf21: Users # Users
+    c00159d4-b0b7-409c-a51b-cae535ca43c5: Trainer # Trainer
     ca145744-939c-4eb4-b8ea-70db55ca748e: 'Section Time' # Section Time
     d3da2a31-6aef-4533-86ad-0cfb6924a6b1: Products # Products
     d436e4d8-e259-4054-b435-ca4a550559dc: 'Product Images' # Product Images

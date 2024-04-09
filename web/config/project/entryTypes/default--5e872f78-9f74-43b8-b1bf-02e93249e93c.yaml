@@ -1,0 +1,47 @@
+fieldLayouts:
+  3f9bdd9f-b8db-4910-930b-0c4090751737:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 01217cea-5352-4975-b541-70eff60c3ca8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: dc9149eb-c64f-4a23-8e48-549463633798
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: c00159d4-b0b7-409c-a51b-cae535ca43c5 # Trainer
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
