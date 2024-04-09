@@ -53,4 +53,23 @@
         z-index: 3;
     }
 
+    &--metrics {
+        align-items: baseline;
+        display: flex;
+        @include fluid-size(font-size, 16px, 18px);
+        @include fluid-size(line-height, 22px, 24px);
+        @include fluid-size(left, 24px, 38px);
+        position: absolute;
+
+        &:before {
+            background-image: url(@assets/img/icon-metrics.svg);
+            background-size: contain;
+            content: '';
+            height: 22px;
+            margin-right: 10px;
+            position: relative;
+            width: 22px;
+        }
+    }
+
 }

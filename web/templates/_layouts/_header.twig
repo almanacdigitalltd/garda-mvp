@@ -1,5 +1,11 @@
 <div class="o-header">
 
+    {% if metricsShow is defined %}
+    <a class="e-button e-button--metrics">
+        Metrics
+    </a>
+    {% endif %}
+
     {% if title is defined %}
     <h1>{{ title }}</h1>
     {% endif %}

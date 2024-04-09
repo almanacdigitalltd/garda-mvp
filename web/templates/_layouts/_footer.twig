@@ -10,10 +10,24 @@
         Logout
     </a>
 
+    {% if manageUsersShow is defined %}
+    <a class="e-button o-footer__manage-users">
+        <i></i>
+        Manage users
+    </a>
+    {% endif %}
+
     {% if trainingCenterHide != true %}
     <a class="e-button o-footer__training" href="/">
         <i></i>
         Training centre
+    </a>
+    {% endif %}
+
+    {% if exportShow is defined %}
+    <a class="e-button o-footer__export">
+        <i></i>
+        Export
     </a>
     {% endif %}
 

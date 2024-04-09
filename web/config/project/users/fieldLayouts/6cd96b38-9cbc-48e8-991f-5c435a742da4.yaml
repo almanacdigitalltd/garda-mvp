@@ -9,6 +9,7 @@ tabs:
           uid: 07b8aab2-6bbd-491d-a108-d42e75d34597
           values:
             - b8bec7f1-2e09-4b73-b034-d67d1c224348 # Operator
+            - 5cd2d042-df9b-4694-a9d8-3e592c7c9092 # Trainer
       elementType: craft\elements\User
       fieldContext: global
     elements:

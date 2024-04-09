@@ -19,7 +19,8 @@
 {% block content %}
 
     {% include "_layouts/_header" with {
-        title: "Training - Overview"
+        title: "Training - Overview",
+        metricsShow: true
     } %}
 
     {% if allProductCategories %}
@@ -45,7 +46,7 @@
 
                 {% for user in allOperators %}
 
-                    <div class="c-trainer-overview__username">
+                    <div class="c-trainer-overview__item c-trainer-overview__username">
                         {{ user.username }}
                     </div>
 
@@ -63,9 +64,9 @@
                     <div class="c-trainer-overview__products">
 
                         {% for product in allProducts %}
-                        <div class="c-trainer-overview__product">
+                        <div class="c-trainer-overview__item c-trainer-overview__product">
                             <div class="c-trainer-overview__product-circle{% if product.slug == 'spot-system' and user.testPass %} c-trainer-overview__product-circle--pass{% endif %}"></div>
-                            <div class="c-trainer-overview__product-text">{{ product.title }}</div>
+                            <a{% if product.slug == 'spot-system' %} href="{{ product.url  }}"{% endif %} class="c-trainer-overview__product-text">{{ product.title }}</a>
                         </div>
                         {% endfor %}
 
@@ -82,7 +83,9 @@
     </div>
 
     {% set footerSettings = {
-        takeQuizHide: true
+        takeQuizHide: true,
+        manageUsersShow: true,
+        exportShow: true
     } %}    
     {% include "_layouts/_footer" with footerSettings %}
 
