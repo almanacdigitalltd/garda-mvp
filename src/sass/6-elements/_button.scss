@@ -2,9 +2,9 @@
     align-items: center;
     color: $secondary-color;
     display: inline-flex;
-    @include fluid-size(font-size, 18px, 22px);
+    @include fluid-size(font-size, 16px, 18px);
     font-weight: $font-medium;
-    @include fluid-size(line-height, 23px, 27px);
+    @include fluid-size(line-height, 22px, 24px);
     text-transform: uppercase;
     text-decoration: none;
 

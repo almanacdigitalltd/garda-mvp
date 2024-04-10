@@ -65,7 +65,7 @@
 
                         {% for product in allProducts %}
                         <div class="c-trainer-overview__item c-trainer-overview__product">
-                            <div class="c-trainer-overview__product-circle{% if product.slug == 'spot-system' and user.testPass %} c-trainer-overview__product-circle--pass{% endif %}"></div>
+                            <div class="c-trainer-overview__product-circle{% if product.slug != 'spot-system' %} c-trainer-overview__product-circle--pass{% endif %}{% if product.slug == 'spot-system' and user.testPass %} c-trainer-overview__product-circle--pass{% endif %}"></div>
                             <a{% if product.slug == 'spot-system' %} href="{{ product.url  }}"{% endif %} class="c-trainer-overview__product-text">{{ product.title }}</a>
                         </div>
                         {% endfor %}
