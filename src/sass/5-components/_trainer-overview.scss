@@ -107,4 +107,16 @@
         }
     }
 
+    &__unset {
+        background-color: $color-fail;
+        border-radius: 6px;
+        color: $primary-color;
+        @include fluid-size(font-size, 14px, 14px);
+        font-weight: $font-bold;
+        @include fluid-size(line-height, 18px, 18px);
+        @include fluid-size(margin-left, 10px, 10px);
+        @include fluid-size(min-width, 24px, 24px);
+        text-align: center;
+    }
+
 }

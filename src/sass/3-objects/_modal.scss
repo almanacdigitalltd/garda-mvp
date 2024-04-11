@@ -21,7 +21,7 @@
         @include fluid-size(padding-right, 40px, 70px);
         @include fluid-size(padding-top, 30px, 50px);
         text-align: center;
-        @include fluid-size(width, 80%, 510px);
+        @include fluid-size(width, 300px, 510px);
     }
 
     &__header {
@@ -71,5 +71,80 @@
         opacity: 0;
         pointer-events: none;
         position: absolute;
+    }
+}
+
+.o-modal--score {
+    .o-modal__header {
+        background-color: $secondary-color;
+        box-shadow: inset 0px 10px 8px rgba($color-black, 0.43);
+        color: $primary-color;
+        display: inline-block;
+        font-weight: $font-bold;
+        @include fluid-size(margin-bottom, 28px, 32px);
+        @include fluid-size(padding-bottom, 8px, 10px);
+        @include fluid-size(padding-left, 25px, 37px);
+        @include fluid-size(padding-right, 25px, 37px);
+        @include fluid-size(padding-top, 8px, 10px);
+        text-align: center;
+
+        &--failed {
+            background-color: $color-fail;
+        }
+
+        &--passed {
+            background-color: $color-pass;
+        }
+    }
+    .o-modal__content {
+        @include fluid-size(padding-bottom, 20px, 30px);
+        @include fluid-size(padding-left, 20px, 40px);
+        @include fluid-size(padding-right, 20px, 40px);
+        padding-top: 0;
+        position: relative;
+        @include fluid-size(width, 500px, 700px);
+    }
+
+    .o-modal__button {
+        @include fluid-size(left, 10px, 20px);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        @include fluid-size(top, 10px, 20px);
+    }
+
+    .o-modal__subheader {
+        @include fluid-size(font-size, 22px, 26px);
+        font-weight: $font-medium;
+        @include fluid-size(line-height, 26px, 30px);
+        @include fluid-size(margin-bottom, 10px, 10px);
+    }
+
+    .o-modal__score-wrap {
+        align-items: center;
+        display: flex;
+    }
+
+    .o-modal__score-wrap-left,
+    .o-modal__score-wrap-right {
+        width: 50%;
+    }
+
+    .o-modal__image {
+        max-height: 240px;
+    }
+
+    .o-modal__product {
+        @include fluid-size(font-size, 20px, 22px);
+        font-weight: $font-light;
+        @include fluid-size(line-height, 24px, 26px);
+    }
+
+    .o-modal__total {
+        @include fluid-size(font-size, 22px, 24px);
+        font-weight: $font-bold;
+        @include fluid-size(line-height, 28px, 30px);
+        @include fluid-size(margin-top, 20px, 20px);
     }
 }

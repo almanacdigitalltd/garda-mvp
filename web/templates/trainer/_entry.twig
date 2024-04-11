@@ -48,6 +48,9 @@
 
                     <div class="c-trainer-overview__item c-trainer-overview__username">
                         {{ user.username }}
+                        {% if user.testPass is empty or user.testPass == 0 %}
+                        <div class="c-trainer-overview__unset">1</div>
+                        {% endif %}
                     </div>
 
                 {% endfor %}
@@ -66,7 +69,20 @@
                         {% for product in allProducts %}
                         <div class="c-trainer-overview__item c-trainer-overview__product">
                             <div class="c-trainer-overview__product-circle{% if product.slug != 'spot-system' %} c-trainer-overview__product-circle--pass{% endif %}{% if product.slug == 'spot-system' and user.testPass %} c-trainer-overview__product-circle--pass{% endif %}"></div>
-                            <a{% if product.slug == 'spot-system' %} href="{{ product.url  }}"{% endif %} class="c-trainer-overview__product-text">{{ product.title }}</a>
+                            <a
+                                href="#"
+                                {% if product.slug == 'spot-system' %}
+                                data-modal-type="score"
+                                data-modal-score="{{ user.score }}"
+                                data-modal-passed="{{ user.testPass }}"
+                                data-modal-name="{{ user.username }}"
+                                data-modal-product="{{ product.title }}"
+                                data-modal-brand="{{ product.productBrand }}"
+                                {% endif %}
+                                class="c-trainer-overview__product-text{% if product.slug == 'spot-system' %} js-modal{% endif %}"
+                            >
+                                {{ product.title }}
+                            </a>
                         </div>
                         {% endfor %}
 
