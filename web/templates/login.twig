@@ -4,7 +4,10 @@
 
 {% block content %}
 
-    {% include "_layouts/_header" %}
+    {% include "_layouts/_header" with {
+        metricsHide: true,
+        homeHide: true
+    } %}
 
     <div class="o-main o-main--narrow o-main--center">
 

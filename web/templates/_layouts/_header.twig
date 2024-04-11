@@ -1,8 +1,17 @@
+{% set metricsHide = metricsHide ?? false %}
+{% set homeHide = homeHide ?? false %}
+
 <div class="o-header">
 
-    {% if metricsShow is defined %}
+    {% if metricsHide != true and currentUser.can('editUsers') %}
     <a class="e-button e-button--metrics">
         Metrics
+    </a>
+    {% endif %}
+
+    {% if homeHide != true and currentUser.can('editUsers') %}
+    <a href="/trainer/overview" class="e-button e-button--home">
+        Home
     </a>
     {% endif %}
 
