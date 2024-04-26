@@ -3,6 +3,7 @@
     box-shadow: 10px 0 6px rgba($color-black, 0.35);
     height: 100%;
     left: -40%;
+    max-width: 450px;
     @include fluid-size(padding-left, 24px, 38px);
     @include fluid-size(padding-right, 24px, 38px);
     @include fluid-size(padding-top, 32px, 47px);
