@@ -1,0 +1,58 @@
+.c-metrics {
+    background-color: rgba($primary-color, 0.85);
+    box-shadow: 10px 0 6px rgba($color-black, 0.35);
+    height: 100%;
+    left: -40%;
+    @include fluid-size(padding-left, 24px, 38px);
+    @include fluid-size(padding-right, 24px, 38px);
+    @include fluid-size(padding-top, 32px, 47px);
+    position: absolute;
+    top: 0;
+    width: 33.33%;
+    z-index: 10;
+
+    transition: left 400ms ease-in-out;
+
+    &--open {
+        left: 0;
+    }
+
+    &__close {
+        background-image: url(@assets/img/icon-back.svg);
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 19px;
+        color: $secondary-color;
+        display: block;
+        @include fluid-size(font-size, 16px, 18px);
+        font-weight: $font-medium;
+        @include fluid-size(line-height, 22px, 24px);
+        margin-top: 4px;
+        padding-left: 40px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &__header {
+        @include fluid-size(font-size, 16px, 20px);
+        @include fluid-size(line-height, 20px, 26px);
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        gap: 14px 0;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+
+        &:first-of-type {
+            margin-top: 50px;
+        }
+    }
+
+    &__link {
+        color: $secondary-color;
+        font-weight: $font-light;
+        text-decoration: none;
+    }
+}

@@ -4,7 +4,7 @@
 <div class="o-header">
 
     {% if metricsHide != true and currentUser.can('editUsers') %}
-    <a class="e-button e-button--metrics">
+    <a class="e-button e-button--metrics js-metrics-open">
         Metrics
     </a>
     {% endif %}
@@ -24,3 +24,32 @@
     {% endif %}
 
 </div>
+
+{% if metricsHide != true and currentUser.can('editUsers') %}
+    <div class="c-metrics js-metrics">
+
+        <a href="#" class="c-metrics__close js-metrics-close">Close</a>
+
+        <div class="c-metrics__section">
+            <h3 class="h2 c-metrics__header">Operator filter</h3>
+            <a class="c-metrics__link" href="/trainer/overview">Show out of date only</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show in date only</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show most out of date</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show most in date</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show top pass rate</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show low pass rate</a>
+        </div>
+
+        <div class="c-metrics__section">
+            <h3 class="h2 c-metrics__header">Equipment filter</h3>
+            <a class="c-metrics__link" href="/trainer/overview">Show out of date only</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show in date only</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show most out of date</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show most in date</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show top pass rate</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show low pass rate</a>
+            <a class="c-metrics__link" href="/trainer/overview">Show feedback only</a>
+        </div>
+
+    </div>
+{% endif %}
