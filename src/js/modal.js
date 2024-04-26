@@ -37,6 +37,8 @@ const render = clicked => {
     const modalContainer = document.createElement( 'div' )
     if ( type == 'score' ) {
         modalContainer.classList.add( 'o-modal', 'o-modal--score' )
+    } else if ( type == 'notes' ) {
+        modalContainer.classList.add( 'o-modal', 'o-modal--notes' )
     } else {
         modalContainer.classList.add( 'o-modal' )
     }
@@ -56,12 +58,18 @@ const render = clicked => {
             modalHeader.classList.add( 'h1', 'o-modal__header', 'o-modal__header--boxed', 'o-modal__header--failed' )
             headerText = document.createTextNode( 'Test Failed' )
         }
+    } else if ( type == 'notes' ) {
+
     } else {
         modalHeader.classList.add( 'h1', 'o-modal__header' )
         headerText = document.createTextNode( header )
     }
-    modalHeader.appendChild( headerText )
-    modalContent.appendChild( modalHeader )
+    if ( headerText ) {
+        modalHeader.appendChild( headerText )
+    }
+    if ( modalHeader ) {
+        modalContent.appendChild( modalHeader )
+    }
 
     if ( type == 'score' ) {
 
@@ -109,6 +117,13 @@ const render = clicked => {
         modalScoreWrap.appendChild( modalScoreWrapRight )
         modalContent.appendChild( modalScoreWrap )
 
+    } else if ( type == 'notes' ) {
+
+        const modalImage = document.createElement( 'img' )
+        modalImage.classList.add( 'o-modal__image' )
+        modalImage.src = '/assets/img/notes.jpg'
+        modalContent.appendChild( modalImage )
+
     } else {
 
         const modalText = document.createElement( 'p' )
@@ -129,7 +144,7 @@ const render = clicked => {
         modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
         buttonNoText = document.createTextNode( 'Ok' )
         modalButtonNo.appendChild( buttonNoText )
-    } else if ( type == 'score' ) {
+    } else if ( type == 'score' || type == 'notes' ) {
         modalButtonYes = document.createElement( 'button' )
         modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes', 'o-modal__hide' )
         buttonYesText = document.createTextNode( 'Close' )

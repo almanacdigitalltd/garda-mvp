@@ -89,6 +89,14 @@
             color: $secondary-color;
             text-decoration: none;
         }
+
+        &-notes {
+            background-image: url(@assets/img/icon-notes.svg);
+            background-size: contain;
+            height: 20px;
+            margin-left: auto;
+            width: 20px;
+        }
     }
 
     &__item {
