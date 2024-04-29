@@ -12,7 +12,9 @@
 {% else %}
     {% css "@web/assets/css/index.css" %}
 
-    {% js "@web/assets/js/core.js" %}
+    {% js "@web/assets/js/core.js" with {
+        type: "module"
+    } %}
 
     {% js %}
         const uuSaveScore = ( score, passed ) => {

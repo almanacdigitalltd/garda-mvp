@@ -1,5 +1,8 @@
-import * as pdfjs from '@modules/pdfjs-dist/build/pdf.mjs' /* @vite-ignore */
-import '@modules/pdfjs-dist/build/pdf.worker.min.mjs' /* @vite-ignore */
+import * as pdfjs from '@modules/pdfjs-dist/build/pdf'
+import pdfjsWorker from '@modules/pdfjs-dist/build/pdf.worker?worker'
+
+window.pdfjsWorker = pdfjsWorker;
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.1.392/pdf.worker.min.mjs`;
 
 var isCordovaApp = !!window.cordova
 
@@ -187,7 +190,6 @@ const render = clicked => {
             }
         }
 
-        // pdfjs.disableWorker = true;
         pdfjs.getDocument(link).promise.then(renderPages);
 
     } else {

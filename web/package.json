@@ -1,6 +1,7 @@
 {
     "name": "grid",
     "version": "1.0.0",
+    "type": "module",
     "description": "The Grid",
     "main": "assets/js/index.js",
     "scripts": {
