@@ -1,21 +1,23 @@
-var isCordovaApp = !!window.cordova;
+import * as pdfjs from '@modules/pdfjs-dist'
+import '@modules/pdfjs-dist/build/pdf.worker.min.mjs'
+
+var isCordovaApp = !!window.cordova
 
 let type, link
 
 const initialize = () => {
-    const clickedItems = document.querySelectorAll('.js-modal')
 
-    if ( clickedItems ) {
-        clickedItems.forEach( clicked => {
-            clicked.addEventListener( 'click', ev => {
-                ev.preventDefault()
-                type = clicked.dataset.modalType
-                link = clicked.getAttribute('href')
-    
-                render( clicked )
-            })
-        })
-    }
+    document.addEventListener( 'click', ev => {
+        const clicked = ev.target.closest( '.js-modal' );
+
+        if( clicked ) {
+            ev.preventDefault()
+            type = clicked.dataset.modalType
+            link = clicked.getAttribute('href')
+
+            render( clicked )
+        }
+    });
 
 }
 
@@ -39,6 +41,10 @@ const render = clicked => {
         modalContainer.classList.add( 'o-modal', 'o-modal--score' )
     } else if ( type == 'notes' ) {
         modalContainer.classList.add( 'o-modal', 'o-modal--notes' )
+    } else if ( type == 'docs' ) {
+        modalContainer.classList.add( 'o-modal', 'o-modal--docs' )
+    } else if ( type == 'file' ) {
+        modalContainer.classList.add( 'o-modal', 'o-modal--file' )
     } else {
         modalContainer.classList.add( 'o-modal' )
     }
@@ -59,6 +65,10 @@ const render = clicked => {
             headerText = document.createTextNode( 'Test Failed' )
         }
     } else if ( type == 'notes' ) {
+
+    } else if ( type == 'docs' ) {
+        headerText = document.createTextNode( 'Additional documentation' )
+    } else if ( type == 'file' ) {
 
     } else {
         modalHeader.classList.add( 'h1', 'o-modal__header' )
@@ -124,6 +134,62 @@ const render = clicked => {
         modalImage.src = '/assets/img/notes.jpg'
         modalContent.appendChild( modalImage )
 
+    } else if ( type == 'docs' ) {
+
+        const files = JSON.parse( clicked.dataset.pdfs )
+
+        files.forEach( file => {
+            const fileIcon = document.createElement( 'div' )
+            fileIcon.classList.add( 'o-modal__file-icon' )
+
+            const fileLinkText = document.createTextNode( file.name )
+            const fileName = document.createElement( 'div' )
+            fileName.classList.add( 'o-modal__file-name' )
+
+            fileName.appendChild( fileLinkText )
+
+            const fileLink = document.createElement( 'a' )
+            fileLink.classList.add( 'o-modal__file-link', 'js-modal' )
+            fileLink.setAttribute('data-modal-type', 'file')
+            fileLink.href = file.file
+
+            fileLink.appendChild( fileIcon )
+            fileLink.appendChild( fileName )
+
+            modalContent.appendChild( fileLink )
+        } )
+
+    } else if ( type == 'file' ) {
+
+        const fileCanvasWrap = document.createElement( 'div' )
+        fileCanvasWrap.classList.add( 'o-modal__canvas' )
+        
+        function renderPage(page) {
+            var viewport = page.getViewport( { scale: 1 } );
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            var renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            fileCanvasWrap.appendChild(canvas)
+            modalContent.appendChild(fileCanvasWrap);
+            
+            page.render(renderContext);
+        }
+        
+        async function renderPages(pdfDoc) {
+            for(var num = 1; num <= pdfDoc.numPages; num++) {
+                await pdfDoc.getPage(num).then(renderPage);
+            }
+        }
+
+        // pdfjs.disableWorker = true;
+        pdfjs.getDocument(link).promise.then(renderPages);
+
     } else {
 
         const modalText = document.createElement( 'p' )
@@ -144,7 +210,7 @@ const render = clicked => {
         modalButtonNo.classList.add( 'e-button', 'o-modal__button', 'o-modal__no' )
         buttonNoText = document.createTextNode( 'Ok' )
         modalButtonNo.appendChild( buttonNoText )
-    } else if ( type == 'score' || type == 'notes' ) {
+    } else if ( type == 'score' || type == 'notes' || type == 'docs' || type == 'file' ) {
         modalButtonYes = document.createElement( 'button' )
         modalButtonYes.classList.add( 'e-button', 'o-modal__button', 'o-modal__yes', 'o-modal__hide' )
         buttonYesText = document.createTextNode( 'Close' )
@@ -174,15 +240,15 @@ const render = clicked => {
 
     document.body.appendChild( modalContainer )
 
-    events()
+    events( modalContainer )
 }
 
-const events = () => {
+const events = modalContainer => {
     const modal = document.querySelector('.o-modal')
-    const buttons = document.querySelectorAll('.o-modal__button')
-
+    const buttons = modalContainer.querySelectorAll('.o-modal__button')
+    
     buttons.forEach( () => {
-        control().then(() => {
+        control( modalContainer ).then(() => {
             window.location.href = link
         }).catch(() => {
             modal.classList.remove( 'o-modal--show' )
@@ -190,14 +256,12 @@ const events = () => {
     })
 }
 
-const control = () => {
+const control = modalContainer => {
     let yesHandler
     let noHandler
 
-    const modal = document.querySelector('.o-modal')
-
-    const yes = modal.querySelector( '.o-modal__yes' )
-    const no = modal.querySelector( '.o-modal__no')
+    const yes = modalContainer.querySelector( '.o-modal__yes' )
+    const no = modalContainer.querySelector( '.o-modal__no')
 
     return new Promise( ( resolve, reject ) => {
         yesHandler = resolve
@@ -207,18 +271,17 @@ const control = () => {
         no.addEventListener( 'click', noHandler )
     })
     .finally( () => {
-        modal.classList.remove( 'o-modal--show' )
+        modalContainer.classList.remove( 'o-modal--show' )
 
         yes.removeEventListener( 'click', yesHandler )
         no.removeEventListener( 'click', noHandler )
 
-        cleanup()
+        cleanup( modalContainer )
     } )
 }
 
-const cleanup = () => {
-    const modal = document.querySelector('.o-modal')
-    modal.remove()
+const cleanup = modalContainer => {
+    modalContainer.remove()
 }
 
 export default initialize;

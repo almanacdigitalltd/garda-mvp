@@ -47,6 +47,11 @@ export default ({ mode }) => {
 
             }
         },
+		optimizeDeps: {
+			esbuildOptions: {
+				target: "esnext",
+			},
+		},
         plugins: [
 			{
 				name: 'php',
