@@ -6,6 +6,8 @@ composer.lock
 
 web/assets/css/index.css
 web/assets/js/core.js
+web/assets/js/index2.js
+web/assets/js/__vite-browser-external.js
 web/assets/videos/*
 
 web/uploads
