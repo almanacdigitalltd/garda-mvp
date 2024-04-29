@@ -220,6 +220,7 @@
     &__video-play,
     &__video-next,
     &__video-mute,
+    &__video-docs,
     &__video-fullscreen {
         display: flex;
         align-items: center;
@@ -302,6 +303,16 @@
         margin-left: auto;
     }
 
+    &__video-docs {
+        margin-right: 21px;
+        
+        &:before {
+            width: 30px;
+            height: 20px;
+            background-image: url(@assets/img/icon-docs.svg);
+        }
+    }
+    
     &__video-fullscreen {
         margin-right: 21px;
         

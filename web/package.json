@@ -4,16 +4,17 @@
     "description": "The Grid",
     "main": "assets/js/index.js",
     "scripts": {
-      "dev": "vite dev",
-      "build": "vite build"    
+        "dev": "vite dev",
+        "build": "vite build"
     },
     "author": "Almanac Digital",
     "license": "Apache-2.0",
     "dependencies": {
-      "swiper": "^11.0.7"
+        "pdfjs-dist": "^4.1.392",
+        "swiper": "^11.0.7"
     },
     "devDependencies": {
-      "vite": "^5.1.5",
-      "sass": "^1.71.1"
+        "sass": "^1.71.1",
+        "vite": "^5.1.5"
     }
-  }
+}

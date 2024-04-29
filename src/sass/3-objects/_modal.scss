@@ -177,3 +177,96 @@
     }
 
 }
+
+.o-modal--docs {
+
+    .o-modal__content {
+        @include fluid-size(padding-bottom, 20px, 30px);
+        @include fluid-size(padding-left, 20px, 40px);
+        @include fluid-size(padding-right, 20px, 40px);
+        @include fluid-size(padding-top, 40px, 60px);
+        position: relative;
+        @include fluid-size(width, 500px, 700px);
+    }
+
+    .o-modal__button {
+        @include fluid-size(left, 10px, 20px);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        @include fluid-size(top, 10px, 20px);
+    }
+
+    h2 {
+        @include fluid-size(padding-bottom, 15px, 20px);
+    }
+
+    .o-modal__file-link {
+        align-items: center;
+        border-top: 2px solid $color-grey-dark;
+        display: flex;
+        text-decoration: none;
+
+        &:first-of-type {
+            border-top: none;
+        }
+    }
+
+    .o-modal__file-icon {
+        border-right: 2px solid $color-grey-dark;
+        @include fluid-size(padding-bottom, 15px, 20px);
+        @include fluid-size(padding-right, 15px, 20px);
+        @include fluid-size(padding-top, 15px, 20px);
+        position: relative;
+
+        &:before {
+            background-image: url(@assets/img/icon-pdf-large.svg);
+            content: '';
+            display: block;
+            height: 44px;
+            width: 43px;
+        }
+    }
+
+    .o-modal__file-name {
+        color: $secondary-color;
+        @include fluid-size(font-size, 18px, 20px);
+        font-weight: $font-medium;
+        @include fluid-size(line-height, 22px, 24px);
+        @include fluid-size(padding-left, 15px, 20px);
+    }
+}
+
+.o-modal--file {
+    background-color: transparent;
+
+    .o-modal__content {
+        @include fluid-size(padding-bottom, 20px, 30px);
+        @include fluid-size(padding-left, 20px, 40px);
+        @include fluid-size(padding-right, 20px, 40px);
+        @include fluid-size(padding-top, 50px, 70px);
+        position: relative;
+        @include fluid-size(width, 550px, 750px);
+    }
+
+    .o-modal__button {
+        @include fluid-size(left, 10px, 20px);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        @include fluid-size(top, 10px, 20px);
+    }
+
+    .o-modal__canvas {
+        height: 450px;
+        overflow-y: auto;
+        width: 620px;
+
+        canvas {
+            width: 100%;
+        }
+    }
+
+}
