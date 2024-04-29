@@ -1,5 +1,5 @@
-import * as pdfjs from '@modules/pdfjs-dist'
-import '@modules/pdfjs-dist/build/pdf.worker.min.mjs'
+import * as pdfjs from '@modules/pdfjs-dist/build/pdf.mjs' /* @vite-ignore */
+import '@modules/pdfjs-dist/build/pdf.worker.min.mjs' /* @vite-ignore */
 
 var isCordovaApp = !!window.cordova
 

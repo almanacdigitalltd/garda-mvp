@@ -15,6 +15,7 @@ export default ({ mode }) => {
 			},
 		},
         build: {
+			target: "es2022",
             minify: true,
             outDir: process.env.VITE_OUTPUT_PATH,
             emptyOutDir: false,
@@ -47,6 +48,9 @@ export default ({ mode }) => {
 
             }
         },
+		esbuild: {
+			target: "es2022"
+		},
 		optimizeDeps: {
 			esbuildOptions: {
 				target: "esnext",
