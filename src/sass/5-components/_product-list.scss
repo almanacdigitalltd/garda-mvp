@@ -4,11 +4,12 @@
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
 
-        // OFF FOR MVP
-        pointer-events: none;
-
+        &:first-of-type {
+            pointer-events: none;
+        }
+        
         &:last-of-type {
-            pointer-events: all;
+            pointer-events: none;
         }
     }
 

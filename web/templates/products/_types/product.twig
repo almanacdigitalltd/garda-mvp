@@ -58,7 +58,7 @@
             <button class="c-product__video-mute videoMute"></button>
             <input class="c-product__video-volume videoVolume" type="range" min="0" max="1" step="0.01" value="1">
             <div class="c-product__video-controls-r">
-                {% set files = [
+                {# {% set files = [
                     {"name": "ExynPak - Best Practices Guide", "file": "/assets/pdfs/exynpak-best-practices-guide.pdf"},
                     {"name": "ExynPak Reference Guide", "file": "/assets/pdfs/exynpak-reference-guide.pdf"},
                     {"name": "Spot Information For Use", "file": "/assets/pdfs/spot-information-for-use.pdf"},
@@ -68,7 +68,7 @@
                     class="c-product__video-docs js-modal"
                     data-modal-type="docs"
                     data-pdfs="{{ files | json_encode }}"
-                ></a>
+                ></a> #}
                 <a class="c-product__video-fullscreen" href="{{ craft.app.request.url }}/fullscreen"></a>
                 <button class="c-product__video-download c-product__video-downloaded"></button>
             </div>

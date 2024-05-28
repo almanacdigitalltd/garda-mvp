@@ -15,12 +15,12 @@ const videoNext = document.querySelector('.videoNext')
 const videoVolume = document.querySelector('.videoVolume')
 
 let videoDuration
-let videoSrc = '/assets/videos/spot.mp4'
-let videoPoster = '/assets/img/film-poster.jpg'
+let videoSrc = '/assets/videos/nfx.mp4'
+let videoPoster = '/assets/img/film-poster.png'
 
 if ( isCordovaApp ) {
-    videoSrc = 'videos/spot.mp4'
-    videoPoster = 'img/film-poster.jpg'
+    videoSrc = 'videos/nfx.mp4'
+    videoPoster = 'img/film-poster.png'
 }
 
 const initialize = () => {

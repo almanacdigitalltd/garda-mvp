@@ -1,6 +1,27 @@
 @font-face {
-    font-family: "Montserrat";
-    src: url(@assets/fonts/Montserrat-VariableFont_wght.ttf) format("ttf supports variations"),
-         url(@assets/fonts/Montserrat-VariableFont_wght.ttf) format("ttf-variations");
-    font-weight: 100 1000;
+    font-family: 'Helvetica Neue';
+    src: url('@assets/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+        url('@assets/fonts/HelveticaNeue-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@assets/fonts/HelveticaNeue-Light.woff2') format('woff2'),
+        url('@assets/fonts/HelveticaNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@assets/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+        url('@assets/fonts/HelveticaNeue-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+

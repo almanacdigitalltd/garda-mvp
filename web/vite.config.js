@@ -15,7 +15,6 @@ export default ({ mode }) => {
 			},
 		},
         build: {
-			target: "es2022",
             minify: true,
             outDir: process.env.VITE_OUTPUT_PATH,
             emptyOutDir: false,
@@ -33,7 +32,7 @@ export default ({ mode }) => {
                             return 'img/[name][extname]';
                         }
 
-						if (/\.(ttf|woff)$/.test(name ?? '')){
+						if (/\.(ttf|woff|woff2)$/.test(name ?? '')){
                             return 'fonts/[name][extname]';
                         }
                         
@@ -48,14 +47,6 @@ export default ({ mode }) => {
 
             }
         },
-		esbuild: {
-			target: "es2022"
-		},
-		optimizeDeps: {
-			esbuildOptions: {
-				target: "esnext",
-			},
-		},
         plugins: [
 			{
 				name: 'php',

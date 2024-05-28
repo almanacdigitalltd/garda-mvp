@@ -36,22 +36,22 @@
                     
                     <div class="c-product-list__data">
                         <a class="c-product-list__info" href="#"></a>
-                        <a class="c-product-list__download{% if loop.last %} c-product-list__downloaded{% endif %}" href="#"></a>
+                        <a class="c-product-list__download{% if loop.index == 2 %} c-product-list__downloaded{% endif %}" href="#"></a>
                     </div>
 
                 </div>
                 
                 <div class="c-product-list__title">
-                    <h2>
+                    <h2 class="fw-medium">
                         <a class="c-product-list__link" href="{{ product.url }}">
-                            <span class="c-product-list__status{% if product.slug == 'spot-system' and currentUser.testPass %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}{% if loop.index == 1 or loop.index == 2 %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}"></span>
+                            <span class="c-product-list__status{% if product.slug == 'night-fighter' and currentUser.testPass %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}{% if loop.index == 1 or loop.index == 3 %} c-product-list__status--passed{% else %} c-product-list__status--failed{% endif %}"></span>
                             {{ product.title }}
                         </a>
                     </h2>
                 </div>
                 
                 <div class="c-product-list__brand">
-                    <h3 class="h2">{{ product.productBrand }}</h3>
+                    <h3 class="h2 fw-medium">{{ product.productBrand }}</h3>
                 </div>
                 
             </div>
