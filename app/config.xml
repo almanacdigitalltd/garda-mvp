@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.app.grid" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>TheGrid</name>
-    <description>The Grid - Training App</description>
+<widget id="com.app.gardaworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>GardaWorld</name>
+    <description>GardaWorld - Training App</description>
     <author email="info@almanac.digital" href="https://almanac.digital">
         Almanac Digital
     </author>

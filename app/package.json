@@ -1,8 +1,8 @@
 {
-  "name": "com.app.grid",
-  "displayName": "TheGrid",
+  "name": "com.app.gardaworld",
+  "displayName": "GardaWorld",
   "version": "1.0.0",
-  "description": "The Grid",
+  "description": "GardaWorld",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

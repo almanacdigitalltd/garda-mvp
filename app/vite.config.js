@@ -32,7 +32,7 @@ export default ({ mode }) => {
                             return 'img/[name][extname]';
                         }
 
-                        if (/\.(ttf|woff)$/.test(name ?? '')){
+                        if (/\.(ttf|woff,woof2)$/.test(name ?? '')){
                             return 'fonts/[name][extname]';
                         }
                         
